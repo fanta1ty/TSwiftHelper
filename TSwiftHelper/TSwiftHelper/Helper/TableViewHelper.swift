@@ -10,7 +10,7 @@
 import Foundation
 import UIKit
 
-struct TableViewStyle {
+public struct TableViewStyle {
     let backgroundColor: DefinedColors!
     let borderColor: DefinedColors!
     
@@ -21,7 +21,7 @@ struct TableViewStyle {
     let isHidden: Bool
     let isUserInteractionEnabled: Bool
     
-    init(backgroundColor: DefinedColors = .Clear, borderColor: DefinedColors = .Clear, borderWidth: CGFloat = 0, corderRadius: CGFloat = 0, clipsToBounds: Bool = true, isHidden: Bool = false, isUserInteractionEnabled: Bool = true) {
+    public init(backgroundColor: DefinedColors = .Clear, borderColor: DefinedColors = .Clear, borderWidth: CGFloat = 0, corderRadius: CGFloat = 0, clipsToBounds: Bool = true, isHidden: Bool = false, isUserInteractionEnabled: Bool = true) {
         
         self.backgroundColor = backgroundColor
         self.borderColor = borderColor
@@ -33,12 +33,12 @@ struct TableViewStyle {
     }
 }
 
-final class TableViewHelper: UITableView {
+public final class TableViewHelper: UITableView {
     private let helperStyle: TableViewStyle
     private let cellClasses: [AnyClass?]
     private let cellIdentifiers: [String]!
     
-    init(style: TableViewStyle, parent: UIView? = nil, cellStyle: UITableView.Style = .grouped, cellClasses: [AnyClass?], cellIdentifiers: [String]) {
+    public init(style: TableViewStyle, parent: UIView? = nil, cellStyle: UITableView.Style = .grouped, cellClasses: [AnyClass?], cellIdentifiers: [String]) {
         self.helperStyle = style
         self.cellClasses = cellClasses
         self.cellIdentifiers = cellIdentifiers

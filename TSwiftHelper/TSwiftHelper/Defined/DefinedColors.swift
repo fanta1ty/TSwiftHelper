@@ -10,7 +10,7 @@
 import Foundation
 import UIKit
 
-enum DefinedColors {
+public enum DefinedColors {
     // MARK: - A Section
     case Abbey
     case Acadia

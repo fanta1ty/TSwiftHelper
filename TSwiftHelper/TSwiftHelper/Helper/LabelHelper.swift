@@ -10,7 +10,7 @@
 import Foundation
 import UIKit
 
-struct LabelStyle {
+public struct LabelStyle {
     let backgroundColor: DefinedColors!
     let borderColor: DefinedColors!
     let textColor: DefinedColors!
@@ -25,7 +25,7 @@ struct LabelStyle {
     
     let isHidden: Bool
     
-    init(backgroundColor: DefinedColors = .Clear,
+    public init(backgroundColor: DefinedColors = .Clear,
          borderColor: DefinedColors = .Clear,
          borderWidth: CGFloat = 0,
          corderRadius: CGFloat = 0,
@@ -47,7 +47,7 @@ struct LabelStyle {
 }
 
 // MARK: - Static Functions
-extension LabelStyle {
+public extension LabelStyle {
     // MARK: regularDefaultFontSize
     static func regularDefaultFontSize() -> LabelStyle {
         return LabelStyle(textFont: .InterRegular(size: 12))
@@ -69,10 +69,10 @@ extension LabelStyle {
     }
 }
 
-final class LabelHelper: UILabel {
+public final class LabelHelper: UILabel {
     private let style: LabelStyle
     
-    init(style: LabelStyle, text: String? = nil, parent: UIView? = nil) {
+    public init(style: LabelStyle, text: String? = nil, parent: UIView? = nil) {
         self.style = style
         super.init(frame: .zero)
         

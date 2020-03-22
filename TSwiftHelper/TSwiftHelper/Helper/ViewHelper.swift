@@ -10,7 +10,7 @@
 import Foundation
 import UIKit
 
-struct ViewStyle {
+public struct ViewStyle {
     let backgroundColor: DefinedColors!
     let borderColor: DefinedColors!
     
@@ -21,7 +21,7 @@ struct ViewStyle {
     let isHidden: Bool
     let isUserInteractionEnabled: Bool
     
-    init(backgroundColor: DefinedColors = .Clear, borderColor: DefinedColors = .Clear, borderWidth: CGFloat = 0, corderRadius: CGFloat = 0, clipsToBounds: Bool = true, isHidden: Bool = false, isUserInteractionEnabled: Bool = true) {
+    public init(backgroundColor: DefinedColors = .Clear, borderColor: DefinedColors = .Clear, borderWidth: CGFloat = 0, corderRadius: CGFloat = 0, clipsToBounds: Bool = true, isHidden: Bool = false, isUserInteractionEnabled: Bool = true) {
         
         self.backgroundColor = backgroundColor
         self.borderColor = borderColor
@@ -33,10 +33,10 @@ struct ViewStyle {
     }
 }
 
-final class ViewHelper: UIView {
+public final class ViewHelper: UIView {
     private let style: ViewStyle
     
-    init(style: ViewStyle, parent: UIView? = nil) {
+    public init(style: ViewStyle, parent: UIView? = nil) {
         self.style = style
         super.init(frame: .zero)
         

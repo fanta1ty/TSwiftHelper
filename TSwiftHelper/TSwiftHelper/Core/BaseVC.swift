@@ -24,10 +24,7 @@ open class BaseVC: UIViewController {
     deinit {
         print(level: .debug, message: self.nameOfClass + " " + "deinit")
     }
-}
-
-// MARK: - Base Function
-extension BaseVC {
+    
     open func setupUI() {
         
     }

@@ -11,9 +11,9 @@ import Foundation
 import UIKit
 
 // MARK: - StringHelper
-final class StringHelper {
+public final class StringHelper {
     // MARK: remove special character
-    static func removeSpecialCharacters(text: String, specialCharacters: String = "+-*=(),.:!_") -> String {
+    public static func removeSpecialCharacters(text: String, specialCharacters: String = "+-*=(),.:!_") -> String {
         return text.filter { character in
             let specialChars : Set<Character> = Set(specialCharacters)
             if specialChars.contains(character) {
@@ -25,7 +25,7 @@ final class StringHelper {
     }
     
     // MARK: nonAccentVietnamese
-    static func nonAccentVietnamese(text: String) -> String {
+    public static func nonAccentVietnamese(text: String) -> String {
         let preparedText = removeSpecialCharacters(text: text)
         var foldedText = preparedText.folding(options: .diacriticInsensitive, locale: Locale(identifier: "vi_VN"))
         foldedText = foldedText.replacingOccurrences(of: "đ", with: "d")
@@ -34,7 +34,7 @@ final class StringHelper {
     }
     
     // MARK: matches
-    static func matches(for regex: String, in text: String) -> [String] {
+    public static func matches(for regex: String, in text: String) -> [String] {
         do {
             let regex = try NSRegularExpression(pattern: regex)
             let results = regex.matches(in: text,

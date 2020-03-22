@@ -10,9 +10,9 @@
 import Foundation
 import UIKit
 
-final class AnimationHelper {
+public final class AnimationHelper {
     // MARK: enableRotation
-    static func enableRotation(targetView: UIView, enable: Bool) {
+    public static func enableRotation(targetView: UIView, enable: Bool) {
         let animationKey = "rotationAnimation"
         let animationKeyPath = "transform.rotation.z"
         

@@ -217,13 +217,13 @@
 		CE38767624271370001DAEEC /* TSwiftHelper */ = {
 			isa = PBXGroup;
 			children = (
+				CE38773F242781FE001DAEEC /* Assets */,
 				CE38772324274570001DAEEC /* Block */,
 				CE3876BC24272F5D001DAEEC /* Core */,
 				CE3876A124272DB9001DAEEC /* Fonts */,
 				CE38769C2427299D001DAEEC /* Defined */,
 				CE38767F24271496001DAEEC /* Extensions */,
 				CE387680242714B2001DAEEC /* Helper */,
-				CE38767824271370001DAEEC /* Info.plist */,
 				CE3876832427154D001DAEEC /* Localizations */,
 			);
 			path = TSwiftHelper;
@@ -378,6 +378,14 @@
 				CE387727242747E4001DAEEC /* Niramit-SemiBoldItalic.ttf */,
 			);
 			path = Niramit;
+			sourceTree = "<group>";
+		};
+		CE38773F242781FE001DAEEC /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				CE38767824271370001DAEEC /* Info.plist */,
+			);
+			path = Assets;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -694,7 +702,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = TSwiftHelper/Info.plist;
+				INFOPLIST_FILE = TSwiftHelper/Assets/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -723,7 +731,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = TSwiftHelper/Info.plist;
+				INFOPLIST_FILE = TSwiftHelper/Assets/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (

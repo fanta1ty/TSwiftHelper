@@ -10,7 +10,7 @@
 import Foundation
 import UIKit
 
-extension UIImage {
+public extension UIImage {
 
     // MARK: scaledImage
     final func scaledImage(with size: CGSize) -> UIImage? {
@@ -29,29 +29,29 @@ extension UIImage {
         #endif  // swift(>=4.2)
     }
     
-    open var base64: String {
+    var base64: String {
         // return UIImageJPEGRepresentation(self, 1.0)!.base64EncodedString()
         return self.jpegData(compressionQuality: 1.0)!.base64EncodedString()
     }
     
     // MARK: Returns compressed image to rate from 0 to 1
-    open func compressImage(rate: CGFloat) -> Data? {
+    func compressImage(rate: CGFloat) -> Data? {
         return self.jpegData(compressionQuality: 1.0)
     }
     
     // MARK: Returns Image size in Bytes
-    open func getSizeAsBytes() -> Int {
+    func getSizeAsBytes() -> Int {
         return self.jpegData(compressionQuality: 1.0)?.count ?? 0
     }
     
     // MARK: Returns Image size in Kylobites
-    open func getSizeAsKilobytes() -> Int {
+    func getSizeAsKilobytes() -> Int {
         let sizeAsBytes = getSizeAsBytes()
         return sizeAsBytes != 0 ? sizeAsBytes / 1024 : 0
     }
     
     // MARK: scales image
-    open class func scaleTo(image: UIImage, w: CGFloat, h: CGFloat) -> UIImage {
+    class func scaleTo(image: UIImage, w: CGFloat, h: CGFloat) -> UIImage {
         let newSize = CGSize(width: w, height: h)
         UIGraphicsBeginImageContextWithOptions(newSize, false, 0.0)
         image.draw(in: CGRect(x: 0, y: 0, width: newSize.width, height: newSize.height))
@@ -61,7 +61,7 @@ extension UIImage {
     }
     
     // MARK:  Returns resized image with width. Might return low quality
-    open func resizeWithWidth(_ width: CGFloat) -> UIImage {
+    func resizeWithWidth(_ width: CGFloat) -> UIImage {
         let aspectSize = CGSize (width: width, height: aspectHeightForWidth(width))
         
         UIGraphicsBeginImageContext(aspectSize)
@@ -73,7 +73,7 @@ extension UIImage {
     }
     
     // MARK:  Returns resized image with height. Might return low quality
-    open func resizeWithHeight(_ height: CGFloat) -> UIImage {
+    func resizeWithHeight(_ height: CGFloat) -> UIImage {
         let aspectSize = CGSize (width: aspectWidthForHeight(height), height: height)
         
         UIGraphicsBeginImageContext(aspectSize)
@@ -85,17 +85,17 @@ extension UIImage {
     }
     
     // MARK: 
-    open func aspectHeightForWidth(_ width: CGFloat) -> CGFloat {
+    func aspectHeightForWidth(_ width: CGFloat) -> CGFloat {
         return (width * self.size.height) / self.size.width
     }
     
     // MARK: 
-    open func aspectWidthForHeight(_ height: CGFloat) -> CGFloat {
+    func aspectWidthForHeight(_ height: CGFloat) -> CGFloat {
         return (height * self.size.width) / self.size.height
     }
     
     // MARK: Returns cropped image from CGRect
-    open func croppedImage(_ bound: CGRect) -> UIImage? {
+    func croppedImage(_ bound: CGRect) -> UIImage? {
         guard self.size.width > bound.origin.x else {
             print("MARK: : Your cropping X coordinate is larger than the image width")
             return nil
@@ -111,7 +111,7 @@ extension UIImage {
     }
     
     // MARK: Use current image for pattern of color
-    open func withColor(_ tintColor: UIColor) -> UIImage {
+    func withColor(_ tintColor: UIColor) -> UIImage {
         UIGraphicsBeginImageContextWithOptions(self.size, false, self.scale)
         
         let context = UIGraphicsGetCurrentContext()
@@ -131,7 +131,7 @@ extension UIImage {
     }
     
     // MARK: Returns the image associated with the URL
-    public convenience init?(urlString: String) {
+    convenience init?(urlString: String) {
         guard let url = URL(string: urlString) else {
             self.init(data: Data())
             return
@@ -145,7 +145,7 @@ extension UIImage {
     }
     
     // MARK: Returns an empty image //TODO: Add to readme
-    open class func blankImage() -> UIImage {
+    class func blankImage() -> UIImage {
         UIGraphicsBeginImageContextWithOptions(CGSize(width: 1, height: 1), false, 0.0)
         let image = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()

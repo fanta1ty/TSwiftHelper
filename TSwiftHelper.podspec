@@ -23,7 +23,7 @@ Pod::Spec.new do |spec|
   spec.source_files  = "TSwiftHelper/**/*.swift"
   
   # ――― Resources ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
-  spec.resource  = ["TSwiftHelper/TSwiftHelper/Fonts/**/*.ttf", "TSwiftHelper/TSwiftHelper/Fonts/**/*.otf","TSwiftHelper/TSwiftHelper/Localizations/Localizable.strings","TSwiftHelper/TSwiftHelper/TSwiftHelper/Info.plist"]
+  spec.resource  = ["TSwiftHelper/TSwiftHelper/Fonts/**/*.ttf", "TSwiftHelper/TSwiftHelper/Fonts/**/*.otf", "TSwiftHelper/TSwiftHelper/Localizations/**/*.strings", "TSwiftHelper/Assets/*"]
 
   # ――― Project Settings ――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
   spec.requires_arc = true

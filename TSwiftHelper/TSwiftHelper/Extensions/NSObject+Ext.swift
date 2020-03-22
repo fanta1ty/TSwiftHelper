@@ -11,7 +11,7 @@ import Foundation
 import UIKit
 
 // MARK: - Properties Section
-extension NSObject {
+public extension NSObject {
     var nameOfClass: String {
         return NSStringFromClass(type(of: self)).components(separatedBy:".").last!
     }

@@ -10,7 +10,7 @@
 import Foundation
 import UIKit
 
-extension UIColor {
+public extension UIColor {
     // MARK: Implement Initialization With Hex Value Function
     convenience init(hex: UInt32) {
         let a = CGFloat(hex & 0xFF) / 255.0

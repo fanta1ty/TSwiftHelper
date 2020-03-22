@@ -10,14 +10,14 @@
 import Foundation
 import UIKit
 
-extension CGRect {
+public extension CGRect {
     // MARK: Easier initialization of CGRect
-    public init(x: CGFloat, y: CGFloat, w: CGFloat, h: CGFloat) {
+    init(x: CGFloat, y: CGFloat, w: CGFloat, h: CGFloat) {
         self.init(x: x, y: y, width: w, height: h)
     }
 
     // MARK: X value of CGRect's origin
-    public var x: CGFloat {
+    var x: CGFloat {
         get {
             return self.origin.x
         } set(value) {
@@ -26,7 +26,7 @@ extension CGRect {
     }
     
     // MARK: Y value of CGRect's origin
-    public var y: CGFloat {
+    var y: CGFloat {
         get {
             return self.origin.y
         } set(value) {
@@ -35,7 +35,7 @@ extension CGRect {
     }
 
     // MARK: Width of CGRect's size
-    public var w: CGFloat {
+    var w: CGFloat {
         get {
             return self.size.width
         } set(value) {
@@ -44,7 +44,7 @@ extension CGRect {
     }
 
     // MARK: Height of CGRect's size
-    public var h: CGFloat {
+    var h: CGFloat {
         get {
             return self.size.height
         } set(value) {
@@ -53,7 +53,7 @@ extension CGRect {
     }
     
     // MARK: Surface Area represented by a CGRectangle
-    public var area: CGFloat {
+    var area: CGFloat {
         return self.h * self.w
     }
 }

@@ -10,10 +10,10 @@
 import Foundation
 import UIKit
 
-extension UISwitch {
+public extension UISwitch {
 
     // MARK: toggles Switch
-    open func toggle() {
+    func toggle() {
         self.setOn(!self.isOn, animated: true)
     }
 }

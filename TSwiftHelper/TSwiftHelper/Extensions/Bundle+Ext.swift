@@ -10,7 +10,7 @@
 import Foundation
 import UIKit
 
-extension Bundle {
+public extension Bundle {
 
     #if os(iOS) || os(tvOS)
     // MARK: load xib

@@ -10,9 +10,9 @@
 import Foundation
 import UIKit
 
-final class UIHelper {
+public final class UIHelper {
     // MARK: convertDateString
-    static func convertDateString(dateStr: String) -> String {
+    public static func convertDateString(dateStr: String) -> String {
         let currentDateStr = UTCToLocal(dateStr: dateStr)
         
         let dateFormatter = DateFormatter()
@@ -31,7 +31,7 @@ final class UIHelper {
     }
     
     // MARK: convertDateString
-    static func convertDateString(dateStr: String, dateFormat: String) -> String {
+    public static func convertDateString(dateStr: String, dateFormat: String) -> String {
         let currentDateStr = UTCToLocal(dateStr: dateStr)
         
         let dateFormatter = DateFormatter()
@@ -50,7 +50,7 @@ final class UIHelper {
     }
     
     // MARK: changeDateFormat
-    static func changeDateFormat(dateStr: String, dateFormat: String) -> String {
+    public static func changeDateFormat(dateStr: String, dateFormat: String) -> String {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd"
         dateFormatter.locale = .current
@@ -66,7 +66,7 @@ final class UIHelper {
         }
     }
     
-    static func convertUTCDateStr(dateStr: String) -> Date? {
+    public static func convertUTCDateStr(dateStr: String) -> Date? {
         let currentDateStr = UTCToLocal(dateStr: dateStr)
         
         let dateFormatter = DateFormatter()
@@ -78,7 +78,7 @@ final class UIHelper {
     }
     
     // MARK: timePassed
-    static func timePassed(dateStr: String) -> String {
+    public static func timePassed(dateStr: String) -> String {
         let currentDateStr = UTCToLocal(dateStr: dateStr)
         
         let dateFormatter = DateFormatter()
@@ -96,7 +96,7 @@ final class UIHelper {
     }
     
     // MARK: minutesInBetweenDate
-    static func hoursInBetweenDate(dateStr: String) -> String {
+    public static func hoursInBetweenDate(dateStr: String) -> String {
         let currentDateStr = UTCToLocal(dateStr: dateStr)
         
         let dateFormatter = DateFormatter()
@@ -113,7 +113,7 @@ final class UIHelper {
     }
     
     // MARK: UTCToLocal
-    static func UTCToLocal(dateStr: String) -> String {
+    public static func UTCToLocal(dateStr: String) -> String {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZ"
         dateFormatter.timeZone = TimeZone(identifier: "UTC")
@@ -129,7 +129,7 @@ final class UIHelper {
     }
     
     // MARK: sinceDate
-    static func sinceDate(dateStr: String) -> String {
+    public static func sinceDate(dateStr: String) -> String {
         let currentDateStr = UTCToLocal(dateStr: dateStr)
         
         let dateFormatter = DateFormatter()
@@ -145,7 +145,7 @@ final class UIHelper {
     }
     
     // MARK: minutesInBetweenDate
-    static func minutesInBetweenDate(dateStr: String) -> String {
+    public static func minutesInBetweenDate(dateStr: String) -> String {
         let currentDateStr = UTCToLocal(dateStr: dateStr)
         
         let dateFormatter = DateFormatter()
@@ -161,7 +161,7 @@ final class UIHelper {
     }
     
     // MARK: minutesInBetweenDate
-    static func minutesInBetweenDate(dateStr: String, dateFormat: String) -> String {
+    public static func minutesInBetweenDate(dateStr: String, dateFormat: String) -> String {
         let currentDateStr = UTCToLocal(dateStr: dateStr)
         
         let dateFormatter = DateFormatter()

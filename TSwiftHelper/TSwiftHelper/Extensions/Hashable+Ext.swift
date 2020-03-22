@@ -10,8 +10,7 @@
 import Foundation
 import UIKit
 
-extension Hashable {
-    
+public extension Hashable {
     // MARK: A string representation of the hash value.
     var hashString: String {
         return String(self.hashValue)

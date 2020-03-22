@@ -10,10 +10,10 @@
 import Foundation
 import UIKit
 
-extension UILabel {
+public extension UILabel {
     
     // MARK: Initialize Label with a font, color and alignment.
-    public convenience init(font: UIFont, color: UIColor, alignment: NSTextAlignment) {
+    convenience init(font: UIFont, color: UIColor, alignment: NSTextAlignment) {
         self.init()
         self.font = font
         self.textColor = color
@@ -21,39 +21,39 @@ extension UILabel {
     }
 
     /// 
-    open func getEstimatedSize(_ width: CGFloat = CGFloat.greatestFiniteMagnitude, height: CGFloat = CGFloat.greatestFiniteMagnitude) -> CGSize {
+    func getEstimatedSize(_ width: CGFloat = CGFloat.greatestFiniteMagnitude, height: CGFloat = CGFloat.greatestFiniteMagnitude) -> CGSize {
         return sizeThatFits(CGSize(width: width, height: height))
     }
 
     /// 
-    open func getEstimatedHeight() -> CGFloat {
+    func getEstimatedHeight() -> CGFloat {
         return sizeThatFits(CGSize(width: w, height: CGFloat.greatestFiniteMagnitude)).height
     }
 
     /// 
-    open func getEstimatedWidth() -> CGFloat {
+    func getEstimatedWidth() -> CGFloat {
         return sizeThatFits(CGSize(width: CGFloat.greatestFiniteMagnitude, height: h)).width
     }
 
     /// 
-    open func fitHeight() {
+    func fitHeight() {
         self.h = getEstimatedHeight()
     }
 
     /// 
-    open func fitWidth() {
+    func fitWidth() {
         self.w = getEstimatedWidth()
     }
 
     /// 
-    open func fitSize() {
+    func fitSize() {
         self.fitWidth()
         self.fitHeight()
         sizeToFit()
     }
     
     ///  (if duration set to 0 animate wont be)
-    open func set(text _text: String?, duration: TimeInterval) {
+    func set(text _text: String?, duration: TimeInterval) {
         UIView.transition(with: self, duration: duration, options: .transitionCrossDissolve, animations: { () -> Void in
             self.text = _text
         }, completion: nil)

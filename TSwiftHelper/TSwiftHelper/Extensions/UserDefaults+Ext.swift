@@ -10,10 +10,10 @@
 import Foundation
 import UIKit
 
-extension UserDefaults {
+public extension UserDefaults {
     
     // MARK: Generic getter and setter for UserDefaults.
-    open subscript(key: String) -> AnyObject? {
+    subscript(key: String) -> AnyObject? {
         get {
             return object(forKey: key) as AnyObject?
         }
@@ -23,7 +23,7 @@ extension UserDefaults {
     }
     
     // MARK: Date from UserDefaults.
-    open func date(forKey key: String) -> Date? {
+    func date(forKey key: String) -> Date? {
         return object(forKey: key) as? Date
     }
 }

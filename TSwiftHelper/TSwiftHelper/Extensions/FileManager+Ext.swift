@@ -10,16 +10,15 @@
 import Foundation
 import UIKit
 
-extension FileManager {
-    
+public extension FileManager {
     // MARK: Returns path of documents directory
-    open var documentsDirectoryPath: String? {
+    var documentsDirectoryPath: String? {
         let paths = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true) as [String]
         return paths[0]
     }
     
     // MARK: Returns path of documents directory caches
-    open var cachesDirectoryPath: String? {
+    var cachesDirectoryPath: String? {
         let paths = NSSearchPathForDirectoriesInDomains(.cachesDirectory, .userDomainMask, true) as [String]
         return paths[0]
     }

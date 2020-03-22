@@ -14,11 +14,11 @@ private let pickerAnimationDuration: TimeInterval = 0.3
 private let viewTransperantTag: Int = 9099
 private let pickerHeight: CGFloat = 216
 
-final class PickerHelper: NSObject {
+public final class PickerHelper: NSObject {
     static private let sharedInstance = PickerHelper()
     private var dataArray: Array<String> = []
     
-    class func selectDate(title: String = "",
+    public class func selectDate(title: String = "",
                           hideCancel: Bool = false,
                           datePickerMode: UIDatePicker.Mode = .date,
                           selectedDate: Date? = Date(),
@@ -116,7 +116,7 @@ final class PickerHelper: NSObject {
         }
     }
     
-    class func selectOption(title: String = "",
+    public class func selectOption(title: String = "",
                             hideCancel: Bool = false,
                             dataArray:Array<String>?,
                             selectedIndex: Int? = nil,
@@ -233,31 +233,31 @@ final class PickerHelper: NSObject {
 extension PickerHelper: UIPickerViewDataSource, UIPickerViewDelegate {
     
     //function for the number of columns in the picker
-    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+    public func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }
     
     //function counting the array to give the number of rows in the picker
-    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+    public func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         return dataArray.count
     }
     
     //function displaying the array rows in the picker as a string
-    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+    public func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         return dataArray[row]
     }
 }
 
-class RToolBar: UIView {
+public class RToolBar: UIView {
     
     open var didSelectDone: (() -> Void)?
     open var didCancelled: (() -> Void)?
     
-    var toolBarTitleItem: ToolBarTitleItem?
+    public var toolBarTitleItem: ToolBarTitleItem?
     
     private var hideCancelButton: Bool = false
     
-    var title = "" {
+    public var title = "" {
         didSet {
             guard let toolBarTitleItem = toolBarTitleItem else {
                 return
@@ -268,7 +268,7 @@ class RToolBar: UIView {
         }
     }
     
-    func addToolBar(hideCancelButton: Bool = false) {
+    public func addToolBar(hideCancelButton: Bool = false) {
         self.hideCancelButton = hideCancelButton
         let toolbarL = toolbar
         self.addSubview(toolbarL)
@@ -311,11 +311,11 @@ class RToolBar: UIView {
     }
 }
 
-class ToolBar: UIToolbar {
+public class ToolBar: UIToolbar {
     
-    let target: Any?
+    public let target: Any?
     
-    init(frame: CGRect, target: Any?) {
+    public init(frame: CGRect, target: Any?) {
         self.target = target
         super.init(frame: frame)
     }
@@ -324,20 +324,20 @@ class ToolBar: UIToolbar {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func buttonItem(systemItem: UIBarButtonItem.SystemItem, selector: Selector?) -> UIBarButtonItem {
+    public func buttonItem(systemItem: UIBarButtonItem.SystemItem, selector: Selector?) -> UIBarButtonItem {
         
         return UIBarButtonItem(barButtonSystemItem: systemItem, target: target, action: selector)
     }
     
-    var flexibleSpace: UIBarButtonItem {
+    public var flexibleSpace: UIBarButtonItem {
         return buttonItem(systemItem: UIBarButtonItem.SystemItem.flexibleSpace, selector:nil)
     }
     
-    func titleItem (text: String, font: UIFont, color: UIColor) -> UIBarButtonItem {
+    public func titleItem (text: String, font: UIFont, color: UIColor) -> UIBarButtonItem {
         return ToolBarTitleItem(text: text, font: font, color: color)
     }
     
-    func appendButton(buttonItem: UIBarButtonItem) {
+    public func appendButton(buttonItem: UIBarButtonItem) {
         if items == nil {
             items = [UIBarButtonItem]()
         }
@@ -351,11 +351,11 @@ class ToolBar: UIToolbar {
     }
 }
 
-class ToolBarTitleItem: UIBarButtonItem {
+public class ToolBarTitleItem: UIBarButtonItem {
     
-    var label: UILabel
+    public var label: UILabel
     
-    init(text: String, font: UIFont, color: UIColor) {
+    public init(text: String, font: UIFont, color: UIColor) {
         
         var frame = UIScreen.main.bounds
         frame.size.width = UIScreen.main.bounds.width - 140

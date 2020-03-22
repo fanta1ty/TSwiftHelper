@@ -10,7 +10,7 @@
 import Foundation
 import UIKit
 
-struct ImageViewStyle {
+public struct ImageViewStyle {
     let backgroundColor: DefinedColors!
     let borderColor: DefinedColors!
     
@@ -21,7 +21,7 @@ struct ImageViewStyle {
     let clipsToBounds: Bool
     let isHidden: Bool
     
-    init(backgroundColor: DefinedColors = .Clear,
+    public init(backgroundColor: DefinedColors = .Clear,
          borderColor: DefinedColors = .Clear,
          borderWidth: CGFloat = 0,
          corderRadius: CGFloat = 0,
@@ -38,10 +38,10 @@ struct ImageViewStyle {
     }
 }
 
-final class ImageViewHelper: UIImageView {
+public final class ImageViewHelper: UIImageView {
     private let style: ImageViewStyle
     
-    init(style: ImageViewStyle,
+    public init(style: ImageViewStyle,
          iconImage: UIImage? = nil,
          parent: UIView? = nil) {
         

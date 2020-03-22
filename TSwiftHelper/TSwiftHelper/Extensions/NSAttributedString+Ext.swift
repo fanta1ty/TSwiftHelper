@@ -10,12 +10,12 @@
 import Foundation
 import UIKit
 
-extension NSAttributedString {
+public extension NSAttributedString {
     // MARK: Adds bold attribute to NSAttributedString and returns it
 
     #if os(iOS)
 
-    open func bold() -> NSAttributedString {
+    func bold() -> NSAttributedString {
         guard let copy = self.mutableCopy() as? NSMutableAttributedString else { return self }
 
         let range = (self.string as NSString).range(of: self.string)
@@ -26,7 +26,7 @@ extension NSAttributedString {
     #endif
 
     // MARK: Adds underline attribute to NSAttributedString and returns it
-    open func underline() -> NSAttributedString {
+    func underline() -> NSAttributedString {
         guard let copy = self.mutableCopy() as? NSMutableAttributedString else { return self }
 
         let range = (self.string as NSString).range(of: self.string)
@@ -37,7 +37,7 @@ extension NSAttributedString {
     #if os(iOS)
 
     // MARK: Adds italic attribute to NSAttributedString and returns it
-    open func italic() -> NSAttributedString {
+    func italic() -> NSAttributedString {
         guard let copy = self.mutableCopy() as? NSMutableAttributedString else { return self }
 
         let range = (self.string as NSString).range(of: self.string)
@@ -46,7 +46,7 @@ extension NSAttributedString {
     }
 
     // MARK: Adds strikethrough attribute to NSAttributedString and returns it
-    open func strikethrough() -> NSAttributedString {
+    func strikethrough() -> NSAttributedString {
         guard let copy = self.mutableCopy() as? NSMutableAttributedString else { return self }
 
         let range = (self.string as NSString).range(of: self.string)
@@ -60,7 +60,7 @@ extension NSAttributedString {
     #endif
 
     // MARK: Adds color attribute to NSAttributedString and returns it
-    open func color(_ color: UIColor) -> NSAttributedString {
+    func color(_ color: UIColor) -> NSAttributedString {
         guard let copy = self.mutableCopy() as? NSMutableAttributedString else { return self }
 
         let range = (self.string as NSString).range(of: self.string)

@@ -10,7 +10,7 @@
 import Foundation
 import UIKit
 
-enum PrintLevel {
+public enum PrintLevel {
     case debug
     case info
     case error
@@ -20,7 +20,7 @@ enum PrintLevel {
 }
 
 // MARK: print
-func print(level: PrintLevel, message: String) {
+public func print(level: PrintLevel, message: String) {
     let length = Float(message.count + 3) * 1.5
     let seperate = String(repeating: "-", count: Int(length))
     

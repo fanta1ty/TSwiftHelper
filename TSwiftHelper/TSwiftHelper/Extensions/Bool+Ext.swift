@@ -10,19 +10,19 @@
 import Foundation
 import UIKit
 
-extension Bool {
+public extension Bool {
     // MARK: Converts Bool to Int.
-    public var toInt: Int { return self ? 1 : 0 }
+    var toInt: Int { return self ? 1 : 0 }
 
     // MARK: Toggle boolean value.
     @discardableResult
-    public mutating func toggle() -> Bool {
+    mutating func toggle() -> Bool {
         self = !self
         return self
     }
     
     // MARK: Return inverted value of bool.
-    public var toggled: Bool {
+    var toggled: Bool {
         return !self
     }
 }

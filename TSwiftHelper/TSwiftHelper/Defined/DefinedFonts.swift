@@ -10,12 +10,12 @@
 import Foundation
 import UIKit
 
-enum FontFamilyName: String {
+public enum FontFamilyName: String {
     case inter = "Inter"
     case niramit = "Niramit"
 }
 
-enum FontType: String {
+public enum FontType: String {
     case bold = "-Bold"
     case boldItalic = "-BoldItalic"
     case extraLight = "-ExtraLight"
@@ -30,7 +30,7 @@ enum FontType: String {
     case semiBoldItalic = "-SemiBoldItalic"
 }
 
-enum DefinedFonts {
+public enum DefinedFonts {
     // MARK: - Inter Section
     // MARK: Bold
     case InterBold(size: Float)
@@ -69,7 +69,7 @@ enum DefinedFonts {
     case NiramitItalic(size: Float)
 }
 
-extension DefinedFonts {
+public extension DefinedFonts {
     var value: UIFont? {
         switch self {
         // MARK: - Inter Section

@@ -10,9 +10,9 @@
 import Foundation
 import UIKit
 
-extension URL {
+public extension URL {
     // MARK: Returns convert query to Dictionary
-    public var queryParameters: [String: String]? {
+    var queryParameters: [String: String]? {
         guard let components = URLComponents(url: self, resolvingAgainstBaseURL: true), let queryItems = components.queryItems else {
             return nil
         }
@@ -26,7 +26,7 @@ extension URL {
     }
 
     // MARK: Returns remote size of url, don't use it in main thread
-    public func remoteSize(_ completionHandler: @escaping ((_ contentLength: Int64) -> Void), timeoutInterval: TimeInterval = 30) {
+    func remoteSize(_ completionHandler: @escaping ((_ contentLength: Int64) -> Void), timeoutInterval: TimeInterval = 30) {
         let request = NSMutableURLRequest(url: self, cachePolicy: NSURLRequest.CachePolicy.reloadIgnoringLocalAndRemoteCacheData, timeoutInterval: timeoutInterval)
         request.httpMethod = "HEAD"
         request.setValue("", forHTTPHeaderField: "Accept-Encoding")
@@ -39,7 +39,7 @@ extension URL {
     }
 
     // MARK: Returns server supports resuming or not, don't use it in main thread
-    public func supportsResume(_ completionHandler: @escaping ((_ doesSupport: Bool) -> Void), timeoutInterval: TimeInterval = 30) {
+    func supportsResume(_ completionHandler: @escaping ((_ doesSupport: Bool) -> Void), timeoutInterval: TimeInterval = 30) {
         let request = NSMutableURLRequest(url: self, cachePolicy: NSURLRequest.CachePolicy.reloadIgnoringLocalAndRemoteCacheData, timeoutInterval: timeoutInterval)
         request.httpMethod = "HEAD"
         request.setValue("bytes=5-10", forHTTPHeaderField: "Range")
@@ -52,7 +52,7 @@ extension URL {
     }
 
     // MARK: Compare two URLs
-    public func isSameWithURL(_ url: URL) -> Bool {
+    func isSameWithURL(_ url: URL) -> Bool {
         if self == url {
             return true
         }
@@ -80,7 +80,7 @@ extension URL {
     }
 
     // MARK: Returns true if given file is a directory
-    public var fileIsDirectory: Bool {
+    var fileIsDirectory: Bool {
         var isdirv: AnyObject?
         do {
             try (self as NSURL).getResourceValue(&isdirv, forKey: URLResourceKey.isDirectoryKey)
@@ -90,7 +90,7 @@ extension URL {
     }
 
     // MARK: File modification date, nil if file doesn't exist
-    public var fileModifiedDate: Date? {
+    var fileModifiedDate: Date? {
         get {
             var datemodv: AnyObject?
             do {
@@ -108,7 +108,7 @@ extension URL {
     }
 
     // MARK: File creation date, nil if file doesn't exist
-    public var fileCreationDate: Date? {
+    var fileCreationDate: Date? {
         get {
             var datecreatev: AnyObject?
             do {
@@ -127,7 +127,7 @@ extension URL {
     }
 
     // MARK: Returns last file access date, nil if file doesn't exist or not yet accessed
-    public var fileAccessDate: Date? {
+    var fileAccessDate: Date? {
         _ = URLResourceKey.customIconKey
         var dateaccessv: AnyObject?
         do {
@@ -138,7 +138,7 @@ extension URL {
     }
 
     // MARK: Returns file size, -1 if file doesn't exist
-    public var fileSize: Int64 {
+    var fileSize: Int64 {
         var sizev: AnyObject?
         do {
             try (self as NSURL).getResourceValue(&sizev, forKey: URLResourceKey.fileSizeKey)
@@ -148,7 +148,7 @@ extension URL {
     }
 
     // MARK: File is hidden or not, don't care about files beginning with dot
-    public var fileIsHidden: Bool {
+    var fileIsHidden: Bool {
         get {
             var ishiddenv: AnyObject?
             do {
@@ -167,7 +167,7 @@ extension URL {
     }
 
     // MARK: Checks if file is writable
-    public var fileIsWritable: Bool {
+    var fileIsWritable: Bool {
         var isdirv: AnyObject?
         do {
             try (self as NSURL).getResourceValue(&isdirv, forKey: URLResourceKey.isWritableKey)
@@ -242,7 +242,7 @@ extension URL {
     #endif
 
     // MARK: Set SkipBackup attrubute of file or directory in iOS. return current state if no value is set
-    public func skipBackupAttributeToItemAtURL(_ skip: Bool? = nil) -> Bool {
+    func skipBackupAttributeToItemAtURL(_ skip: Bool? = nil) -> Bool {
         let keys = [URLResourceKey.isDirectoryKey, URLResourceKey.fileSizeKey]
         let enumOpt = FileManager.DirectoryEnumerationOptions()
         if FileManager.default.fileExists(atPath: self.path) {

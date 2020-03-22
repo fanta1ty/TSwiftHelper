@@ -10,9 +10,9 @@
 import Foundation
 import UIKit
 
-extension UIAlertController {
+public extension UIAlertController {
     // MARK: Easy way to present UIAlertController
-    open func show() {
+    func show() {
         UIApplication.shared.keyWindow?.rootViewController?.present(self, animated: true, completion: nil)
     }
 }

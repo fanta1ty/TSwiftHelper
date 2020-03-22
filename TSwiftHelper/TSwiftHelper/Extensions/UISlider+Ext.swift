@@ -10,9 +10,9 @@
 import Foundation
 import UIKit
 
-extension UISlider {
+public extension UISlider {
     // MARK: Slider moving to value with animation duration
-    open func setValue(_ value: Float, duration: Double) {
+    func setValue(_ value: Float, duration: Double) {
       UIView.animate(withDuration: duration, animations: { () -> Void in
         self.setValue(self.value, animated: true)
         }, completion: { (_) -> Void in

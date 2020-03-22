@@ -10,14 +10,14 @@
 import Foundation
 import UIKit
 
-extension UITextView {
+public extension UITextView {
 
     /// : Automatically sets these values: backgroundColor = clearColor, textColor = ThemeNicknameColor, clipsToBounds = true,
     /// textAlignment = Left, userInteractionEnabled = true, editable = false, scrollEnabled = false, font = ThemeFontName
     #if os(iOS)
 
     // MARK: Automatically adds a toolbar with a done button to the top of the keyboard. Tapping the button will dismiss the keyboard.
-    open func addDoneButton(_ barStyle: UIBarStyle = .default, title: String? = nil) {
+    func addDoneButton(_ barStyle: UIBarStyle = .default, title: String? = nil) {
         let keyboardToolbar = UIToolbar()
         keyboardToolbar.items = [
             UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil),

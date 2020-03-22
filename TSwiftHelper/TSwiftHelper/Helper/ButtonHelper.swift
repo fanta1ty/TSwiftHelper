@@ -10,7 +10,7 @@
 import Foundation
 import UIKit
 
-struct ButtonStyle {
+public struct ButtonStyle {
     let backgroundColor: DefinedColors!
     let borderColor: DefinedColors!
     
@@ -24,7 +24,7 @@ struct ButtonStyle {
     let isHidden: Bool
     let isUserInteractionEnabled: Bool
     
-    init(backgroundColor: DefinedColors = .Clear, borderColor: DefinedColors = .Clear, borderWidth: CGFloat = 0, corderRadius: CGFloat = 0, textColor: DefinedColors = .Black, textFont: DefinedFonts = .InterRegular(size: 14), clipsToBounds: Bool = true, isHidden: Bool = false, isUserInteractionEnabled: Bool = true) {
+    public init(backgroundColor: DefinedColors = .Clear, borderColor: DefinedColors = .Clear, borderWidth: CGFloat = 0, corderRadius: CGFloat = 0, textColor: DefinedColors = .Black, textFont: DefinedFonts = .InterRegular(size: 14), clipsToBounds: Bool = true, isHidden: Bool = false, isUserInteractionEnabled: Bool = true) {
         
         self.backgroundColor = backgroundColor
         self.borderColor = borderColor
@@ -39,7 +39,7 @@ struct ButtonStyle {
 }
 
 // MARK: - Static Functions
-extension ButtonStyle {
+public extension ButtonStyle {
     // MARK: regularDefaultFontSize
     static func regularDefaultFontSize() -> ButtonStyle {
         return ButtonStyle(textFont: .InterRegular(size: 12))
@@ -61,10 +61,10 @@ extension ButtonStyle {
     }
 }
 
-final class ButtonHelper: UIButton {
+public final class ButtonHelper: UIButton {
     private let style: ButtonStyle
     
-    init(style: ButtonStyle,
+    public init(style: ButtonStyle,
          title: String? = nil,
          normalImage: UIImage? = nil,
          selectedImage: UIImage? = nil,

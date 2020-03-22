@@ -10,7 +10,7 @@
 import Foundation
 import UIKit
 
-struct TextFieldStyle {
+public struct TextFieldStyle {
     let backgroundColor: DefinedColors!
     let borderColor: DefinedColors!
     let textColor: DefinedColors!
@@ -31,7 +31,7 @@ struct TextFieldStyle {
     let isHidden: Bool
     let isUserInteractionEnabled: Bool
     
-    init(backgroundColor: DefinedColors = .Clear, borderColor: DefinedColors = .Clear, borderWidth: CGFloat = 0, corderRadius: CGFloat = 0, textColor: DefinedColors = .Black, textFont: DefinedFonts = .InterRegular(size: 14), textAlignment: NSTextAlignment = .left, keyboardType: UIKeyboardType = .default, isSecureTextEntry: Bool = false, autocorrectionType: UITextAutocorrectionType = .no, spellCheckingType: UITextSpellCheckingType = .no, autocapitalizationType: UITextAutocapitalizationType = .none, clearButtonMode: UITextField.ViewMode = .whileEditing, isHidden: Bool = false, isUserInteractionEnabled: Bool = true) {
+    public init(backgroundColor: DefinedColors = .Clear, borderColor: DefinedColors = .Clear, borderWidth: CGFloat = 0, corderRadius: CGFloat = 0, textColor: DefinedColors = .Black, textFont: DefinedFonts = .InterRegular(size: 14), textAlignment: NSTextAlignment = .left, keyboardType: UIKeyboardType = .default, isSecureTextEntry: Bool = false, autocorrectionType: UITextAutocorrectionType = .no, spellCheckingType: UITextSpellCheckingType = .no, autocapitalizationType: UITextAutocapitalizationType = .none, clearButtonMode: UITextField.ViewMode = .whileEditing, isHidden: Bool = false, isUserInteractionEnabled: Bool = true) {
         
         self.backgroundColor = backgroundColor
         self.borderColor = borderColor
@@ -52,7 +52,7 @@ struct TextFieldStyle {
 }
 
 // MARK: - Static Functions
-extension TextFieldStyle {
+public extension TextFieldStyle {
     // MARK: regularDefaultFontSize
     static func regularDefaultFontSize() -> LabelStyle {
         return LabelStyle(textFont: .InterRegular(size: 12))
@@ -74,10 +74,10 @@ extension TextFieldStyle {
     }
 }
 
-final class TextFieldHelper: UITextField {
+public final class TextFieldHelper: UITextField {
     private let style: TextFieldStyle
     
-    init(style: TextFieldStyle, text: String? = nil, placeholder: String? = nil, parent: UIView? = nil) {
+    public init(style: TextFieldStyle, text: String? = nil, placeholder: String? = nil, parent: UIView? = nil) {
         self.style = style
         super.init(frame: .zero)
         

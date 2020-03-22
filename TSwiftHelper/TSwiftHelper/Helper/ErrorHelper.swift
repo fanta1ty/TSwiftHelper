@@ -10,9 +10,9 @@
 import Foundation
 import UIKit
 
-final class ErrorHelper {
+public final class ErrorHelper {
     // MARK: showAlertError
-    static func showAlertError(title: String?, message: String?, controller: UIViewController, complete: (() -> ())?) {
+    public static func showAlertError(title: String?, message: String?, controller: UIViewController, complete: (() -> ())?) {
         let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
         
         let okAction = UIAlertAction(title: "OK".localized, style: .default) { action in
@@ -28,7 +28,7 @@ final class ErrorHelper {
     }
     
     // MARK: showAlertSetting
-    static func showAlertSetting(title: String?, message: String?, controller: UIViewController) {
+    public static func showAlertSetting(title: String?, message: String?, controller: UIViewController) {
         let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
         
         let cancelAction = UIAlertAction(title: "CANCEL".localized, style: .default, handler: nil)

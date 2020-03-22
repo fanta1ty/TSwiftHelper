@@ -10,12 +10,12 @@
 import Foundation
 import UIKit
 
-extension UIWindow {
+public extension UIWindow {
     static var currentController: UIViewController? {
         return UIApplication.shared.delegate?.window??.currentController
     }
     
-    open var currentController: UIViewController? {
+    var currentController: UIViewController? {
         if let vc = self.rootViewController {
             return topViewController(controller: vc)
         }

@@ -10,7 +10,7 @@
 import Foundation
 import UIKit
 
-extension Timer {
+public extension Timer {
     // MARK: Runs every x seconds, to cancel use: timer.invalidate()
     static func runThisEvery(seconds: TimeInterval, handler: @escaping (Timer?) -> Void) -> Timer {
         let fireDate = CFAbsoluteTimeGetCurrent()

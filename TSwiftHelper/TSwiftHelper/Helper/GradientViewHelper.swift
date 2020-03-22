@@ -10,87 +10,87 @@
 import Foundation
 import UIKit
 
-final class GradientViewHelper: UIView {
+public final class GradientViewHelper: UIView {
     // MARK: Types
-    enum GradientMode: Int {
+    public enum GradientMode: Int {
         case linear
         case radial
     }
     
-    enum GradientDirection: Int {
+    public enum GradientDirection: Int {
         case vertical
         case horizontal
     }
     
     // MARK: Properties
-    var colors:[DefinedColors]? {
+    public var colors:[DefinedColors]? {
         didSet {
             updateGradient()
         }
     }
     
-    var dimmedColors: [DefinedColors]? {
+    public var dimmedColors: [DefinedColors]? {
         didSet {
             updateGradient()
         }
     }
     
-    var locations: [CGFloat]? {
+    public var locations: [CGFloat]? {
         didSet {
             updateGradient()
         }
     }
     
-    var gradientMode: GradientMode = .linear {
+    public var gradientMode: GradientMode = .linear {
         didSet {
             setNeedsDisplay()
         }
     }
     
-    var gradientDirection: GradientDirection = .vertical {
+    public var gradientDirection: GradientDirection = .vertical {
         didSet {
             setNeedsDisplay()
         }
     }
     
-    var drawsThinBorders: Bool = true {
+    public var drawsThinBorders: Bool = true {
         didSet {
             setNeedsDisplay()
         }
     }
     
-    var topBorderColor: DefinedColors? {
+    public var topBorderColor: DefinedColors? {
         didSet {
             setNeedsDisplay()
         }
     }
     
-    var rightBorderColor: DefinedColors? {
+    public var rightBorderColor: DefinedColors? {
         didSet {
             setNeedsDisplay()
         }
     }
     
-    var bottomBorderColor: DefinedColors? {
+    public var bottomBorderColor: DefinedColors? {
         didSet {
             setNeedsDisplay()
         }
     }
     
-    var leftBorderColor: DefinedColors? {
+    public var leftBorderColor: DefinedColors? {
         didSet {
             setNeedsDisplay()
         }
     }
     
-    var automaticallyDims = true
+    public var automaticallyDims = true
     
     // MARK: Private
     private var gradient: CGGradient?
     
     // MARK: - Override
     // MARK: draw
-    override func draw(_ rect: CGRect) {
+    override public func draw(_ rect: CGRect) {
         let context = UIGraphicsGetCurrentContext()
         let size = bounds.size
         
@@ -151,7 +151,7 @@ final class GradientViewHelper: UIView {
     }
     
     // MARK: tintColorDidChange
-    override func tintColorDidChange() {
+    override public func tintColorDidChange() {
         super.tintColorDidChange()
 
         if automaticallyDims {
@@ -160,7 +160,7 @@ final class GradientViewHelper: UIView {
     }
     
     // MARK: didMoveToWindow
-    override func didMoveToWindow() {
+    override public func didMoveToWindow() {
         super.didMoveToWindow()
         contentMode = .redraw
     }

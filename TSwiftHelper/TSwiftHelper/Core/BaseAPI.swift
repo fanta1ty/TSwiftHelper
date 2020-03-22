@@ -15,8 +15,8 @@ public protocol AppServerConfiguration {
     var defaultHeaders: [String: String] { get }
 }
 
-extension AppServerConfiguration {
-    public var defaultHeaders: [String : String] {
+public extension AppServerConfiguration {
+    var defaultHeaders: [String : String] {
         return [:]
     }
 }
@@ -29,13 +29,13 @@ open class BaseAPI {
     }
 }
 
-enum EntityState<T: Equatable> {
+public enum EntityState<T: Equatable> {
     case result(T?)
     case fail(String)
 }
 
 extension EntityState: Equatable {
-    static func ==<T>(lhs: EntityState<T>, rhs: EntityState<T>) -> Bool {
+    public static func ==<T>(lhs: EntityState<T>, rhs: EntityState<T>) -> Bool {
         switch (lhs, rhs) {
         case (.fail, .fail):
             return true
@@ -50,13 +50,13 @@ extension EntityState: Equatable {
 }
 
 // MARK: EntityArrayState Section
-enum EntityArrayState<T: Equatable> {
+public enum EntityArrayState<T: Equatable> {
     case result([T]?)
     case fail(String)
 }
 
 extension EntityArrayState: Equatable {
-    static func ==<T>(lhs: EntityArrayState<T>, rhs: EntityArrayState<T>) -> Bool {
+    public static func ==<T>(lhs: EntityArrayState<T>, rhs: EntityArrayState<T>) -> Bool {
         
         switch (lhs, rhs) {
         case (.fail, .fail):

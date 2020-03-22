@@ -33,6 +33,16 @@ extension Formatter {
 }
 
 extension Double {
+    extension Float {
+        var clean: String {
+           return self.truncatingRemainder(dividingBy: 1) == 0 ? String(format: "%.0f", self) : String(self)
+        }
+    }
+    
+    var clean: String {
+       return self.truncatingRemainder(dividingBy: 1) == 0 ? String(format: "%.0f", self) : String(self)
+    }
+    
     // MARK: Converts Double to String
     public var toString: String { return String(self) }
 

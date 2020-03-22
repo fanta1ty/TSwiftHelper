@@ -1,7 +1,7 @@
 Pod::Spec.new do |spec|
   # ―――  Spec Metadata  ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
   spec.name         = "TSwiftHelper"
-  spec.version      = "1.0.4"
+  spec.version      = "1.0.5"
   spec.summary      = "TSwiftHelper is a library for iOS written in Swift to help user lots of helpful extension functions in development."
   spec.description  = <<-DESC
   TSwiftHelper is a library for iOS written in Swift to help user lots of helpful extension functions in development
@@ -23,7 +23,7 @@ Pod::Spec.new do |spec|
   spec.source_files  = "TSwiftHelper/**/*.swift"
   
   # ――― Resources ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
-  spec.resource  = ["TSwiftHelper/TSwiftHelper/Fonts/**/*.ttf", "TSwiftHelper/TSwiftHelper/Fonts/**/*.otf", "TSwiftHelper/TSwiftHelper/Localizations/**/*.strings", "TSwiftHelper/Assets/*"]
+  spec.resource  = ["TSwiftHelper/TSwiftHelper/Fonts/**/*.ttf", "TSwiftHelper/TSwiftHelper/Fonts/**/*.otf", "TSwiftHelper/TSwiftHelper/Localizations/**/*.strings"]
 
   # ――― Project Settings ――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
   spec.requires_arc = true

@@ -70,14 +70,14 @@ extension NSAttributedString {
 }
 
 // MARK: Appends one NSAttributedString to another NSAttributedString and returns it
-open func += (left: inout NSAttributedString, right: NSAttributedString) {
+public func += (left: inout NSAttributedString, right: NSAttributedString) {
     let ns = NSMutableAttributedString(attributedString: left)
     ns.append(right)
     left = ns
 }
     
 // MARK: Sum of one NSAttributedString with another NSAttributedString
-open func + (left: NSAttributedString, right: NSAttributedString) -> NSAttributedString {
+public func + (left: NSAttributedString, right: NSAttributedString) -> NSAttributedString {
     let ns = NSMutableAttributedString(attributedString: left)
     ns.append(right)
     return ns

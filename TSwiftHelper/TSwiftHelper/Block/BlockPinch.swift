@@ -14,11 +14,11 @@ import UIKit
 open class BlockPinch: UIPinchGestureRecognizer {
     private var pinchAction: ((UIPinchGestureRecognizer) -> Void)?
 
-    open override init(target: Any?, action: Selector?) {
+    public override init(target: Any?, action: Selector?) {
         super.init(target: target, action: action)
     }
 
-    open convenience init (action: ((UIPinchGestureRecognizer) -> Void)?) {
+    public convenience init (action: ((UIPinchGestureRecognizer) -> Void)?) {
         self.init()
         self.pinchAction = action
         self.addTarget(self, action: #selector(BlockPinch.didPinch(_:)))

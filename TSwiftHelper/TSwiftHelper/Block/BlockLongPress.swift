@@ -14,11 +14,11 @@ import UIKit
 open class BlockLongPress: UILongPressGestureRecognizer {
     private var longPressAction: ((UILongPressGestureRecognizer) -> Void)?
 
-    open override init(target: Any?, action: Selector?) {
+    public override init(target: Any?, action: Selector?) {
         super.init(target: target, action: action)
     }
 
-    open convenience init (action: ((UILongPressGestureRecognizer) -> Void)?) {
+    public convenience init (action: ((UILongPressGestureRecognizer) -> Void)?) {
         self.init()
         longPressAction = action
         addTarget(self, action: #selector(BlockLongPress.didLongPressed(_:)))

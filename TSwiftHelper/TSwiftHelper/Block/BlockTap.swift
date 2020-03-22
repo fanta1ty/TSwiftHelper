@@ -14,11 +14,11 @@ import UIKit
 open class BlockTap: UITapGestureRecognizer {
     private var tapAction: ((UITapGestureRecognizer) -> Void)?
 
-    open override init(target: Any?, action: Selector?) {
+    public override init(target: Any?, action: Selector?) {
         super.init(target: target, action: action)
     }
 
-    open convenience init (
+    public convenience init (
         tapCount: Int = 1,
         fingerCount: Int = 1,
         action: ((UITapGestureRecognizer) -> Void)?) {

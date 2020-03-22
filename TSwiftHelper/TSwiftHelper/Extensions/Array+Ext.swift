@@ -31,53 +31,53 @@ extension Array {
     }
     
     // MARK: Get a sub array from range of index
-    open func get(at range: ClosedRange<Int>) -> Array {
+    public func get(at range: ClosedRange<Int>) -> Array {
         let halfopenClampedRange = Range(range).clamped(to: indices)
         return Array(self[halfopenClampedRange])
     }
 
     // MARK: Checks if array contains at least 1 item which type is same with given element's type
-    open func containsType<T>(of element: T) -> Bool {
+    public func containsType<T>(of element: T) -> Bool {
         let elementType = type(of: element)
         return contains { type(of: $0) == elementType}
     }
 
     // MARK: Decompose an array to a tuple with first element and the rest
-    open func decompose() -> (head: Iterator.Element, tail: SubSequence)? {
+    public func decompose() -> (head: Iterator.Element, tail: SubSequence)? {
         return (count > 0) ? (self[0], self[1..<count]) : nil
     }
 
     // MARK: Iterates on each element of the array with its index. (Index, Element)
-    open func forEachEnumerated(_ body: @escaping (_ offset: Int, _ element: Element) -> Void) {
+    public func forEachEnumerated(_ body: @escaping (_ offset: Int, _ element: Element) -> Void) {
         enumerated().forEach(body)
     }
 
     // MARK: Gets the object at the specified index, if it exists.
-    open func get(at index: Int) -> Element? {
+    public func get(at index: Int) -> Element? {
         guard index >= 0 && index < count else { return nil }
         return self[index]
     }
 
     // MARK: Prepends an object to the array.
-    open mutating func insertFirst(_ newElement: Element) {
+    public mutating func insertFirst(_ newElement: Element) {
         insert(newElement, at: 0)
     }
 
     // MARK: Returns a random element from the array.
-    open func random() -> Element? {
+    public func random() -> Element? {
         guard count > 0 else { return nil }
         let index = Int(arc4random_uniform(UInt32(count)))
         return self[index]
     }
 
     // MARK: Reverse the given index. i.g.: reverseIndex(2) would be 2 to the last
-    open func reverseIndex(_ index: Int) -> Int? {
+    public func reverseIndex(_ index: Int) -> Int? {
         guard index >= 0 && index < count else { return nil }
         return Swift.max(count - 1 - index, 0)
     }
 
     // MARK: Shuffles the array in-place using the Fisher-Yates-Durstenfeld algorithm.
-    open mutating func shuffle() {
+    public mutating func shuffle() {
         guard count > 1 else { return }
         var j: Int
         for i in 0..<(count-2) {
@@ -87,24 +87,24 @@ extension Array {
     }
 
     // MARK: Shuffles copied array using the Fisher-Yates-Durstenfeld algorithm, returns shuffled array.
-    open func shuffled() -> Array {
+    public func shuffled() -> Array {
         var result = self
         result.shuffle()
         return result
     }
 
     // MARK: Returns an array with the given number as the max number of elements.
-    open func takeMax(_ n: Int) -> Array {
+    public func takeMax(_ n: Int) -> Array {
         return Array(self[0..<Swift.max(0, Swift.min(n, count))])
     }
 
     // MARK: Checks if test returns true for all the elements in self
-    open func testAll(_ body: @escaping (Element) -> Bool) -> Bool {
+    public func testAll(_ body: @escaping (Element) -> Bool) -> Bool {
         return !contains { !body($0) }
     }
 
     // MARK: Checks if all elements in the array are true or false
-    open func testAll(is condition: Bool) -> Bool {
+    public func testAll(is condition: Bool) -> Bool {
         return testAll { ($0 as? Bool) ?? !condition == condition }
     }
 }
@@ -122,33 +122,33 @@ extension Array where Element: Equatable {
     }
     
     // MARK: Checks if the main array contains the parameter array
-    open func contains(_ array: [Element]) -> Bool {
+    public func contains(_ array: [Element]) -> Bool {
         return array.testAll { self.firstIndex(of: $0) ?? -1 >= 0 }
     }
 
     // MARK: Checks if self contains a list of items.
-    open func contains(_ elements: Element...) -> Bool {
+    public func contains(_ elements: Element...) -> Bool {
         return elements.testAll { self.firstIndex(of: $0) ?? -1 >= 0 }
     }
 
     // MARK: Returns the indexes of the object
-    open func indexes(of element: Element) -> [Int] {
+    public func indexes(of element: Element) -> [Int] {
         return enumerated().compactMap { ($0.element == element) ? $0.offset : nil }
     }
 
     // MARK: Returns the last index of the object
-    open func lastIndex(of element: Element) -> Int? {
+    public func lastIndex(of element: Element) -> Int? {
         return indexes(of: element).last
     }
 
     // MARK: Removes the first given object
-    open mutating func removeFirst(_ element: Element) {
+    public mutating func removeFirst(_ element: Element) {
         guard let index = firstIndex(of: element) else { return }
         self.remove(at: index)
     }
 
     // MARK: Removes all occurrences of the given object(s), at least one entry is needed.
-    open mutating func removeAll(_ firstElement: Element?, _ elements: Element...) {
+    public mutating func removeAll(_ firstElement: Element?, _ elements: Element...) {
         var removeAllArr = [Element]()
         
         if let firstElementVal = firstElement {
@@ -161,13 +161,13 @@ extension Array where Element: Equatable {
     }
 
     // MARK: Removes all occurrences of the given object(s)
-    open mutating func removeAll(_ elements: [Element]) {
+    public mutating func removeAll(_ elements: [Element]) {
         // COW ensures no extra copy in case of no removed elements
         self = filter { !elements.contains($0) }
     }
 
     // MARK: Difference of self and the input arrays.
-    open func difference(_ values: [Element]...) -> [Element] {
+    public func difference(_ values: [Element]...) -> [Element] {
         var result = [Element]()
         elements: for element in self {
             for value in values {
@@ -184,7 +184,7 @@ extension Array where Element: Equatable {
     }
 
     // MARK: Intersection of self and the input arrays.
-    open func intersection(_ values: [Element]...) -> Array {
+    public func intersection(_ values: [Element]...) -> Array {
         var result = self
         var intersection = Array()
 
@@ -208,7 +208,7 @@ extension Array where Element: Equatable {
     }
 
     // MARK: Union of self and the input arrays.
-    open func union(_ values: [Element]...) -> Array {
+    public func union(_ values: [Element]...) -> Array {
         var result = self
         for array in values {
             for value in array {
@@ -221,7 +221,7 @@ extension Array where Element: Equatable {
     }
 
     // MARK: Returns an array consisting of the unique elements in the array
-    open func unique() -> Array {
+    public func unique() -> Array {
         return reduce([]) { $0.contains($1) ? $0 : $0 + [$1] }
     }
 }
@@ -229,14 +229,14 @@ extension Array where Element: Equatable {
 // MARK: - Hashable
 extension Array where Element: Hashable {
     // MARK: Removes all occurrences of the given object(s)
-    open mutating func removeAll(_ elements: [Element]) {
+    public mutating func removeAll(_ elements: [Element]) {
         let elementsSet = Set(elements)
         // COW ensures no extra copy in case of no removed elements
         self = filter { !elementsSet.contains($0) }
     }
 }
 
-open func ==<T: Equatable>(lhs: [T]?, rhs: [T]?) -> Bool {
+public func ==<T: Equatable>(lhs: [T]?, rhs: [T]?) -> Bool {
     switch (lhs, rhs) {
     case let (lhs?, rhs?):
         return lhs == rhs
@@ -253,19 +253,19 @@ extension Array {
 
     // MARK: Checks if array contains at least 1 instance of the given object type
     @available(*, deprecated, renamed: "containsType(of:)")
-    open func containsInstanceOf<T>(_ element: T) -> Bool {
+    public func containsInstanceOf<T>(_ element: T) -> Bool {
         return containsType(of: element)
     }
 
     // MARK: Gets the object at the specified index, if it exists.
     @available(*, deprecated, renamed: "get(at:)")
-    open func get(_ index: Int) -> Element? {
+    public func get(_ index: Int) -> Element? {
         return get(at: index)
     }
 
     // MARK: Checks if all elements in the array are true of false
     @available(*, deprecated, renamed: "testAll(is:)")
-    open func testIfAllIs(_ condition: Bool) -> Bool {
+    public func testIfAllIs(_ condition: Bool) -> Bool {
         return testAll(is: condition)
     }
 
@@ -275,7 +275,7 @@ extension Array where Element: Equatable {
 
     // MARK: Removes the first given object
     @available(*, deprecated, renamed: "removeFirst(_:)")
-    open mutating func removeFirstObject(_ object: Element) {
+    public mutating func removeFirstObject(_ object: Element) {
         removeFirst(object)
     }
 }
@@ -286,7 +286,7 @@ extension Array {
 
     // MARK: Prepends an object to the array.
     @available(*, deprecated, renamed: "insertFirst(_:)")
-    open mutating func insertAsFirst(_ newElement: Element) {
+    public mutating func insertAsFirst(_ newElement: Element) {
         insertFirst(newElement)
     }
 
@@ -296,25 +296,25 @@ extension Array where Element: Equatable {
 
     // MARK: Checks if the main array contains the parameter array
     @available(*, deprecated, renamed: "contains(_:)")
-    open func containsArray(_ array: [Element]) -> Bool {
+    public func containsArray(_ array: [Element]) -> Bool {
         return contains(array)
     }
 
     // MARK: Returns the indexes of the object
     @available(*, deprecated, renamed: "indexes(of:)")
-    open func indexesOf(_ object: Element) -> [Int] {
+    public func indexesOf(_ object: Element) -> [Int] {
         return indexes(of: object)
     }
 
     // MARK: Returns the last index of the object
     @available(*, deprecated, renamed: "lastIndex(_:)")
-    open func lastIndexOf(_ object: Element) -> Int? {
+    public func lastIndexOf(_ object: Element) -> Int? {
         return lastIndex(of: object)
     }
 
     // MARK: Removes the first given object
     @available(*, deprecated, renamed: "removeFirstObject(_:)")
-    open mutating func removeObject(_ object: Element) {
+    public mutating func removeObject(_ object: Element) {
         removeFirstObject(object)
     }
 
@@ -327,13 +327,13 @@ extension Array {
     // MARK: Creates an array with values generated by running each value of self
     /// through the mapFunction and discarding nil return values.
     @available(*, deprecated, renamed: "flatMap(_:)")
-    open func mapFilter<V>(mapFunction map: (Element) -> (V)?) -> [V] {
+    public func mapFilter<V>(mapFunction map: (Element) -> (V)?) -> [V] {
         return compactMap { map($0) }
     }
 
     // MARK: Iterates on each element of the array with its index.  (Index, Element)
     @available(*, deprecated, renamed: "forEachEnumerated(_:)")
-    open func each(_ call: @escaping (Int, Element) -> Void) {
+    public func each(_ call: @escaping (Int, Element) -> Void) {
         forEachEnumerated(call)
     }
 

@@ -131,7 +131,7 @@ extension UIImage {
     }
     
     // MARK: Returns the image associated with the URL
-    open convenience init?(urlString: String) {
+    public convenience init?(urlString: String) {
         guard let url = URL(string: urlString) else {
             self.init(data: Data())
             return

@@ -16,7 +16,7 @@ extension NSDictionary {
 
     // MARK: Unserialize JSON string into NSDictionary
     @available(*, deprecated)
-    open convenience init ? (json: String) {
+    public convenience init ? (json: String) {
         if let data = (try? JSONSerialization.jsonObject(with: json.data(using: String.Encoding.utf8, allowLossyConversion: true)!, options: JSONSerialization.ReadingOptions.mutableContainers)) as? NSDictionary {
             self.init(dictionary: data)
         } else {

@@ -9,7 +9,7 @@
 
 import Foundation
 
-open extension Date {
+public extension Date {
     
     // MARK: Convert from String
     
@@ -606,7 +606,7 @@ open extension Date {
  ````
  
  */
-open enum DateFormatType {
+public enum DateFormatType {
     
     /// The ISO8601 formatted year "yyyy" i.e. 1997
     case isoYear
@@ -663,7 +663,7 @@ open enum DateFormatType {
 }
 
 extension DateFormatType: Equatable {
-    open static func ==(lhs: DateFormatType, rhs: DateFormatType) -> Bool {
+    public static func ==(lhs: DateFormatType, rhs: DateFormatType) -> Bool {
         switch (lhs, rhs) {
         case (.custom(let lhsString), .custom(let rhsString)):
             return lhsString == rhsString
@@ -674,7 +674,7 @@ extension DateFormatType: Equatable {
 }
 
 /// The time zone to be used for date conversion
-open enum TimeZoneType {
+public enum TimeZoneType {
     case local, `default`, utc, custom(Int)
     var timeZone:TimeZone {
         switch self {
@@ -687,12 +687,12 @@ open enum TimeZoneType {
 }
 
 // The string keys to modify the strings in relative format
-open enum RelativeTimeStringType {
+public enum RelativeTimeStringType {
     case nowPast, nowFuture, secondsPast, secondsFuture, oneMinutePast, oneMinuteFuture, minutesPast, minutesFuture, oneHourPast, oneHourFuture, hoursPast, hoursFuture, oneDayPast, oneDayFuture, daysPast, daysFuture, oneWeekPast, oneWeekFuture, weeksPast, weeksFuture, oneMonthPast, oneMonthFuture, monthsPast, monthsFuture, oneYearPast, oneYearFuture, yearsPast, yearsFuture
 }
 
 // The type of comparison to do against today's date or with the suplied date.
-open enum DateComparisonType {
+public enum DateComparisonType {
     
     // Days
     
@@ -756,18 +756,18 @@ open enum DateComparisonType {
 }
 
 // The date components available to be retrieved or modifed
-open enum DateComponentType {
+public enum DateComponentType {
     case second, minute, hour, day, weekday, nthWeekday, week, month, year
 }
     
 
 // The type of date that can be used for the dateFor function.
-open enum DateForType {
+public enum DateForType {
     case startOfDay, endOfDay, startOfWeek, endOfWeek, startOfMonth, endOfMonth, tomorrow, yesterday, nearestMinute(minute:Int), nearestHour(hour:Int)
 }
 
 // Convenience types for date to string conversion
-open enum DateStyleType {
+public enum DateStyleType {
     /// Short style: "2/27/17, 2:22 PM"
     case short
     /// Medium style: "Feb 27, 2017, 2:22:06 PM"

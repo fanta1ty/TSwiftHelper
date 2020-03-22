@@ -13,7 +13,7 @@ import UIKit
 extension UILabel {
     
     // MARK: Initialize Label with a font, color and alignment.
-    open convenience init(font: UIFont, color: UIColor, alignment: NSTextAlignment) {
+    public convenience init(font: UIFont, color: UIColor, alignment: NSTextAlignment) {
         self.init()
         self.font = font
         self.textColor = color

@@ -115,17 +115,17 @@ extension UIView {
     }
     
     // MARK: convenience contructor to define a view based on width, height and base coordinates.
-    @objc open convenience init(x: CGFloat, y: CGFloat, w: CGFloat, h: CGFloat) {
+    @objc public convenience init(x: CGFloat, y: CGFloat, w: CGFloat, h: CGFloat) {
         self.init(frame: CGRect(x: x, y: y, width: w, height: h))
     }
 
     // MARK: puts padding around the view
-    open convenience init(superView: UIView, padding: CGFloat) {
+    public convenience init(superView: UIView, padding: CGFloat) {
         self.init(frame: CGRect(x: superView.x + padding, y: superView.y + padding, width: superView.w - padding*2, height: superView.h - padding*2))
     }
 
     ///  - Copies size of superview
-    open convenience init(superView: UIView) {
+    public convenience init(superView: UIView) {
         self.init(frame: CGRect(origin: CGPoint.zero, size: superView.size))
     }
     
@@ -707,7 +707,7 @@ extension UIView {
 
 // MARK: Fade Extensions
 
-open let UIViewDefaultFadeDuration: TimeInterval = 0.4
+public let UIViewDefaultFadeDuration: TimeInterval = 0.4
 
 extension UIView {
     // MARK: Fade in with duration, delay and completion block.

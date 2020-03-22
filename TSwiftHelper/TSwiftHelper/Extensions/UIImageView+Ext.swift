@@ -13,7 +13,7 @@ import UIKit
 extension UIImageView {
     
     // MARK: Convenince init that takes coordinates of bottom left corner, height width and image name.
-    open convenience init(x: CGFloat, y: CGFloat, w: CGFloat, h: CGFloat, imageName: String? = nil) {
+    public convenience init(x: CGFloat, y: CGFloat, w: CGFloat, h: CGFloat, imageName: String? = nil) {
         self.init(frame: CGRect(x: x, y: y, width: w, height: h))
         if let name = imageName {
             self.image = UIImage(named: name)
@@ -21,7 +21,7 @@ extension UIImageView {
     }
 
     // MARK: Convenience init that takes coordinates of bottom left corner, image name and scales image frame to width.
-    open convenience init(x: CGFloat, y: CGFloat, imageName: String, scaleToWidth: CGFloat) {
+    public convenience init(x: CGFloat, y: CGFloat, imageName: String, scaleToWidth: CGFloat) {
         self.init(frame: CGRect(x: x, y: y, width: 0, height: 0))
         image = UIImage(named: imageName)
         if image != nil {
@@ -32,13 +32,13 @@ extension UIImageView {
     }
 
     // MARK: Convenience init that takes coordinates of bottom left corner, width height and an UIImage Object.
-    open convenience init(x: CGFloat, y: CGFloat, w: CGFloat, h: CGFloat, image: UIImage) {
+    public convenience init(x: CGFloat, y: CGFloat, w: CGFloat, h: CGFloat, image: UIImage) {
         self.init(frame: CGRect(x: x, y: y, width: w, height: h))
         self.image = image
     }
 
     // MARK: Convenience init that coordinates of bottom left corner, an UIImage object and scales image from to width.
-    open convenience init(x: CGFloat, y: CGFloat, image: UIImage, scaleToWidth: CGFloat) {
+    public convenience init(x: CGFloat, y: CGFloat, image: UIImage, scaleToWidth: CGFloat) {
         self.init(frame: CGRect(x: x, y: y, width: 0, height: 0))
         self.image = image
         scaleImageFrameToWidth(width: scaleToWidth)

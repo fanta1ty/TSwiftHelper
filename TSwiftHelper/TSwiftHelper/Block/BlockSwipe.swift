@@ -14,11 +14,11 @@ import UIKit
 open class BlockSwipe: UISwipeGestureRecognizer {
     private var swipeAction: ((UISwipeGestureRecognizer) -> Void)?
 
-    open override init(target: Any?, action: Selector?) {
+    public override init(target: Any?, action: Selector?) {
         super.init(target: target, action: action)
     }
 
-    open convenience init (
+    public convenience init (
         direction: UISwipeGestureRecognizer.Direction,
         fingerCount: Int = 1,
         action: ((UISwipeGestureRecognizer) -> Void)?) {

@@ -10,7 +10,7 @@
 import Foundation
 import UIKit
 
-open typealias BlockButtonAction = (_ sender: BlockButton) -> Void
+public typealias BlockButtonAction = (_ sender: BlockButton) -> Void
 
 ///Make sure you use  "[weak self] (sender) in" if you are using the keyword self inside the closure or there might be a memory leak
 open class BlockButton: UIButton {
@@ -21,40 +21,40 @@ open class BlockButton: UIButton {
 
     // MARK: Init
 
-    open init() {
+    public init() {
         super.init(frame: CGRect(x: 0, y: 0, width: 0, height: 0))
         defaultInit()
     }
 
-    open init(x: CGFloat, y: CGFloat, w: CGFloat, h: CGFloat) {
+    public init(x: CGFloat, y: CGFloat, w: CGFloat, h: CGFloat) {
         super.init(frame: CGRect(x: x, y: y, width: w, height: h))
         defaultInit()
     }
 
-    open init(x: CGFloat, y: CGFloat, w: CGFloat, h: CGFloat, action: BlockButtonAction?) {
+    public init(x: CGFloat, y: CGFloat, w: CGFloat, h: CGFloat, action: BlockButtonAction?) {
         super.init (frame: CGRect(x: x, y: y, width: w, height: h))
         self.action = action
         defaultInit()
     }
 
-    open init(action: @escaping BlockButtonAction) {
+    public init(action: @escaping BlockButtonAction) {
         super.init(frame: CGRect.zero)
         self.action = action
         defaultInit()
     }
 
-    open override init(frame: CGRect) {
+    public override init(frame: CGRect) {
         super.init(frame: frame)
         defaultInit()
     }
 
-    open init(frame: CGRect, action: @escaping BlockButtonAction) {
+    public init(frame: CGRect, action: @escaping BlockButtonAction) {
         super.init(frame: frame)
         self.action = action
         defaultInit()
     }
 
-    open required init?(coder aDecoder: NSCoder) {
+    public required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         defaultInit()
     }

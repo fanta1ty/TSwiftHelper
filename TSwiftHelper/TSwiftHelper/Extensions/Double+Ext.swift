@@ -44,20 +44,20 @@ extension Double {
     }
     
     // MARK: Converts Double to String
-    open var toString: String { return String(self) }
+    public var toString: String { return String(self) }
 
     // MARK: Converts Double to Int
-    open var toInt: Int { return Int(self) }
+    public var toInt: Int { return Int(self) }
     
     #if os(iOS) || os(tvOS)
     
     // MARK: Converts Double to CGFloat
-    open var toCGFloat: CGFloat { return CGFloat(self) }
+    public var toCGFloat: CGFloat { return CGFloat(self) }
     
     #endif
     
     // MARK: Creating the exponent operator
-    static open func ** (lhs: Double, rhs: Double) -> Double {
+    static public func ** (lhs: Double, rhs: Double) -> Double {
         return pow(lhs, rhs)
     }
     
@@ -77,30 +77,30 @@ extension Double {
 
     // MARK: Returns a Double rounded to decimal
     @available(*, deprecated, renamed: "rounded(toPlaces:)")
-    open func getRoundedByPlaces(_ places: Int) -> Double {
+    public func getRoundedByPlaces(_ places: Int) -> Double {
         return rounded(toPlaces: places)
     }
 
     // MARK: Rounds the current Double rounded to decimal
     @available(*, deprecated, renamed: "round(toPlaces:)")
-    open mutating func roundByPlaces(_ places: Int) {
+    public mutating func roundByPlaces(_ places: Int) {
         self.round(toPlaces: places)
     }
 
     // MARK: Returns a Double Ceil to decimal
     @available(*, deprecated, renamed: "ceiled(toPlaces:)")
-    open func getCeiledByPlaces(_ places: Int) -> Double {
+    public func getCeiledByPlaces(_ places: Int) -> Double {
         return ceiled(toPlaces: places)
     }
 
     // MARK: Ceils current Double to number of places
     @available(*, deprecated, renamed: "ceil(toPlaces:)")
-    open mutating func ceilByPlaces(_ places: Int) {
+    public mutating func ceilByPlaces(_ places: Int) {
         self.ceil(toPlaces: places)
     }
     
     // MARK: Absolute value of Double.
-    open var abs: Double {
+    public var abs: Double {
         if self > 0 {
             return self
         } else {

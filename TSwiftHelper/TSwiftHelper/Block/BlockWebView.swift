@@ -18,12 +18,12 @@ open class BlockWebView: UIWebView, UIWebViewDelegate {
 
     open var shouldStartLoadingRequest: ((URLRequest) -> (Bool))?
 
-    open override init(frame: CGRect) {
+    public override init(frame: CGRect) {
         super.init(frame: frame)
         delegate = self
     }
 
-    open required init?(coder aDecoder: NSCoder) {
+    public required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
 

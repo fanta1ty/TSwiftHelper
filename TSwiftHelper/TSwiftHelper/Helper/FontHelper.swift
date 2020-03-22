@@ -28,9 +28,7 @@ public final class FontHelper: NSObject {
     
     // MARK: loadFont
     private static func loadFont(withName fontName: String, extStr: String) {
-        guard let bundle = Bundle(identifier: "thinhNguyen.TSwiftHelper") else {
-            return
-        }
+        let bundle = Bundle(for: self.classForCoder())
         
         guard let fontURL = bundle.url(forResource: fontName, withExtension: extStr) else {
             return

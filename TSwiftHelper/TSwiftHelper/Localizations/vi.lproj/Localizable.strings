@@ -1,0 +1,41 @@
+/* 
+  Localizable.strings
+  TSwiftHelper
+
+  Created by User on 3/22/20.
+  Copyright © 2020 ThinhNguyen. All rights reserved.
+  Email: thinhnguyen12389@gmail.com
+*/
+"year" = "năm";
+
+"years" = "năm";
+
+"ago" = "trước";
+
+"month" = "tháng";
+
+"months" = "tháng";
+
+"day" = "ngày";
+
+"days" = "ngày";
+
+"hour" = "giờ";
+
+"hours" = "giờ";
+
+"minute" = "phút";
+
+"minutes" = "phút";
+
+"second" = "giây";
+
+"seconds" = "giây";
+
+"Just now" = "Mới đây";
+
+"OK" = "Xác Nhận";
+
+"CANCEL" = "Hủy Bỏ";
+
+"Settings" = "Cài Đặt";

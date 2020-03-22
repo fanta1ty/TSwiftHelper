@@ -1,0 +1,42 @@
+/* 
+  Localizable.strings
+  TSwiftHelper
+
+  Created by User on 3/22/20.
+  Copyright © 2020 ThinhNguyen. All rights reserved.
+  Email: thinhnguyen12389@gmail.com
+*/
+
+"year" = "year";
+
+"years" = "years";
+
+"ago" = "ago";
+
+"month" = "month";
+
+"months" = "months";
+
+"day" = "day";
+
+"days" = "days";
+
+"hour" = "hour";
+
+"hours" = "hours";
+
+"minute" = "minute";
+
+"minutes" = "minutes";
+
+"second" = "second";
+
+"seconds" = "seconds";
+
+"Just now" = "Just now";
+
+"OK" = "OK";
+
+"CANCEL" = "CANCEL";
+
+"Settings" = "Settings";

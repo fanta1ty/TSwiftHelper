@@ -10,12 +10,12 @@
 import Foundation
 import UIKit
 
-public enum FontFamilyName: String {
+public enum FontFamilyName: String, CaseIterable {
     case inter = "Inter"
     case niramit = "Niramit"
 }
 
-public enum FontType: String {
+public enum FontType: String, CaseIterable {
     case bold = "-Bold"
     case boldItalic = "-BoldItalic"
     case extraLight = "-ExtraLight"

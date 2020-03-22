@@ -4,7 +4,7 @@ TSwiftHelper is a library for iOS written in Swift to help user lots of helpful 
 [![Platform](https://img.shields.io/cocoapods/p/TSwiftHelper)](https://cocoapods.org/pods/TSwiftHelper)
 [![Swift 5.0](https://img.shields.io/badge/Swift-5.0-brightgreen)](https://developer.apple.com/swift/)
 [![Version](https://img.shields.io/badge/pod-1.0.0-informational)](https://cocoapods.org/?q=TSwiftHelper)
-[![License](http://img.shields.io/badge/license-MIT-blue)](https://github.com/fanta1ty/TESign/blob/master/LICENSE)
+[![License](http://img.shields.io/badge/license-MIT-blue)](https://github.com/fanta1ty/TSwiftHelper/blob/master/LICENSE)
 [![Email](https://img.shields.io/badge/contact-@thinhnguyen12389@gmail.com-blue)](thinhnguyen12389@gmail.com)
 
 ### Installation
@@ -24,7 +24,7 @@ TSwiftHelper is a library for iOS written in Swift to help user lots of helpful 
 
 ### License
 
-TESign is available under the MIT license. See the [LICENSE](https://github.com/fanta1ty/TESign/blob/master/LICENSE) file for more info.
+TSwiftHelper is available under the MIT license. See the [LICENSE](https://github.com/fanta1ty/TSwiftHelper/blob/master/LICENSE) file for more info.
 
 ### Author
 

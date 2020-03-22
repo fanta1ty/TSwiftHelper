@@ -9,7 +9,7 @@
 
 import Foundation
 
-public extension Date {
+open extension Date {
     
     // MARK: Convert from String
     
@@ -530,7 +530,7 @@ public extension Date {
             return numberFormatter
         }
         
-        public func cachedFormatter(_ format: String = DateFormatType.standard.stringFormat,
+        open func cachedFormatter(_ format: String = DateFormatType.standard.stringFormat,
                                     timeZone: Foundation.TimeZone = Foundation.TimeZone.current,
                                     locale: Locale = Locale.current, isLenient: Bool = true) -> DateFormatter {
             
@@ -550,7 +550,7 @@ public extension Date {
         
         /// Generates a cached formatter based on the provided date style, time style and relative date.
         /// Formatters are cached in a singleton array using hashkeys.
-        public func cachedFormatter(_ dateStyle: DateFormatter.Style, timeStyle: DateFormatter.Style, doesRelativeDateFormatting: Bool, timeZone: Foundation.TimeZone = Foundation.NSTimeZone.local, locale: Locale = Locale.current, isLenient: Bool = true) -> DateFormatter {
+        open func cachedFormatter(_ dateStyle: DateFormatter.Style, timeStyle: DateFormatter.Style, doesRelativeDateFormatting: Bool, timeZone: Foundation.TimeZone = Foundation.NSTimeZone.local, locale: Locale = Locale.current, isLenient: Bool = true) -> DateFormatter {
             let hashKey = "\(dateStyle.hashValue)\(timeStyle.hashValue)\(doesRelativeDateFormatting.hashValue)\(timeZone.hashValue)\(locale.hashValue)"
             if Date.cachedDateFormatters.retrieve(hashKey: hashKey) == nil {
                 let formatter = DateFormatter()
@@ -566,7 +566,7 @@ public extension Date {
             return Date.cachedDateFormatters.retrieve(hashKey: hashKey)!
         }
         
-        public func cachedNumberFormatter() -> NumberFormatter {
+        open func cachedNumberFormatter() -> NumberFormatter {
             return Date.cachedDateFormatters.retrieve()
         }
         
@@ -606,7 +606,7 @@ public extension Date {
  ````
  
  */
-public enum DateFormatType {
+open enum DateFormatType {
     
     /// The ISO8601 formatted year "yyyy" i.e. 1997
     case isoYear
@@ -663,7 +663,7 @@ public enum DateFormatType {
 }
 
 extension DateFormatType: Equatable {
-    public static func ==(lhs: DateFormatType, rhs: DateFormatType) -> Bool {
+    open static func ==(lhs: DateFormatType, rhs: DateFormatType) -> Bool {
         switch (lhs, rhs) {
         case (.custom(let lhsString), .custom(let rhsString)):
             return lhsString == rhsString
@@ -674,7 +674,7 @@ extension DateFormatType: Equatable {
 }
 
 /// The time zone to be used for date conversion
-public enum TimeZoneType {
+open enum TimeZoneType {
     case local, `default`, utc, custom(Int)
     var timeZone:TimeZone {
         switch self {
@@ -687,12 +687,12 @@ public enum TimeZoneType {
 }
 
 // The string keys to modify the strings in relative format
-public enum RelativeTimeStringType {
+open enum RelativeTimeStringType {
     case nowPast, nowFuture, secondsPast, secondsFuture, oneMinutePast, oneMinuteFuture, minutesPast, minutesFuture, oneHourPast, oneHourFuture, hoursPast, hoursFuture, oneDayPast, oneDayFuture, daysPast, daysFuture, oneWeekPast, oneWeekFuture, weeksPast, weeksFuture, oneMonthPast, oneMonthFuture, monthsPast, monthsFuture, oneYearPast, oneYearFuture, yearsPast, yearsFuture
 }
 
 // The type of comparison to do against today's date or with the suplied date.
-public enum DateComparisonType {
+open enum DateComparisonType {
     
     // Days
     
@@ -756,18 +756,18 @@ public enum DateComparisonType {
 }
 
 // The date components available to be retrieved or modifed
-public enum DateComponentType {
+open enum DateComponentType {
     case second, minute, hour, day, weekday, nthWeekday, week, month, year
 }
     
 
 // The type of date that can be used for the dateFor function.
-public enum DateForType {
+open enum DateForType {
     case startOfDay, endOfDay, startOfWeek, endOfWeek, startOfMonth, endOfMonth, tomorrow, yesterday, nearestMinute(minute:Int), nearestHour(hour:Int)
 }
 
 // Convenience types for date to string conversion
-public enum DateStyleType {
+open enum DateStyleType {
     /// Short style: "2/27/17, 2:22 PM"
     case short
     /// Medium style: "Feb 27, 2017, 2:22:06 PM"

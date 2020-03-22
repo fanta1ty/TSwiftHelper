@@ -13,7 +13,7 @@ import UIKit
 extension UserDefaults {
     
     // MARK: Generic getter and setter for UserDefaults.
-    public subscript(key: String) -> AnyObject? {
+    open subscript(key: String) -> AnyObject? {
         get {
             return object(forKey: key) as AnyObject?
         }
@@ -23,7 +23,7 @@ extension UserDefaults {
     }
     
     // MARK: Date from UserDefaults.
-    public func date(forKey key: String) -> Date? {
+    open func date(forKey key: String) -> Date? {
         return object(forKey: key) as? Date
     }
 }

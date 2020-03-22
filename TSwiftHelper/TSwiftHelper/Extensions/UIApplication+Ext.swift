@@ -12,7 +12,7 @@ import UIKit
 
 extension UIApplication {
     // MARK: Run a block in background after app resigns activity
-    public func runInBackground(_ closure: @escaping () -> Void, expirationHandler: (() -> Void)? = nil) {
+    open func runInBackground(_ closure: @escaping () -> Void, expirationHandler: (() -> Void)? = nil) {
         DispatchQueue.main.async {
             let taskID: UIBackgroundTaskIdentifier
             if let expirationHandler = expirationHandler {
@@ -26,7 +26,7 @@ extension UIApplication {
     }
 
     // MARK: Get the top most view controller from the base view controller; default param is UIWindow's rootViewController
-    public class func topViewController(_ base: UIViewController? = UIApplication.shared.keyWindow?.rootViewController) -> UIViewController? {
+    open class func topViewController(_ base: UIViewController? = UIApplication.shared.keyWindow?.rootViewController) -> UIViewController? {
         if let nav = base as? UINavigationController {
             return topViewController(nav.visibleViewController)
         }

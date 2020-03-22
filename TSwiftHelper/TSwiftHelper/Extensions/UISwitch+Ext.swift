@@ -13,7 +13,7 @@ import UIKit
 extension UISwitch {
 
     // MARK: toggles Switch
-    public func toggle() {
+    open func toggle() {
         self.setOn(!self.isOn, animated: true)
     }
 }

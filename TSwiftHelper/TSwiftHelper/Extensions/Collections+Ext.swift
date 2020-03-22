@@ -12,13 +12,13 @@ import UIKit
 
 extension Collection {
     /// Returns the element at the specified index if it is within bounds, otherwise nil.
-    public subscript (safe index: Index) -> Iterator.Element? {
+    open subscript (safe index: Index) -> Iterator.Element? {
         return indices.contains(index) ? self[index] : nil
     }
     
 #if os(iOS)
     // MARK:  : A parralelized map for collections, operation is non blocking
-    public func parallelizedMap<R>(_ each: @escaping (Self.Iterator.Element) -> R) -> [R?] {
+    open func parallelizedMap<R>(_ each: @escaping (Self.Iterator.Element) -> R) -> [R?] {
         let indices = indicesArray()
         var res = [R?](repeating: nil, count: indices.count)
         

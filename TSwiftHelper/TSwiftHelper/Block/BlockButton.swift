@@ -10,51 +10,51 @@
 import Foundation
 import UIKit
 
-public typealias BlockButtonAction = (_ sender: BlockButton) -> Void
+open typealias BlockButtonAction = (_ sender: BlockButton) -> Void
 
 ///Make sure you use  "[weak self] (sender) in" if you are using the keyword self inside the closure or there might be a memory leak
-public class BlockButton: UIButton {
+open class BlockButton: UIButton {
     // MARK: Propeties
 
-    public var highlightLayer: CALayer?
-    public var action: BlockButtonAction?
+    open var highlightLayer: CALayer?
+    open var action: BlockButtonAction?
 
     // MARK: Init
 
-    public init() {
+    open init() {
         super.init(frame: CGRect(x: 0, y: 0, width: 0, height: 0))
         defaultInit()
     }
 
-    public init(x: CGFloat, y: CGFloat, w: CGFloat, h: CGFloat) {
+    open init(x: CGFloat, y: CGFloat, w: CGFloat, h: CGFloat) {
         super.init(frame: CGRect(x: x, y: y, width: w, height: h))
         defaultInit()
     }
 
-    public init(x: CGFloat, y: CGFloat, w: CGFloat, h: CGFloat, action: BlockButtonAction?) {
+    open init(x: CGFloat, y: CGFloat, w: CGFloat, h: CGFloat, action: BlockButtonAction?) {
         super.init (frame: CGRect(x: x, y: y, width: w, height: h))
         self.action = action
         defaultInit()
     }
 
-    public init(action: @escaping BlockButtonAction) {
+    open init(action: @escaping BlockButtonAction) {
         super.init(frame: CGRect.zero)
         self.action = action
         defaultInit()
     }
 
-    public override init(frame: CGRect) {
+    open override init(frame: CGRect) {
         super.init(frame: frame)
         defaultInit()
     }
 
-    public init(frame: CGRect, action: @escaping BlockButtonAction) {
+    open init(frame: CGRect, action: @escaping BlockButtonAction) {
         super.init(frame: frame)
         self.action = action
         defaultInit()
     }
 
-    public required init?(coder aDecoder: NSCoder) {
+    open required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         defaultInit()
     }
@@ -72,19 +72,19 @@ public class BlockButton: UIButton {
         setTitleColor(UIColor.blue, for: UIControl.State.selected)
     }
 
-    public func addAction(_ action: @escaping BlockButtonAction) {
+    open func addAction(_ action: @escaping BlockButtonAction) {
         self.action = action
     }
 
     // MARK: Action
 
-    @objc public func didPressed(_ sender: BlockButton) {
+    @objc open func didPressed(_ sender: BlockButton) {
         action?(sender)
     }
 
     // MARK: Highlight
 
-    @objc public func highlight() {
+    @objc open func highlight() {
         if action == nil {
             return
         }
@@ -107,7 +107,7 @@ public class BlockButton: UIButton {
         self.highlightLayer = highlightLayer
     }
 
-    @objc public func unhighlight() {
+    @objc open func unhighlight() {
         if action == nil {
             return
         }

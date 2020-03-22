@@ -51,41 +51,41 @@ extension String {
     }
     
     // MARK: Cut string from integerIndex to the end
-    public subscript(integerIndex: Int) -> Character {
+    open subscript(integerIndex: Int) -> Character {
         let index = self.index(startIndex, offsetBy: integerIndex)
         return self[index]
     }
     
     // MARK: Cut string from range
-    public subscript(integerRange: Range<Int>) -> String {
+    open subscript(integerRange: Range<Int>) -> String {
         let start = self.index(startIndex, offsetBy: integerRange.lowerBound)
         let end = self.index(startIndex, offsetBy: integerRange.upperBound)
         return String(self[start..<end])
     }
     
     // MARK: Cut string from closedrange
-    public subscript(integerClosedRange: ClosedRange<Int>) -> String {
+    open subscript(integerClosedRange: ClosedRange<Int>) -> String {
         return self[integerClosedRange.lowerBound..<(integerClosedRange.upperBound + 1)]
     }
     
     // MARK: Character count
-    public var length: Int {
+    open var length: Int {
         return self.count
     }
     
     // MARK: Counts number of instances of the input inside String
-    public func count(_ substring: String) -> Int {
+    open func count(_ substring: String) -> Int {
         return components(separatedBy: substring).count - 1
     }
     
     // MARK: Capitalizes first character of String
-    public mutating func capitalizeFirst() {
+    open mutating func capitalizeFirst() {
         guard self.count > 0 else { return }
         self.replaceSubrange(startIndex...startIndex, with: String(self[startIndex]).capitalized)
     }
     
     // MARK: Capitalizes first character of String, returns a new string
-    public func capitalizedFirst() -> String {
+    open func capitalizedFirst() -> String {
         guard self.count > 0 else { return self }
         var result = self
         
@@ -94,14 +94,14 @@ extension String {
     }
     
     // MARK: Uppercases first 'count' characters of String
-    public mutating func uppercasePrefix(_ count: Int) {
+    open mutating func uppercasePrefix(_ count: Int) {
         guard self.count > 0 && count > 0 else { return }
         self.replaceSubrange(startIndex..<self.index(startIndex, offsetBy: min(count, length)),
                              with: String(self[startIndex..<self.index(startIndex, offsetBy: min(count, length))]).uppercased())
     }
     
     // MARK: Uppercases first 'count' characters of String, returns a new string
-    public func uppercasedPrefix(_ count: Int) -> String {
+    open func uppercasedPrefix(_ count: Int) -> String {
         guard self.count > 0 && count > 0 else { return self }
         var result = self
         result.replaceSubrange(startIndex..<self.index(startIndex, offsetBy: min(count, length)),
@@ -110,14 +110,14 @@ extension String {
     }
     
     // MARK: Uppercases last 'count' characters of String
-    public mutating func uppercaseSuffix(_ count: Int) {
+    open mutating func uppercaseSuffix(_ count: Int) {
         guard self.count > 0 && count > 0 else { return }
         self.replaceSubrange(self.index(endIndex, offsetBy: -min(count, length))..<endIndex,
                              with: String(self[self.index(endIndex, offsetBy: -min(count, length))..<endIndex]).uppercased())
     }
     
     // MARK: Uppercases last 'count' characters of String, returns a new string
-    public func uppercasedSuffix(_ count: Int) -> String {
+    open func uppercasedSuffix(_ count: Int) -> String {
         guard self.count > 0 && count > 0 else { return self }
         var result = self
         result.replaceSubrange(self.index(endIndex, offsetBy: -min(count, length))..<endIndex,
@@ -126,7 +126,7 @@ extension String {
     }
     
     // MARK: Uppercases string in range 'range' (from range.startIndex to range.endIndex)
-    public mutating func uppercase(range: CountableRange<Int>) {
+    open mutating func uppercase(range: CountableRange<Int>) {
         let from = max(range.lowerBound, 0), to = min(range.upperBound, length)
         guard self.count > 0 && (0..<length).contains(from) else { return }
         self.replaceSubrange(self.index(startIndex, offsetBy: from)..<self.index(startIndex, offsetBy: to),
@@ -134,7 +134,7 @@ extension String {
     }
     
     // MARK: Uppercases string in range 'range' (from range.startIndex to range.endIndex), returns new string
-    public func uppercased(range: CountableRange<Int>) -> String {
+    open func uppercased(range: CountableRange<Int>) -> String {
         let from = max(range.lowerBound, 0), to = min(range.upperBound, length)
         guard self.count > 0 && (0..<length).contains(from) else { return self }
         var result = self
@@ -144,13 +144,13 @@ extension String {
     }
     
     // MARK: Lowercases first character of String
-    public mutating func lowercaseFirst() {
+    open mutating func lowercaseFirst() {
         guard self.count > 0 else { return }
         self.replaceSubrange(startIndex...startIndex, with: String(self[startIndex]).lowercased())
     }
     
     // MARK: Lowercases first character of String, returns a new string
-    public func lowercasedFirst() -> String {
+    open func lowercasedFirst() -> String {
         guard self.count > 0 else { return self }
         var result = self
         result.replaceSubrange(startIndex...startIndex, with: String(self[startIndex]).lowercased())
@@ -158,14 +158,14 @@ extension String {
     }
     
     // MARK: Lowercases first 'count' characters of String
-    public mutating func lowercasePrefix(_ count: Int) {
+    open mutating func lowercasePrefix(_ count: Int) {
         guard self.count > 0 && count > 0 else { return }
         self.replaceSubrange(startIndex..<self.index(startIndex, offsetBy: min(count, length)),
                              with: String(self[startIndex..<self.index(startIndex, offsetBy: min(count, length))]).lowercased())
     }
     
     // MARK: Lowercases first 'count' characters of String, returns a new string
-    public func lowercasedPrefix(_ count: Int) -> String {
+    open func lowercasedPrefix(_ count: Int) -> String {
         guard self.count > 0 && count > 0 else { return self }
         var result = self
         result.replaceSubrange(startIndex..<self.index(startIndex, offsetBy: min(count, length)),
@@ -174,14 +174,14 @@ extension String {
     }
     
     // MARK: Lowercases last 'count' characters of String
-    public mutating func lowercaseSuffix(_ count: Int) {
+    open mutating func lowercaseSuffix(_ count: Int) {
         guard self.count > 0 && count > 0 else { return }
         self.replaceSubrange(self.index(endIndex, offsetBy: -min(count, length))..<endIndex,
                              with: String(self[self.index(endIndex, offsetBy: -min(count, length))..<endIndex]).lowercased())
     }
     
     // MARK: Lowercases last 'count' characters of String, returns a new string
-    public func lowercasedSuffix(_ count: Int) -> String {
+    open func lowercasedSuffix(_ count: Int) -> String {
         guard self.count > 0 && count > 0 else { return self }
         var result = self
         result.replaceSubrange(self.index(endIndex, offsetBy: -min(count, length))..<endIndex,
@@ -190,7 +190,7 @@ extension String {
     }
     
     // MARK: Lowercases string in range 'range' (from range.startIndex to range.endIndex)
-    public mutating func lowercase(range: CountableRange<Int>) {
+    open mutating func lowercase(range: CountableRange<Int>) {
         let from = max(range.lowerBound, 0), to = min(range.upperBound, length)
         guard self.count > 0 && (0..<length).contains(from) else { return }
         self.replaceSubrange(self.index(startIndex, offsetBy: from)..<self.index(startIndex, offsetBy: to),
@@ -198,7 +198,7 @@ extension String {
     }
     
     // MARK: Lowercases string in range 'range' (from range.startIndex to range.endIndex), returns new string
-    public func lowercased(range: CountableRange<Int>) -> String {
+    open func lowercased(range: CountableRange<Int>) -> String {
         let from = max(range.lowerBound, 0), to = min(range.upperBound, length)
         guard self.count > 0 && (0..<length).contains(from) else { return self }
         var result = self
@@ -209,30 +209,30 @@ extension String {
     
     // MARK: Counts whitespace & new lines
     @available(*, deprecated, renamed: "isBlank")
-    public func isOnlyEmptySpacesAndNewLineCharacters() -> Bool {
+    open func isOnlyEmptySpacesAndNewLineCharacters() -> Bool {
         let characterSet = CharacterSet.whitespacesAndNewlines
         let newText = self.trimmingCharacters(in: characterSet)
         return newText.isEmpty
     }
     
     // MARK: Checks if string is empty or consists only of whitespace and newline characters
-    public var isBlank: Bool {
+    open var isBlank: Bool {
         let trimmed = trimmingCharacters(in: .whitespacesAndNewlines)
         return trimmed.isEmpty
     }
     
     // MARK: Trims white space and new line characters
-    public mutating func trim() {
+    open mutating func trim() {
         self = self.trimmed()
     }
     
     // MARK: Trims white space and new line characters, returns a new string
-    public func trimmed() -> String {
+    open func trimmed() -> String {
         return self.trimmingCharacters(in: .whitespacesAndNewlines)
     }
     
     // MARK: Position of begining character of substing
-    public func positionOfSubstring(_ subString: String, caseInsensitive: Bool = false, fromEnd: Bool = false) -> Int {
+    open func positionOfSubstring(_ subString: String, caseInsensitive: Bool = false, fromEnd: Bool = false) -> Int {
         if subString.isEmpty {
             return -1
         }
@@ -247,27 +247,27 @@ extension String {
     }
     
     // MARK: split string using a spearator string, returns an array of string
-    public func split(_ separator: String) -> [String] {
+    open func split(_ separator: String) -> [String] {
         return self.components(separatedBy: separator).filter {
             !$0.trimmed().isEmpty
         }
     }
     
     // MARK: split string with delimiters, returns an array of string
-    public func split(_ characters: CharacterSet) -> [String] {
+    open func split(_ characters: CharacterSet) -> [String] {
         return self.components(separatedBy: characters).filter {
             !$0.trimmed().isEmpty
         }
     }
     
     // MARK: Returns count of words in string
-    public var countofWords: Int {
+    open var countofWords: Int {
         let regex = try? NSRegularExpression(pattern: "\\w+", options: NSRegularExpression.Options())
         return regex?.numberOfMatches(in: self, options: NSRegularExpression.MatchingOptions(), range: NSRange(location: 0, length: self.length)) ?? 0
     }
     
     // MARK: Returns count of paragraphs in string
-    public var countofParagraphs: Int {
+    open var countofParagraphs: Int {
         let regex = try? NSRegularExpression(pattern: "\\n", options: NSRegularExpression.Options())
         let str = self.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines)
         return (regex?.numberOfMatches(in: str, options: NSRegularExpression.MatchingOptions(), range: NSRange(location: 0, length: str.length)) ?? -1) + 1
@@ -285,26 +285,26 @@ extension String {
     }
     
     // MARK: Find matches of regular expression in string
-    public func matchesForRegexInText(_ regex: String!) -> [String] {
+    open func matchesForRegexInText(_ regex: String!) -> [String] {
         let regex = try? NSRegularExpression(pattern: regex, options: [])
         let results = regex?.matches(in: self, options: [], range: NSRange(location: 0, length: self.length)) ?? []
         return results.map { String(self[self.rangeFromNSRange($0.range)!]) }
     }
     
     // MARK: Checks if String contains Email
-    public var isEmail: Bool {
+    open var isEmail: Bool {
         let dataDetector = try? NSDataDetector(types: NSTextCheckingResult.CheckingType.link.rawValue)
         let firstMatch = dataDetector?.firstMatch(in: self, options: NSRegularExpression.MatchingOptions.reportCompletion, range: NSRange(location: 0, length: length))
         return (firstMatch?.range.location != NSNotFound && firstMatch?.url?.scheme == "mailto")
     }
     
     // MARK: Returns if String is a number
-    public func isNumber() -> Bool {
+    open func isNumber() -> Bool {
         return NumberFormatter().number(from: self) != nil ? true : false
     }
     
     // MARK: Extracts URLS from String
-    public var extractURLs: [URL] {
+    open var extractURLs: [URL] {
         var urls: [URL] = []
         let detector: NSDataDetector?
         do {
@@ -330,12 +330,12 @@ extension String {
     }
     
     // MARK: Checking if String contains input with comparing options
-    public func contains(_ find: String, compareOption: NSString.CompareOptions) -> Bool {
+    open func contains(_ find: String, compareOption: NSString.CompareOptions) -> Bool {
         return self.range(of: find, options: compareOption) != nil
     }
     
     // MARK: Converts String to Int
-    public func toInt() -> Int? {
+    open func toInt() -> Int? {
         if let num = NumberFormatter().number(from: self) {
             return num.intValue
         } else {
@@ -344,7 +344,7 @@ extension String {
     }
     
     // MARK: Converts String to Double
-    public func toDouble() -> Double? {
+    open func toDouble() -> Double? {
         if let num = NumberFormatter().number(from: self) {
             return num.doubleValue
         } else {
@@ -353,7 +353,7 @@ extension String {
     }
     
     // MARK: Converts String to Float
-    public func toFloat() -> Float? {
+    open func toFloat() -> Float? {
         if let num = NumberFormatter().number(from: self) {
             return num.floatValue
         } else {
@@ -362,7 +362,7 @@ extension String {
     }
     
     // MARK: Converts String to Bool
-    public func toBool() -> Bool? {
+    open func toBool() -> Bool? {
         let trimmedString = trimmed().lowercased()
         if trimmedString == "true" || trimmedString == "false" {
             return (trimmedString as NSString).boolValue
@@ -371,7 +371,7 @@ extension String {
     }
     
     // MARK: Returns the first index of the occurency of the character in String
-    public func getIndexOf(_ char: Character) -> Int? {
+    open func getIndexOf(_ char: Character) -> Int? {
         for (index, c) in self.enumerated() where c == char {
             return index
         }
@@ -379,12 +379,12 @@ extension String {
     }
     
     // MARK: Converts String to NSString
-    public var toNSString: NSString { return self as NSString }
+    open var toNSString: NSString { return self as NSString }
     
     #if os(iOS)
     
     // MARK: Returns bold NSAttributedString
-    public func bold() -> NSAttributedString {
+    open func bold() -> NSAttributedString {
         let boldString = NSMutableAttributedString(string: self, attributes: [NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: UIFont.systemFontSize)])
         return boldString
     }
@@ -394,7 +394,7 @@ extension String {
     #if os(iOS)
 
     // MARK: Returns underlined NSAttributedString
-    public func underline() -> NSAttributedString {
+    open func underline() -> NSAttributedString {
         let underlineString = NSAttributedString(string: self, attributes: [NSAttributedString.Key.underlineStyle: NSUnderlineStyle.single.rawValue])
         return underlineString
     }
@@ -404,7 +404,7 @@ extension String {
     #if os(iOS)
     
     // MARK: Returns italic NSAttributedString
-    public func italic() -> NSAttributedString {
+    open func italic() -> NSAttributedString {
         let italicString = NSMutableAttributedString(string: self, attributes: [NSAttributedString.Key.font: UIFont.italicSystemFont(ofSize: UIFont.systemFontSize)])
         return italicString
     }
@@ -414,7 +414,7 @@ extension String {
     #if os(iOS)
     
     // MARK: Returns hight of rendered string
-    public func height(_ width: CGFloat, font: UIFont, lineBreakMode: NSLineBreakMode?) -> CGFloat {
+    open func height(_ width: CGFloat, font: UIFont, lineBreakMode: NSLineBreakMode?) -> CGFloat {
         var attrib: [NSAttributedString.Key: Any] = [NSAttributedString.Key.font: font]
         if lineBreakMode != nil {
             let paragraphStyle = NSMutableParagraphStyle()
@@ -430,13 +430,13 @@ extension String {
     #if os(iOS) || os(tvOS)
     
     // MARK: Returns NSAttributedString
-    public func color(_ color: UIColor) -> NSAttributedString {
+    open func color(_ color: UIColor) -> NSAttributedString {
         let colorString = NSMutableAttributedString(string: self, attributes: [NSAttributedString.Key.foregroundColor: color])
         return colorString
     }
     
     // MARK: Returns NSAttributedString
-    public func colorSubString(_ subString: String, color: UIColor) -> NSMutableAttributedString {
+    open func colorSubString(_ subString: String, color: UIColor) -> NSMutableAttributedString {
         var start = 0
         var ranges: [NSRange] = []
         while true {
@@ -458,7 +458,7 @@ extension String {
     #endif
     
     // MARK: Checks if String contains Emoji
-    public func includesEmoji() -> Bool {
+    open func includesEmoji() -> Bool {
         for i in 0...length {
             let c: unichar = (self as NSString).character(at: i)
             if (0xD800 <= c && c <= 0xDBFF) || (0xDC00 <= c && c <= 0xDFFF) {
@@ -471,7 +471,7 @@ extension String {
     #if os(iOS)
     
     // MARK: copy string to pasteboard
-    public func addToPasteboard() {
+    open func addToPasteboard() {
         let pasteboard = UIPasteboard.general
         pasteboard.string = self
     }
@@ -479,7 +479,7 @@ extension String {
     #endif
     
     // MARK: : URL encode a string (percent encoding special chars)
-    public func urlEncoded() -> String {
+    open func urlEncoded() -> String {
         return self.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed)!
     }
     
@@ -489,7 +489,7 @@ extension String {
     }
     
     // MARK: : Removes percent encoding from string
-    public func urlDecoded() -> String {
+    open func urlDecoded() -> String {
         return removingPercentEncoding ?? self
     }
     
@@ -516,19 +516,19 @@ extension String {
 }
 
 // MARK: Pattern matching of strings via defined functions
-public func ~=<T> (pattern: ((T) -> Bool), value: T) -> Bool {
+open func ~=<T> (pattern: ((T) -> Bool), value: T) -> Bool {
     return pattern(value)
 }
 
 // MARK: Can be used in switch-case
-public func hasPrefix(_ prefix: String) -> (_ value: String) -> Bool {
+open func hasPrefix(_ prefix: String) -> (_ value: String) -> Bool {
     return { (value: String) -> Bool in
         value.hasPrefix(prefix)
     }
 }
 
 // MARK: Can be used in switch-case
-public func hasSuffix(_ suffix: String) -> (_ value: String) -> Bool {
+open func hasSuffix(_ suffix: String) -> (_ value: String) -> Bool {
     return { (value: String) -> Bool in
         value.hasSuffix(suffix)
     }

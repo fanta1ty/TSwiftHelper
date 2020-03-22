@@ -29,29 +29,29 @@ extension UIImage {
         #endif  // swift(>=4.2)
     }
     
-    public var base64: String {
+    open var base64: String {
         // return UIImageJPEGRepresentation(self, 1.0)!.base64EncodedString()
         return self.jpegData(compressionQuality: 1.0)!.base64EncodedString()
     }
     
     // MARK: Returns compressed image to rate from 0 to 1
-    public func compressImage(rate: CGFloat) -> Data? {
+    open func compressImage(rate: CGFloat) -> Data? {
         return self.jpegData(compressionQuality: 1.0)
     }
     
     // MARK: Returns Image size in Bytes
-    public func getSizeAsBytes() -> Int {
+    open func getSizeAsBytes() -> Int {
         return self.jpegData(compressionQuality: 1.0)?.count ?? 0
     }
     
     // MARK: Returns Image size in Kylobites
-    public func getSizeAsKilobytes() -> Int {
+    open func getSizeAsKilobytes() -> Int {
         let sizeAsBytes = getSizeAsBytes()
         return sizeAsBytes != 0 ? sizeAsBytes / 1024 : 0
     }
     
     // MARK: scales image
-    public class func scaleTo(image: UIImage, w: CGFloat, h: CGFloat) -> UIImage {
+    open class func scaleTo(image: UIImage, w: CGFloat, h: CGFloat) -> UIImage {
         let newSize = CGSize(width: w, height: h)
         UIGraphicsBeginImageContextWithOptions(newSize, false, 0.0)
         image.draw(in: CGRect(x: 0, y: 0, width: newSize.width, height: newSize.height))
@@ -61,7 +61,7 @@ extension UIImage {
     }
     
     // MARK:  Returns resized image with width. Might return low quality
-    public func resizeWithWidth(_ width: CGFloat) -> UIImage {
+    open func resizeWithWidth(_ width: CGFloat) -> UIImage {
         let aspectSize = CGSize (width: width, height: aspectHeightForWidth(width))
         
         UIGraphicsBeginImageContext(aspectSize)
@@ -73,7 +73,7 @@ extension UIImage {
     }
     
     // MARK:  Returns resized image with height. Might return low quality
-    public func resizeWithHeight(_ height: CGFloat) -> UIImage {
+    open func resizeWithHeight(_ height: CGFloat) -> UIImage {
         let aspectSize = CGSize (width: aspectWidthForHeight(height), height: height)
         
         UIGraphicsBeginImageContext(aspectSize)
@@ -85,17 +85,17 @@ extension UIImage {
     }
     
     // MARK: 
-    public func aspectHeightForWidth(_ width: CGFloat) -> CGFloat {
+    open func aspectHeightForWidth(_ width: CGFloat) -> CGFloat {
         return (width * self.size.height) / self.size.width
     }
     
     // MARK: 
-    public func aspectWidthForHeight(_ height: CGFloat) -> CGFloat {
+    open func aspectWidthForHeight(_ height: CGFloat) -> CGFloat {
         return (height * self.size.width) / self.size.height
     }
     
     // MARK: Returns cropped image from CGRect
-    public func croppedImage(_ bound: CGRect) -> UIImage? {
+    open func croppedImage(_ bound: CGRect) -> UIImage? {
         guard self.size.width > bound.origin.x else {
             print("MARK: : Your cropping X coordinate is larger than the image width")
             return nil
@@ -111,7 +111,7 @@ extension UIImage {
     }
     
     // MARK: Use current image for pattern of color
-    public func withColor(_ tintColor: UIColor) -> UIImage {
+    open func withColor(_ tintColor: UIColor) -> UIImage {
         UIGraphicsBeginImageContextWithOptions(self.size, false, self.scale)
         
         let context = UIGraphicsGetCurrentContext()
@@ -131,7 +131,7 @@ extension UIImage {
     }
     
     // MARK: Returns the image associated with the URL
-    public convenience init?(urlString: String) {
+    open convenience init?(urlString: String) {
         guard let url = URL(string: urlString) else {
             self.init(data: Data())
             return
@@ -145,7 +145,7 @@ extension UIImage {
     }
     
     // MARK: Returns an empty image //TODO: Add to readme
-    public class func blankImage() -> UIImage {
+    open class func blankImage() -> UIImage {
         UIGraphicsBeginImageContextWithOptions(CGSize(width: 1, height: 1), false, 0.0)
         let image = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()

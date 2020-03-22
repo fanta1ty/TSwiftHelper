@@ -13,13 +13,13 @@ import UIKit
 extension FileManager {
     
     // MARK: Returns path of documents directory
-    public var documentsDirectoryPath: String? {
+    open var documentsDirectoryPath: String? {
         let paths = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true) as [String]
         return paths[0]
     }
     
     // MARK: Returns path of documents directory caches
-    public var cachesDirectoryPath: String? {
+    open var cachesDirectoryPath: String? {
         let paths = NSSearchPathForDirectoriesInDomains(.cachesDirectory, .userDomainMask, true) as [String]
         return paths[0]
     }

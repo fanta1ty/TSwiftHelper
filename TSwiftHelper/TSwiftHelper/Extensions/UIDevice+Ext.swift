@@ -10,7 +10,7 @@
 import Foundation
 import UIKit
 
-public enum Model: String {
+open enum Model: String {
     /// Simulator
     case simulator = "simulator/sandbox",
     
@@ -75,7 +75,7 @@ public enum Model: String {
     unrecognized       = "?unrecognized?"
 }
 
-public extension UIDevice {
+open extension UIDevice {
     var type: Model {
         var systemInfo = utsname()
         uname(&systemInfo)

@@ -11,14 +11,14 @@ import Foundation
 import UIKit
 
 ///Make sure you use  "[weak self] (gesture) in" if you are using the keyword self inside the closure or there might be a memory leak
-public class BlockSwipe: UISwipeGestureRecognizer {
+open class BlockSwipe: UISwipeGestureRecognizer {
     private var swipeAction: ((UISwipeGestureRecognizer) -> Void)?
 
-    public override init(target: Any?, action: Selector?) {
+    open override init(target: Any?, action: Selector?) {
         super.init(target: target, action: action)
     }
 
-    public convenience init (
+    open convenience init (
         direction: UISwipeGestureRecognizer.Direction,
         fingerCount: Int = 1,
         action: ((UISwipeGestureRecognizer) -> Void)?) {
@@ -35,7 +35,7 @@ public class BlockSwipe: UISwipeGestureRecognizer {
             addTarget(self, action: #selector(BlockSwipe.didSwipe(_:)))
     }
 
-    @objc public func didSwipe (_ swipe: UISwipeGestureRecognizer) {
+    @objc open func didSwipe (_ swipe: UISwipeGestureRecognizer) {
         swipeAction? (swipe)
     }
 }

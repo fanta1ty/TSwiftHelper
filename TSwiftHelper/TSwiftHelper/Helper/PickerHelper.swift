@@ -78,11 +78,11 @@ final class PickerHelper: NSObject {
             toolBar.title = title
             
             // show picker
-            var publicPickerFrame = viewTransperant.frame
-            publicPickerFrame.origin.y = 0
+            var openPickerFrame = viewTransperant.frame
+            openPickerFrame.origin.y = 0
             
             UIView.animate(withDuration: pickerAnimationDuration, animations: {
-                viewTransperant.frame = publicPickerFrame
+                viewTransperant.frame = openPickerFrame
                 
             }, completion: { (_) in
                 UIView.animate(withDuration: pickerAnimationDuration, animations: {
@@ -183,11 +183,11 @@ final class PickerHelper: NSObject {
             toolBar.title = title
             
             // show picker
-            var publicPickerFrame = viewTransperant.frame
-            publicPickerFrame.origin.y = 0
+            var openPickerFrame = viewTransperant.frame
+            openPickerFrame.origin.y = 0
             
             UIView.animate(withDuration: pickerAnimationDuration, animations: {
-                viewTransperant.frame = publicPickerFrame
+                viewTransperant.frame = openPickerFrame
                 
             }, completion: { (_) in
                 UIView.animate(withDuration: pickerAnimationDuration, animations: {
@@ -250,8 +250,8 @@ extension PickerHelper: UIPickerViewDataSource, UIPickerViewDelegate {
 
 class RToolBar: UIView {
     
-    public var didSelectDone: (() -> Void)?
-    public var didCancelled: (() -> Void)?
+    open var didSelectDone: (() -> Void)?
+    open var didCancelled: (() -> Void)?
     
     var toolBarTitleItem: ToolBarTitleItem?
     
@@ -275,7 +275,7 @@ class RToolBar: UIView {
         self.addToolBarConstraints(toolbarL)
     }
     
-    public var toolbar: UIToolbar {
+    open var toolbar: UIToolbar {
         
         let toolBarL = ToolBar(frame: frame, target: self)
         

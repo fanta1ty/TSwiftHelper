@@ -10,13 +10,13 @@
 import Foundation
 import UIKit
 
-public class BaseVC: UIViewController {
-    override public func viewDidLoad() {
+open class BaseVC: UIViewController {
+    override open func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
     }
     
-    override public func viewWillAppear(_ animated: Bool) {
+    override open func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         setupRx()
     }
@@ -28,11 +28,11 @@ public class BaseVC: UIViewController {
 
 // MARK: - Base Function
 extension BaseVC {
-    func setupUI() {
+    open func setupUI() {
         
     }
     
-    func setupRx() {
+    open func setupRx() {
         
     }
 }

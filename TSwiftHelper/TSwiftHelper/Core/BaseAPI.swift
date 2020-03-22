@@ -10,18 +10,18 @@
 import Foundation
 import UIKit
 
-public protocol AppServerConfiguration {
+open protocol AppServerConfiguration {
     var baseURL: String { get }
     var defaultHeaders: [String: String] { get }
 }
 
 extension AppServerConfiguration {
-    public var defaultHeaders: [String : String] {
+    open var defaultHeaders: [String : String] {
         return [:]
     }
 }
 
-public class BaseAPI {
+open class BaseAPI {
     let serverConfiguration: AppServerConfiguration
     
     init(serverConfiguration: AppServerConfiguration) {

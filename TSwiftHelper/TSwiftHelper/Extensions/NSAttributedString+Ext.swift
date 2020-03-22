@@ -15,7 +15,7 @@ extension NSAttributedString {
 
     #if os(iOS)
 
-    public func bold() -> NSAttributedString {
+    open func bold() -> NSAttributedString {
         guard let copy = self.mutableCopy() as? NSMutableAttributedString else { return self }
 
         let range = (self.string as NSString).range(of: self.string)
@@ -26,7 +26,7 @@ extension NSAttributedString {
     #endif
 
     // MARK: Adds underline attribute to NSAttributedString and returns it
-    public func underline() -> NSAttributedString {
+    open func underline() -> NSAttributedString {
         guard let copy = self.mutableCopy() as? NSMutableAttributedString else { return self }
 
         let range = (self.string as NSString).range(of: self.string)
@@ -37,7 +37,7 @@ extension NSAttributedString {
     #if os(iOS)
 
     // MARK: Adds italic attribute to NSAttributedString and returns it
-    public func italic() -> NSAttributedString {
+    open func italic() -> NSAttributedString {
         guard let copy = self.mutableCopy() as? NSMutableAttributedString else { return self }
 
         let range = (self.string as NSString).range(of: self.string)
@@ -46,7 +46,7 @@ extension NSAttributedString {
     }
 
     // MARK: Adds strikethrough attribute to NSAttributedString and returns it
-    public func strikethrough() -> NSAttributedString {
+    open func strikethrough() -> NSAttributedString {
         guard let copy = self.mutableCopy() as? NSMutableAttributedString else { return self }
 
         let range = (self.string as NSString).range(of: self.string)
@@ -60,7 +60,7 @@ extension NSAttributedString {
     #endif
 
     // MARK: Adds color attribute to NSAttributedString and returns it
-    public func color(_ color: UIColor) -> NSAttributedString {
+    open func color(_ color: UIColor) -> NSAttributedString {
         guard let copy = self.mutableCopy() as? NSMutableAttributedString else { return self }
 
         let range = (self.string as NSString).range(of: self.string)
@@ -70,14 +70,14 @@ extension NSAttributedString {
 }
 
 // MARK: Appends one NSAttributedString to another NSAttributedString and returns it
-public func += (left: inout NSAttributedString, right: NSAttributedString) {
+open func += (left: inout NSAttributedString, right: NSAttributedString) {
     let ns = NSMutableAttributedString(attributedString: left)
     ns.append(right)
     left = ns
 }
     
 // MARK: Sum of one NSAttributedString with another NSAttributedString
-public func + (left: NSAttributedString, right: NSAttributedString) -> NSAttributedString {
+open func + (left: NSAttributedString, right: NSAttributedString) -> NSAttributedString {
     let ns = NSMutableAttributedString(attributedString: left)
     ns.append(right)
     return ns

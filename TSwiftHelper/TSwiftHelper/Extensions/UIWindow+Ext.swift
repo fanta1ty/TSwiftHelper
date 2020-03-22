@@ -15,7 +15,7 @@ extension UIWindow {
         return UIApplication.shared.delegate?.window??.currentController
     }
     
-    public var currentController: UIViewController? {
+    open var currentController: UIViewController? {
         if let vc = self.rootViewController {
             return topViewController(controller: vc)
         }

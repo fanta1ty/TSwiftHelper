@@ -10,7 +10,7 @@
 import Foundation
 import UIKit
 
-public enum TimePassed {
+open enum TimePassed {
     case year(Int)
     case month(Int)
     case day(Int)
@@ -21,7 +21,7 @@ public enum TimePassed {
 }
 
 extension TimePassed: Equatable {
-    public static func ==(lhs: TimePassed, rhs: TimePassed) -> Bool {
+    open static func ==(lhs: TimePassed, rhs: TimePassed) -> Bool {
         
         switch(lhs, rhs) {
             
@@ -55,7 +55,7 @@ extension TimePassed: Equatable {
 // MARK: - Initialize
 extension Date {
     // MARK: Init
-    public init?(fromString string: String, format: String, timezone: TimeZone = TimeZone.autoupdatingCurrent, locale: Locale = Locale.current) {
+    open init?(fromString string: String, format: String, timezone: TimeZone = TimeZone.autoupdatingCurrent, locale: Locale = Locale.current) {
         let formatter = DateFormatter()
         formatter.timeZone = timezone
         formatter.locale = locale
@@ -67,7 +67,7 @@ extension Date {
         }
     }
     
-    public init?(httpDateString: String) {
+    open init?(httpDateString: String) {
         if let rfc1123 = Date(fromString: httpDateString, format: "EEE',' dd' 'MMM' 'yyyy HH':'mm':'ss zzz") {
             self = rfc1123
             return
@@ -111,10 +111,10 @@ extension Date {
         return Calendar.current.date(byAdding: dateComponents, to: self)!
     }
     
-    public static let minutesInAWeek = 24 * 60 * 7
+    open static let minutesInAWeek = 24 * 60 * 7
 
     // MARK: toString
-    public func toString(dateStyle: DateFormatter.Style = .medium, timeStyle: DateFormatter.Style = .medium) -> String {
+    open func toString(dateStyle: DateFormatter.Style = .medium, timeStyle: DateFormatter.Style = .medium) -> String {
         let formatter = DateFormatter()
         formatter.dateStyle = dateStyle
         formatter.timeStyle = timeStyle
@@ -122,42 +122,42 @@ extension Date {
     }
 
     // MARK: toString
-    public func toString(format: String) -> String {
+    open func toString(format: String) -> String {
         let formatter = DateFormatter()
         formatter.dateFormat = format
         return formatter.string(from: self)
     }
 
     // MARK: daysInBetweenDate
-    public func daysInBetweenDate(_ date: Date) -> Double {
+    open func daysInBetweenDate(_ date: Date) -> Double {
         var diff = self.timeIntervalSince1970 - date.timeIntervalSince1970
         diff = fabs(diff/86400)
         return diff
     }
 
     // MARK: hoursInBetweenDate
-    public func hoursInBetweenDate(_ date: Date) -> Double {
+    open func hoursInBetweenDate(_ date: Date) -> Double {
         var diff = self.timeIntervalSince1970 - date.timeIntervalSince1970
         diff = fabs(diff/3600)
         return diff
     }
 
     // MARK: minutesInBetweenDate
-    public func minutesInBetweenDate(_ date: Date) -> Double {
+    open func minutesInBetweenDate(_ date: Date) -> Double {
         var diff = self.timeIntervalSince1970 - date.timeIntervalSince1970
         diff = fabs(diff/60)
         return diff
     }
 
     // MARK: secondsInBetweenDate
-    public func secondsInBetweenDate(_ date: Date) -> Double {
+    open func secondsInBetweenDate(_ date: Date) -> Double {
         var diff = self.timeIntervalSince1970 - date.timeIntervalSince1970
         diff = fabs(diff)
         return diff
     }
 
     // MARK: timePassed
-    public func timePassed() -> String {
+    open func timePassed() -> String {
         let date = Date()
         let calendar = Calendar.autoupdatingCurrent
         let components = (calendar as NSCalendar).components([.year, .month, .day, .hour, .minute, .second], from: self, to: date, options: [])
@@ -194,7 +194,7 @@ extension Date {
     }
     
     // MARK: timePassed
-    public func timePassed() -> TimePassed {
+    open func timePassed() -> TimePassed {
         
         let date = Date()
         let calendar = Calendar.autoupdatingCurrent
@@ -218,24 +218,24 @@ extension Date {
     }
     
     // MARK: isFuture
-    public var isFuture: Bool {
+    open var isFuture: Bool {
         return self > Date()
     }
     
     // MARK: isPast
-    public var isPast: Bool {
+    open var isPast: Bool {
         return self < Date()
     }
 
     // MARK: isToday
-    public var isToday: Bool {
+    open var isToday: Bool {
         let format = DateFormatter()
         format.dateFormat = "yyyy-MM-dd"
         return format.string(from: self) == format.string(from: Date())
     }
 
     // MARK: isYesterday
-    public var isYesterday: Bool {
+    open var isYesterday: Bool {
         let format = DateFormatter()
         format.dateFormat = "yyyy-MM-dd"
         let yesterDay = Calendar.current.date(byAdding: .day, value: -1, to: Date())
@@ -243,7 +243,7 @@ extension Date {
     }
 
     // MARK: isTomorrow
-    public var isTomorrow: Bool {
+    open var isTomorrow: Bool {
         let format = DateFormatter()
         format.dateFormat = "yyyy-MM-dd"
         let tomorrow = Calendar.current.date(byAdding: .day, value: 1, to: Date())
@@ -251,67 +251,67 @@ extension Date {
     }
 
     // MARK: isThisMonth
-    public var isThisMonth: Bool {
+    open var isThisMonth: Bool {
         let today = Date()
         return self.month == today.month && self.year == today.year
     }
 
     // MARK: isThisWeek
-    public var isThisWeek: Bool {
+    open var isThisWeek: Bool {
         return self.minutesInBetweenDate(Date()) <= Double(Date.minutesInAWeek)
     }
 
     // MARK: era
-    public var era: Int {
+    open var era: Int {
         return Calendar.current.component(Calendar.Component.era, from: self)
     }
     
     // MARK: year
-    public var year: Int {
+    open var year: Int {
         return Calendar.current.component(Calendar.Component.year, from: self)
     }
 
     // MARK: month
-    public var month: Int {
+    open var month: Int {
         return Calendar.current.component(Calendar.Component.month, from: self)
     }
 
     // MARK: weekday
-    public var weekday: String {
+    open var weekday: String {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "EEEE"
         return dateFormatter.string(from: self)
     }
 
     // MARK: monthAsString
-    public var monthAsString: String {
+    open var monthAsString: String {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "MMMM"
         return dateFormatter.string(from: self)
     }
 
     // MARK: day
-    public var day: Int {
+    open var day: Int {
         return Calendar.current.component(.day, from: self)
     }
 
     // MARK: hour
-    public var hour: Int {
+    open var hour: Int {
         return Calendar.current.component(.hour, from: self)
     }
 
     // MARK: minute
-    public var minute: Int {
+    open var minute: Int {
         return Calendar.current.component(.minute, from: self)
     }
 
     // MARK: second
-    public var second: Int {
+    open var second: Int {
         return Calendar.current.component(.second, from: self)
     }
     
     // MARK: nanosecond
-    public var nanosecond: Int {
+    open var nanosecond: Int {
         return Calendar.current.component(.nanosecond, from: self)
     }
     
@@ -320,7 +320,7 @@ extension Date {
     // MARK: Gets the international standard(ISO8601) representation of date
     @available(iOS 10.0, *)
     @available(tvOS 10.0, *)
-    public var iso8601: String {
+    open var iso8601: String {
         let formatter = ISO8601DateFormatter()
         return formatter.string(from: self)
     }

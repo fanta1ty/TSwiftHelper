@@ -12,17 +12,17 @@ import UIKit
 
 extension Bool {
     // MARK: Converts Bool to Int.
-    public var toInt: Int { return self ? 1 : 0 }
+    open var toInt: Int { return self ? 1 : 0 }
 
     // MARK: Toggle boolean value.
     @discardableResult
-    public mutating func toggle() -> Bool {
+    open mutating func toggle() -> Bool {
         self = !self
         return self
     }
     
     // MARK: Return inverted value of bool.
-    public var toggled: Bool {
+    open var toggled: Bool {
         return !self
     }
 }

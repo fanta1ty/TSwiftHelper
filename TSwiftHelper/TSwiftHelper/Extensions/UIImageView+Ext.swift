@@ -13,7 +13,7 @@ import UIKit
 extension UIImageView {
     
     // MARK: Convenince init that takes coordinates of bottom left corner, height width and image name.
-    public convenience init(x: CGFloat, y: CGFloat, w: CGFloat, h: CGFloat, imageName: String? = nil) {
+    open convenience init(x: CGFloat, y: CGFloat, w: CGFloat, h: CGFloat, imageName: String? = nil) {
         self.init(frame: CGRect(x: x, y: y, width: w, height: h))
         if let name = imageName {
             self.image = UIImage(named: name)
@@ -21,7 +21,7 @@ extension UIImageView {
     }
 
     // MARK: Convenience init that takes coordinates of bottom left corner, image name and scales image frame to width.
-    public convenience init(x: CGFloat, y: CGFloat, imageName: String, scaleToWidth: CGFloat) {
+    open convenience init(x: CGFloat, y: CGFloat, imageName: String, scaleToWidth: CGFloat) {
         self.init(frame: CGRect(x: x, y: y, width: 0, height: 0))
         image = UIImage(named: imageName)
         if image != nil {
@@ -32,20 +32,20 @@ extension UIImageView {
     }
 
     // MARK: Convenience init that takes coordinates of bottom left corner, width height and an UIImage Object.
-    public convenience init(x: CGFloat, y: CGFloat, w: CGFloat, h: CGFloat, image: UIImage) {
+    open convenience init(x: CGFloat, y: CGFloat, w: CGFloat, h: CGFloat, image: UIImage) {
         self.init(frame: CGRect(x: x, y: y, width: w, height: h))
         self.image = image
     }
 
     // MARK: Convenience init that coordinates of bottom left corner, an UIImage object and scales image from to width.
-    public convenience init(x: CGFloat, y: CGFloat, image: UIImage, scaleToWidth: CGFloat) {
+    open convenience init(x: CGFloat, y: CGFloat, image: UIImage, scaleToWidth: CGFloat) {
         self.init(frame: CGRect(x: x, y: y, width: 0, height: 0))
         self.image = image
         scaleImageFrameToWidth(width: scaleToWidth)
     }
 
     // MARK: scales this ImageView size to fit the given width
-    public func scaleImageFrameToWidth(width: CGFloat) {
+    open func scaleImageFrameToWidth(width: CGFloat) {
         guard let image = image else {
             print(" Error: The image is not set yet!")
             return
@@ -57,7 +57,7 @@ extension UIImageView {
     }
 
     // MARK: scales this ImageView size to fit the given height
-    public func scaleImageFrameToHeight(height: CGFloat) {
+    open func scaleImageFrameToHeight(height: CGFloat) {
         guard let image = image else {
             print(" Error: The image is not set yet!")
             return
@@ -69,13 +69,13 @@ extension UIImageView {
     }
 
     // MARK: Rounds up an image by clipping the corner radius to one half the frame width.
-    public func roundSquareImage() {
+    open func roundSquareImage() {
         self.clipsToBounds = true
         self.layer.cornerRadius = self.frame.size.width / 2
     }
 
     // MARK: Initializes an UIImage from URL and adds into current ImageView
-    public func image(url: String) {
+    open func image(url: String) {
         TSwiftHelper.requestImage(url, success: { (image) -> Void in
             if let img = image {
                 DispatchQueue.main.async {
@@ -86,13 +86,13 @@ extension UIImageView {
     }
 
     // MARK: Initializes an UIImage from URL and adds into current ImageView with placeholder
-    public func image(url: String, placeholder: UIImage) {
+    open func image(url: String, placeholder: UIImage) {
         self.image = placeholder
         image(url: url)
     }
 
     // MARK: Initializes an UIImage from URL and adds into current ImageView with placeholder
-    public func image(url: String, placeholderNamed: String) {
+    open func image(url: String, placeholderNamed: String) {
         if let image = UIImage(named: placeholderNamed) {
             self.image(url: url, placeholder: image)
         } else {
@@ -104,7 +104,7 @@ extension UIImageView {
 
     /// 
     @available(*, deprecated, renamed: "image(url:)")
-    public func imageWithUrl(url: String) {
+    open func imageWithUrl(url: String) {
         TSwiftHelper.requestImage(url, success: { (image) -> Void in
             if let img = image {
                 DispatchQueue.main.async {
@@ -116,14 +116,14 @@ extension UIImageView {
 
     /// 
     @available(*, deprecated, renamed: "image(url:placeholder:)")
-    public func imageWithUrl(url: String, placeholder: UIImage) {
+    open func imageWithUrl(url: String, placeholder: UIImage) {
         self.image = placeholder
         imageWithUrl(url: url)
     }
 
     /// 
     @available(*, deprecated, renamed: "image(url:placeholderNamed:)")
-    public func imageWithUrl(url: String, placeholderNamed: String) {
+    open func imageWithUrl(url: String, placeholderNamed: String) {
         if let image = UIImage(named: placeholderNamed) {
             imageWithUrl(url: url, placeholder: image)
         } else {

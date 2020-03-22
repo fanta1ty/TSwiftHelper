@@ -12,7 +12,7 @@ import UIKit
 
 extension UIAlertController {
     // MARK: Easy way to present UIAlertController
-    public func show() {
+    open func show() {
         UIApplication.shared.keyWindow?.rootViewController?.present(self, animated: true, completion: nil)
     }
 }

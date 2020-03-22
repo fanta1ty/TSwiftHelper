@@ -24,7 +24,7 @@ TSwiftHelper is a library for iOS written in Swift to help user lots of helpful 
 
 ### License
 
-TSwiftHelper is available under the MIT license. See the [LICENSE](https://github.com/fanta1ty/TSwiftHelper/blob/master/LICENSE) file for more info.
+TSwiftHelper is available under the MIT license. See the [LICENSE](https://github.com/fanta1ty/TSwiftHelper/blob/master/LICENSE) file for more info. 
 
 ### Author
 

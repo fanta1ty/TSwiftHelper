@@ -10,6 +10,13 @@
 import Foundation
 import UIKit
 
+public enum Task {
+    /// All basic request task.
+    case request
+    case download
+    case upload
+}
+
 public protocol AppServerConfiguration {
     var baseURL: String { get }
     var defaultHeaders: [String: String] { get }

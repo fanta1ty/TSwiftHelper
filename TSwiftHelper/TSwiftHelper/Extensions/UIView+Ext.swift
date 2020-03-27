@@ -727,3 +727,13 @@ public extension UIView {
         }, completion: completion)
     }
 }
+
+public protocol ReuseableView {
+    
+}
+
+public extension ReuseableView where Self: UIView {
+    static var reuseIdentifier: String {
+        return String(describing: self)
+    }
+}

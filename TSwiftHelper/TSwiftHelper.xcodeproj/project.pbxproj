@@ -94,6 +94,8 @@
 		CE38773C242747E4001DAEEC /* Niramit-MediumItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CE387730242747E4001DAEEC /* Niramit-MediumItalic.ttf */; };
 		CE38773E242754F9001DAEEC /* BaseAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE38773D242754F9001DAEEC /* BaseAPI.swift */; };
 		CE3877412427B52B001DAEEC /* FontHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3877402427B52B001DAEEC /* FontHelper.swift */; };
+		CE559BA6242E5BBA0024406B /* UITableViewCell+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE559BA5242E5BBA0024406B /* UITableViewCell+Ext.swift */; };
+		CE559BA8242E5D490024406B /* UITableView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE559BA7242E5D490024406B /* UITableView+Ext.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -187,6 +189,8 @@
 		CE387730242747E4001DAEEC /* Niramit-MediumItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Niramit-MediumItalic.ttf"; sourceTree = "<group>"; };
 		CE38773D242754F9001DAEEC /* BaseAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseAPI.swift; sourceTree = "<group>"; };
 		CE3877402427B52B001DAEEC /* FontHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontHelper.swift; sourceTree = "<group>"; };
+		CE559BA5242E5BBA0024406B /* UITableViewCell+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableViewCell+Ext.swift"; sourceTree = "<group>"; };
+		CE559BA7242E5D490024406B /* UITableView+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Ext.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -266,6 +270,8 @@
 				CE3877052427437E001DAEEC /* UILabel+Ext.swift */,
 				CE38770724274408001DAEEC /* UISlider+Ext.swift */,
 				CE3877092427441E001DAEEC /* UISwitch+Ext.swift */,
+				CE559BA7242E5D490024406B /* UITableView+Ext.swift */,
+				CE559BA5242E5BBA0024406B /* UITableViewCell+Ext.swift */,
 				CE38770B24274432001DAEEC /* UITextField+Ext.swift */,
 				CE38770D24274448001DAEEC /* UITextView+Ext.swift */,
 				CE3876BA24272EC1001DAEEC /* UIView+Ext.swift */,
@@ -533,8 +539,10 @@
 				CE38771E24274535001DAEEC /* BlockSwipe.swift in Sources */,
 				CE3876D824273A22001DAEEC /* TextFieldHelper.swift in Sources */,
 				CE387712242744CB001DAEEC /* URL+Ext.swift in Sources */,
+				CE559BA6242E5BBA0024406B /* UITableViewCell+Ext.swift in Sources */,
 				CE3877062427437E001DAEEC /* UILabel+Ext.swift in Sources */,
 				CE387716242744FD001DAEEC /* BlockButton.swift in Sources */,
+				CE559BA8242E5D490024406B /* UITableView+Ext.swift in Sources */,
 				CE38771A2427451A001DAEEC /* BlockPan.swift in Sources */,
 				CE38768F24271F75001DAEEC /* String+Ext.swift in Sources */,
 				CE3877412427B52B001DAEEC /* FontHelper.swift in Sources */,
@@ -723,7 +731,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.8;
+				MARKETING_VERSION = 1.0.9;
 				PRODUCT_BUNDLE_IDENTIFIER = thinhNguyen.TSwiftHelper;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
@@ -752,7 +760,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.8;
+				MARKETING_VERSION = 1.0.9;
 				PRODUCT_BUNDLE_IDENTIFIER = thinhNguyen.TSwiftHelper;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;

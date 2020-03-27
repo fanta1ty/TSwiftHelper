@@ -1639,7 +1639,7 @@ public enum DefinedColors {
     case customRGBA(r: Float, g: Float, b: Float, a: Float)
 }
 
-extension DefinedColors {
+public extension DefinedColors {
     var value: UIColor {
         switch self {
         // MARK: - A Section

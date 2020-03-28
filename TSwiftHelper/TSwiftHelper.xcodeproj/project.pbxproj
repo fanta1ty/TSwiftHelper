@@ -96,6 +96,7 @@
 		CE3877412427B52B001DAEEC /* FontHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3877402427B52B001DAEEC /* FontHelper.swift */; };
 		CE559BA6242E5BBA0024406B /* UITableViewCell+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE559BA5242E5BBA0024406B /* UITableViewCell+Ext.swift */; };
 		CE559BA8242E5D490024406B /* UITableView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE559BA7242E5D490024406B /* UITableView+Ext.swift */; };
+		CEA5E191242F11460061C6F1 /* TextViewHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA5E190242F11450061C6F1 /* TextViewHelper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -191,6 +192,7 @@
 		CE3877402427B52B001DAEEC /* FontHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontHelper.swift; sourceTree = "<group>"; };
 		CE559BA5242E5BBA0024406B /* UITableViewCell+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableViewCell+Ext.swift"; sourceTree = "<group>"; };
 		CE559BA7242E5D490024406B /* UITableView+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Ext.swift"; sourceTree = "<group>"; };
+		CEA5E190242F11450061C6F1 /* TextViewHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextViewHelper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -301,6 +303,7 @@
 				CE3876D724273A22001DAEEC /* TextFieldHelper.swift */,
 				CE3876CD24273749001DAEEC /* UIHelper.swift */,
 				CE3876D924273A57001DAEEC /* ViewHelper.swift */,
+				CEA5E190242F11450061C6F1 /* TextViewHelper.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -510,6 +513,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CE3877102427447B001DAEEC /* UIViewController+Ext.swift in Sources */,
+				CEA5E191242F11460061C6F1 /* TextViewHelper.swift in Sources */,
 				CE38771C24274528001DAEEC /* BlockPinch.swift in Sources */,
 				CE3876C424273468001DAEEC /* DateHelper.swift in Sources */,
 				CE3876A024272AE5001DAEEC /* DefinedFonts.swift in Sources */,
@@ -731,7 +735,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1.0;
+				MARKETING_VERSION = 1.1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = thinhNguyen.TSwiftHelper;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
@@ -760,7 +764,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1.0;
+				MARKETING_VERSION = 1.1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = thinhNguyen.TSwiftHelper;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;

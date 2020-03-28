@@ -133,7 +133,7 @@ public final class PickerHelper: NSObject {
         
         if let currentController = UIWindow.currentController {
             
-            if let bgView = currentController.view.viewWithTag(viewTransperantTag) {
+            if let _ = currentController.view.viewWithTag(viewTransperantTag) {
                 return
             }
             

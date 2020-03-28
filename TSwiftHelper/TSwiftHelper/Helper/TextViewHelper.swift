@@ -30,7 +30,7 @@ public struct TextViewStyle {
     let isHidden: Bool
     let isUserInteractionEnabled: Bool
     
-    init(backgroundColor: DefinedColors = .Clear, borderColor: DefinedColors = .Clear, borderWidth: CGFloat = 0, corderRadius: CGFloat = 0, textColor: DefinedColors = .Black, textFont: DefinedFonts = .InterRegular(size: 14), textAlignment: NSTextAlignment = .left, keyboardType: UIKeyboardType = .default, isSecureTextEntry: Bool = false, autocorrectionType: UITextAutocorrectionType = .no, spellCheckingType: UITextSpellCheckingType = .no, autocapitalizationType: UITextAutocapitalizationType = .none, isHidden: Bool = false, isUserInteractionEnabled: Bool = true) {
+    public init(backgroundColor: DefinedColors = .Clear, borderColor: DefinedColors = .Clear, borderWidth: CGFloat = 0, corderRadius: CGFloat = 0, textColor: DefinedColors = .Black, textFont: DefinedFonts = .InterRegular(size: 14), textAlignment: NSTextAlignment = .left, keyboardType: UIKeyboardType = .default, isSecureTextEntry: Bool = false, autocorrectionType: UITextAutocorrectionType = .no, spellCheckingType: UITextSpellCheckingType = .no, autocapitalizationType: UITextAutocapitalizationType = .none, isHidden: Bool = false, isUserInteractionEnabled: Bool = true) {
         self.backgroundColor = backgroundColor
         self.borderColor = borderColor
         self.borderWidth = borderWidth
@@ -74,7 +74,7 @@ public extension TextViewStyle {
 public final class TextViewHelper: UITextView {
     private let style: TextViewStyle
     
-    init(style: TextViewStyle, text: String? = nil, parent: UIView? = nil) {
+    public init(style: TextViewStyle, text: String? = nil, parent: UIView? = nil) {
         self.style = style
         super.init(frame: .zero, textContainer: nil)
         

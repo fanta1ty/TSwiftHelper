@@ -301,9 +301,9 @@
 				CE3876C7242734EA001DAEEC /* StringHelper.swift */,
 				CE3876DB24273A78001DAEEC /* TableViewHelper.swift */,
 				CE3876D724273A22001DAEEC /* TextFieldHelper.swift */,
+				CEA5E190242F11450061C6F1 /* TextViewHelper.swift */,
 				CE3876CD24273749001DAEEC /* UIHelper.swift */,
 				CE3876D924273A57001DAEEC /* ViewHelper.swift */,
-				CEA5E190242F11450061C6F1 /* TextViewHelper.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -737,7 +737,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1.1;
+				MARKETING_VERSION = 1.1.2;
 				PRODUCT_BUNDLE_IDENTIFIER = thinhNguyen.TSwiftHelper;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
@@ -766,7 +766,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1.1;
+				MARKETING_VERSION = 1.1.2;
 				PRODUCT_BUNDLE_IDENTIFIER = thinhNguyen.TSwiftHelper;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;

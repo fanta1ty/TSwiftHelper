@@ -49,7 +49,7 @@ public struct TextViewStyle {
 }
 
 // MARK: - Static Functions
-extension TextViewStyle {
+public extension TextViewStyle {
     // MARK: regularDefaultFontSize
     static func regularDefaultFontSize() -> LabelStyle {
         return LabelStyle(textFont: .InterRegular(size: 12))
@@ -71,7 +71,7 @@ extension TextViewStyle {
     }
 }
 
-final class TextViewHelper: UITextView {
+public final class TextViewHelper: UITextView {
     private let style: TextViewStyle
     
     init(style: TextViewStyle, text: String? = nil, parent: UIView? = nil) {

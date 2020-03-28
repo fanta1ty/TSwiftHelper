@@ -31,7 +31,7 @@ public extension AppServerConfiguration {
 open class BaseAPI {
     let serverConfiguration: AppServerConfiguration
     
-    init(serverConfiguration: AppServerConfiguration) {
+    public init(serverConfiguration: AppServerConfiguration) {
         self.serverConfiguration = serverConfiguration
     }
 }

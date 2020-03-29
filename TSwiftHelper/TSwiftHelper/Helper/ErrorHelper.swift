@@ -12,7 +12,7 @@ import UIKit
 
 public final class ErrorHelper {
     // MARK: showAlertError
-    public static func showAlertError(title: String?, message: String?, controller: UIViewController, complete: (() -> ())?) {
+    public static func showAlertError(title: String?, message: String?, controller: UIViewController, complete: (() -> ())? = nil) {
         let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
         
         let okAction = UIAlertAction(title: "OK".localized, style: .default) { action in

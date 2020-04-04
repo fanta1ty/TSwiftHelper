@@ -15,6 +15,90 @@ public enum FontFamilyName: String, CaseIterable {
     case niramit = "Niramit"
 }
 
+public enum DefaultFontFamilyName: String {
+    case copperplate = "Copperplate"
+    case appleSDGothicNeo = "AppleSDGothicNeo"
+    case thonburi = "Thonburi"
+    case gillSans = "GillSans"
+    case markerFelt = "MarkerFelt"
+    case hiraMaruProN = "HiraMaruProN"
+    case courierNewPS = "CourierNewPS"
+    case kohinoorTelugu = "KohinoorTelugu"
+    case avenirNextCondensed = "AvenirNextCondensed"
+    case tamilSangamMN = "TamilSangamMN"
+    case helveticaNeue = "HelveticaNeue"
+    case timesNewRomanPS = "TimesNewRomanPS"
+    case georgia = "Georgia"
+    case sinhalaSangamMN = "SinhalaSangamMN"
+    case arialRoundedMTBold = "ArialRoundedMTBold"
+    case kailasa = "Kailasa"
+    case kohinoorDevanagari = "KohinoorDevanagari"
+    case kohinoorBangla = "KohinoorBangla"
+    case notoSansOriya = "NotoSansOriya"
+    case chalkboardSE = "ChalkboardSE"
+    case notoSansKannada = "NotoSansKannada"
+    case appleColorEmoji = "AppleColorEmoji"
+    case pingFangTC = "PingFangTC"
+    case geezaPro = "GeezaPro"
+    case damascus = "Damascus"
+    case noteworthy = "Noteworthy"
+    case avenir = "Avenir"
+    case kohinoorGujarati = "KohinoorGujarati"
+    case diwanMishafi = "DiwanMishafi"
+    case academyEngravedLetPlain = "AcademyEngravedLetPlain"
+    case partyLetPlain = "PartyLetPlain"
+    case futura = "Futura"
+    case arialHebrew = "ArialHebrew"
+    case farah = "Farah"
+    case muktaMahee = "MuktaMahee"
+    case notoSansMyanmar = "NotoSansMyanmar"
+    case arial = "Arial"
+    case chalkduster = "Chalkduster"
+    case kefa = "Kefa"
+    case hoeflerText = "HoeflerText"
+    case optima = "Optima"
+    case galvji = "Galvji"
+    case palatino = "Palatino"
+    case malayalamSangamMN = "MalayalamSangamMN"
+    case alNile = "AlNile"
+    case laoSangamMN = "LaoSangamMN"
+    case bradleyHandITCTT = "BradleyHandITCTT"
+    case hiraMinProN = "HiraMinProN"
+    case pingFangHK = "PingFangHK"
+    case helvetica = "Helvetica"
+    case courier = "Courier"
+    case cochin = "Cochin"
+    case trebuchetMS = "TrebuchetMS"
+    case devanagariSangamMN = "DevanagariSangamMN"
+    case rockwell = "Rockwell"
+    case snellRoundhand = "SnellRoundhand"
+    case zapfDingbatsITC = "ZapfDingbatsITC"
+    case bodoniSvtyTwoITCTT = "BodoniSvtyTwoITCTT"
+    case verdana = "Verdana"
+    case americanTypewriter = "AmericanTypewriter"
+    case avenirNext = "AvenirNext"
+    case baskerville = "Baskerville"
+    case khmerSangamMN = "KhmerSangamMN"
+    case didot = "Didot"
+    case savoyeLetPlain = "SavoyeLetPlain"
+    case bodoniOrnamentsITCTT = "BodoniOrnamentsITCTT"
+    case symbol = "Symbol"
+    case charter = "Charter"
+    case menlo = "Menlo"
+    case notoNastaliqUrdu = "NotoNastaliqUrdu"
+    case bodoniSvtyTwoSCITCTT = "BodoniSvtyTwoSCITCTT"
+    case dINAlternate = "DINAlternate"
+    case papyrus = "Papyrus"
+    case hiraginoSans = "HiraginoSans"
+    case pingFangSC = "PingFangSC"
+    case myanmarSangamMN = "MyanmarSangamMN"
+    case appleSymbols = "AppleSymbols"
+    case zapfino = "Zapfino"
+    case bodoniSvtyTwoOSITCTT = "BodoniSvtyTwoOSITCTT"
+    case euphemiaUCAS = "EuphemiaUCAS"
+    case dinCondensed = "DINCondensed"
+}
+
 public enum FontType: String, CaseIterable {
     case bold = "-Bold"
     case boldItalic = "-BoldItalic"
@@ -22,56 +106,179 @@ public enum FontType: String, CaseIterable {
     case extraLightItalic = "-ExtraLightItalic"
     case italic = "-Italic"
     case light = "-Light"
+    case ultraLight = "-UltraLight"
     case lightItalic = "-LightItalic"
     case medium = "-Medium"
     case mediumItalic = "-MediumItalic"
     case regular = "-Regular"
     case semiBold = "-SemiBold"
     case semiBoldItalic = "-SemiBoldItalic"
+    case thin = "-Thin"
 }
 
 public enum DefinedFonts {
+    // MARK: - Default Section
+    // MARK: Bold
+    case bold(size: Float)
+    
+    // MARK: Italic
+    case italic(size: Float)
+    
+    // MARK: Regular
+    case regular(size: Float)
+    
+    // MARK: - Copperplate Section
+    // MARK: Bold
+    case copperplateBold(size: Float)
+    
+    // MARK: Light
+    case copperplateLight(size: Float)
+    
+    // MARK: Regular
+    case copperplateRegular(size: Float)
+    
+    // MARK: - AppleSDGothicNeo Section
+    // MARK: Thin
+    case appleSDGothicNeoThin(size: Float)
+    
+    // MARK: Light
+    case appleSDGothicNeoLight(size: Float)
+    
+    // MARK: Regular
+    case appleSDGothicNeoRegular(size: Float)
+    
+    // MARK: Bold
+    case appleSDGothicNeoBold(size: Float)
+    
+    // MARK: SemiBold
+    case appleSDGothicNeoSemiBold(size: Float)
+    
+    // MARK: UltraLight
+    case appleSDGothicNeoSemiUltraLight(size: Float)
+    
+    // MARK: Medium
+    case appleSDGothicNeoMedium(size: Float)
+    
     // MARK: - Inter Section
     // MARK: Bold
     case InterBold(size: Float)
+    
+    // MARK: BoldItalic
     case InterBoldItalic(size: Float)
-    case NiramitBold(size: Float)
-    case NiramitBoldItalic(size: Float)
     
-    // MARK: Semi
+    // MARK: SemiBold
     case InterSemiBold(size: Float)
-    case InterSemiBoldItalic(size: Float)
-    case NiramitSemiBold(size: Float)
-    case NiramitSemiBoldItalic(size: Float)
     
-    // MARK: Italic
+    // MARK: SemiBoldItalic
+    case InterSemiBoldItalic(size: Float)
+    
+    // MARK: ExtraLight
     case InterExtraLight(size: Float)
+    
+    // MARK: ExtraLightItalic
     case InterExtraLightItalic(size: Float)
-    case NiramitExtraLight(size: Float)
-    case NiramitExtraLightItalic(size: Float)
     
     // MARK: Light
     case InterLight(size: Float)
+    
+    // MARK: LightItalic
     case InterLightItalic(size: Float)
-    case NiramitLight(size: Float)
-    case NiramitLightItalic(size: Float)
     
     // MARK: Medium
     case InterMedium(size: Float)
+    
+    // MARK: MediumItalic
     case InterMediumItalic(size: Float)
-    case NiramitMedium(size: Float)
-    case NiramitMediumItalic(size: Float)
     
     // MARK: Regular
     case InterRegular(size: Float)
+    
+    // MARK: Italic
     case InterItalic(size: Float)
+    
+    // MARK: - Niramit Section
+    // MARK: Bold
+    case NiramitBold(size: Float)
+    
+    // MARK: BoldItalic
+    case NiramitBoldItalic(size: Float)
+    
+    // MARK: SemiBold
+    case NiramitSemiBold(size: Float)
+    
+    // MARK: SemiBoldItalic
+    case NiramitSemiBoldItalic(size: Float)
+    
+    // MARK: ExtraLight
+    case NiramitExtraLight(size: Float)
+    
+    // MARK: ExtraLightItalic
+    case NiramitExtraLightItalic(size: Float)
+    
+    // MARK: Light
+    case NiramitLight(size: Float)
+    
+    // MARK: LightItalic
+    case NiramitLightItalic(size: Float)
+    
+    // MARK: Medium
+    case NiramitMedium(size: Float)
+    
+    // MARK: MediumItalic
+    case NiramitMediumItalic(size: Float)
+    
+    // MARK: Regular
     case NiramitRegular(size: Float)
+    
+    // MARK: Italic
     case NiramitItalic(size: Float)
 }
 
 public extension DefinedFonts {
     var value: UIFont? {
         switch self {
+        // MARK: - Default Section
+        case .bold(let size):
+            return UIFont.boldSystemFont(ofSize: CGFloat(size))
+        
+        case .italic(let size):
+            return UIFont.italicSystemFont(ofSize: CGFloat(size))
+            
+        case .regular(let size):
+            return UIFont.systemFont(ofSize: CGFloat(size))
+        
+        // MARK: - Copperplate Section
+        case .copperplateBold(let size):
+            return UIFont(name: DefaultFontFamilyName.copperplate.rawValue + FontType.bold.rawValue, size: CGFloat(size))
+            
+        case .copperplateLight(let size):
+            return UIFont(name: DefaultFontFamilyName.copperplate.rawValue + FontType.light.rawValue, size: CGFloat(size))
+            
+        case .copperplateRegular(let size):
+            return UIFont(name: DefaultFontFamilyName.copperplate.rawValue, size: CGFloat(size))
+            
+        // MARK: AppleSDGothicNeo
+        case .appleSDGothicNeoThin(let size):
+            return UIFont(name: DefaultFontFamilyName.appleSDGothicNeo.rawValue + FontType.thin.rawValue, size: CGFloat(size))
+            
+        case .appleSDGothicNeoLight(let size):
+            return UIFont(name: DefaultFontFamilyName.appleSDGothicNeo.rawValue + FontType.light.rawValue, size: CGFloat(size))
+            
+        case .appleSDGothicNeoRegular(let size):
+            return UIFont(name: DefaultFontFamilyName.appleSDGothicNeo.rawValue + FontType.regular.rawValue, size: CGFloat(size))
+            
+        case .appleSDGothicNeoBold(let size):
+            return UIFont(name: DefaultFontFamilyName.appleSDGothicNeo.rawValue + FontType.bold.rawValue, size: CGFloat(size))
+            
+        case .appleSDGothicNeoSemiBold(let size):
+            return UIFont(name: DefaultFontFamilyName.appleSDGothicNeo.rawValue + FontType.semiBold.rawValue, size: CGFloat(size))
+            
+        case .appleSDGothicNeoSemiUltraLight(let size):
+            return UIFont(name: DefaultFontFamilyName.appleSDGothicNeo.rawValue + FontType.ultraLight.rawValue, size: CGFloat(size))
+            
+        case .appleSDGothicNeoMedium(let size):
+            return UIFont(name: DefaultFontFamilyName.appleSDGothicNeo.rawValue + FontType.medium.rawValue, size: CGFloat(size))
+            
         // MARK: - Inter Section
         case .InterBold(let size):
             return UIFont(name: FontFamilyName.inter.rawValue + FontType.bold.rawValue, size: CGFloat(size))

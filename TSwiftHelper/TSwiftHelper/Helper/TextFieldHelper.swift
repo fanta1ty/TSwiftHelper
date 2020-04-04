@@ -91,6 +91,23 @@ public final class TextFieldHelper: UITextField {
         initializeStyle()
     }
     
+    public init(type: TextType, style: TextFieldStyle, text: String? = nil, placeholder: String? = nil, parent: UIView? = nil) {
+        self.style = style
+        
+        super.init(frame: .zero)
+        
+        self.text = text
+        self.placeholder = placeholder
+        
+        if let parent = parent {
+            parent.addSubview(self)
+        }
+        
+        initializeStyle()
+        
+        self.textType = type
+    }
+    
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }

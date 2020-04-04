@@ -10,26 +10,16 @@
 import Foundation
 import UIKit
 
+// MARK: - Functions
 public extension UITableView {
-    func register<T: UITableViewCell>(cellClass: T.Type) {
-        register(cellClass, forCellReuseIdentifier: T.reuseIdentifier)
+    // MARK: scrollToBottom
+    func scrollToBottom(animated: Bool = true) {
+        let bottomOffset = CGPoint(x: 0, y: contentSize.height - bounds.size.height)
+        setContentOffset(bottomOffset, animated: animated)
     }
     
-    func register<T: UITableViewHeaderFooterView>(aClass: T.Type) {
-        register(aClass, forHeaderFooterViewReuseIdentifier: T.reuseIdentifier)
-    }
-    
-    func dequeueResuableCell<T: UITableViewCell>(forIndexPath indexPath: IndexPath) -> T {
-        guard let cell = dequeueReusableCell(withIdentifier: T.reuseIdentifier, for: indexPath) as? T else {
-            fatalError(" Could not dequeue cell with identifier: \(T.reuseIdentifier)")
-        }
-        return cell
-    }
-    
-    func dequeueReusableHeaderFooterView<T: UITableViewHeaderFooterView>() -> T {
-        guard let view = dequeueReusableHeaderFooterView(withIdentifier: T.reuseIdentifier) as? T else {
-            fatalError("Could not dequeue header/footer view with identifier: \(T.reuseIdentifier)")
-        }
-        return view
+    // MARK: scrollToTop
+    func scrollToTop(animated: Bool = true) {
+        setContentOffset(CGPoint.zero, animated: animated)
     }
 }

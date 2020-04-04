@@ -79,7 +79,6 @@
 		CE38771C24274528001DAEEC /* BlockPinch.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE38771B24274528001DAEEC /* BlockPinch.swift */; };
 		CE38771E24274535001DAEEC /* BlockSwipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE38771D24274535001DAEEC /* BlockSwipe.swift */; };
 		CE38772024274545001DAEEC /* BlockTap.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE38771F24274545001DAEEC /* BlockTap.swift */; };
-		CE38772224274557001DAEEC /* BlockWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE38772124274557001DAEEC /* BlockWebView.swift */; };
 		CE387731242747E4001DAEEC /* Niramit-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CE387725242747E4001DAEEC /* Niramit-Regular.ttf */; };
 		CE387732242747E4001DAEEC /* Niramit-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CE387726242747E4001DAEEC /* Niramit-SemiBold.ttf */; };
 		CE387733242747E4001DAEEC /* Niramit-SemiBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CE387727242747E4001DAEEC /* Niramit-SemiBoldItalic.ttf */; };
@@ -175,7 +174,6 @@
 		CE38771B24274528001DAEEC /* BlockPinch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockPinch.swift; sourceTree = "<group>"; };
 		CE38771D24274535001DAEEC /* BlockSwipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockSwipe.swift; sourceTree = "<group>"; };
 		CE38771F24274545001DAEEC /* BlockTap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockTap.swift; sourceTree = "<group>"; };
-		CE38772124274557001DAEEC /* BlockWebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockWebView.swift; sourceTree = "<group>"; };
 		CE387725242747E4001DAEEC /* Niramit-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Niramit-Regular.ttf"; sourceTree = "<group>"; };
 		CE387726242747E4001DAEEC /* Niramit-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Niramit-SemiBold.ttf"; sourceTree = "<group>"; };
 		CE387727242747E4001DAEEC /* Niramit-SemiBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Niramit-SemiBoldItalic.ttf"; sourceTree = "<group>"; };
@@ -369,7 +367,6 @@
 				CE38771B24274528001DAEEC /* BlockPinch.swift */,
 				CE38771D24274535001DAEEC /* BlockSwipe.swift */,
 				CE38771F24274545001DAEEC /* BlockTap.swift */,
-				CE38772124274557001DAEEC /* BlockWebView.swift */,
 			);
 			path = Block;
 			sourceTree = "<group>";
@@ -536,7 +533,6 @@
 				CE3876DA24273A57001DAEEC /* ViewHelper.swift in Sources */,
 				CE3877182427450C001DAEEC /* BlockLongPress.swift in Sources */,
 				CE38769E242729B0001DAEEC /* DefinedColors.swift in Sources */,
-				CE38772224274557001DAEEC /* BlockWebView.swift in Sources */,
 				CE3876F62427414D001DAEEC /* Int+Ext.swift in Sources */,
 				CE38768D242715D0001DAEEC /* Date+Ext.swift in Sources */,
 				CE3876BE24272F6A001DAEEC /* BaseVC.swift in Sources */,

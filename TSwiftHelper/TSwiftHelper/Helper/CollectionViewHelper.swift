@@ -1,8 +1,8 @@
 //
-//  TableViewHelper.swift
+//  CollectionViewHelper.swift
 //  TSwiftHelper
 //
-//  Created by User on 3/22/20.
+//  Created by User on 4/8/20.
 //  Copyright © 2020 ThinhNguyen. All rights reserved.
 //  Email: thinhnguyen12389@gmail.com
 //
@@ -10,7 +10,7 @@
 import Foundation
 import UIKit
 
-public struct TableViewStyle {
+public struct CollectionViewStyle {
     let backgroundColor: DefinedColors!
     let borderColor: DefinedColors!
     
@@ -33,17 +33,17 @@ public struct TableViewStyle {
     }
 }
 
-public final class TableViewHelper: UITableView {
-    private let helperStyle: TableViewStyle
+public final class CollectionViewHelper: UICollectionView {
+    private let helperStyle: CollectionViewStyle
     private let cellClasses: [AnyClass?]
     private let cellIdentifiers: [String]!
     
-    public init(style: TableViewStyle, cellStyle: UITableView.Style = .grouped, cellClasses: [AnyClass?], cellIdentifiers: [String], parent: UIView? = nil) {
+    public init(style: CollectionViewStyle, collectionViewLayout: UICollectionViewLayout, cellClasses: [AnyClass?], cellIdentifiers: [String], parent: UIView? = nil) {
         self.helperStyle = style
         self.cellClasses = cellClasses
         self.cellIdentifiers = cellIdentifiers
         
-        super.init(frame: .zero, style: cellStyle)
+        super.init(frame: .zero, collectionViewLayout: collectionViewLayout)
         
         if let parent = parent {
             parent.addSubview(self)
@@ -58,7 +58,7 @@ public final class TableViewHelper: UITableView {
 }
 
 // MARK: - Private Functions
-extension TableViewHelper {
+extension CollectionViewHelper {
     // MARK: initializeStyle
     final private func initializeStyle() {
         backgroundColor = helperStyle.backgroundColor.value
@@ -72,10 +72,8 @@ extension TableViewHelper {
         isHidden = helperStyle.isHidden
         isUserInteractionEnabled = helperStyle.isUserInteractionEnabled
         
-        separatorStyle = .none
-        
         for (index, cellClass) in cellClasses.enumerated() {
-            register(cellClass, forCellReuseIdentifier: cellIdentifiers[index])
+            register(cellClass, forCellWithReuseIdentifier: cellIdentifiers[index])
         }
     }
 }

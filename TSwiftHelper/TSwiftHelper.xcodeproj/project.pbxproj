@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CE294964243D815C00523BF4 /* CollectionViewHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE294963243D815C00523BF4 /* CollectionViewHelper.swift */; };
+		CE294966243D826100523BF4 /* UICollectionViewCell+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE294965243D826100523BF4 /* UICollectionViewCell+Ext.swift */; };
 		CE38768624271562001DAEEC /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = CE38768824271562001DAEEC /* Localizable.strings */; };
 		CE38768B24271596001DAEEC /* Array+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE38768A24271596001DAEEC /* Array+Ext.swift */; };
 		CE38768D242715D0001DAEEC /* Date+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE38768C242715D0001DAEEC /* Date+Ext.swift */; };
@@ -99,6 +101,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CE294963243D815C00523BF4 /* CollectionViewHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewHelper.swift; sourceTree = "<group>"; };
+		CE294965243D826100523BF4 /* UICollectionViewCell+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionViewCell+Ext.swift"; sourceTree = "<group>"; };
 		CE38767424271370001DAEEC /* TSwiftHelper.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = TSwiftHelper.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE38767824271370001DAEEC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CE38768724271562001DAEEC /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -263,6 +267,7 @@
 				CE3876FD242742A4001DAEEC /* UIAlertController+Ext.swift */,
 				CE3876FF242742D4001DAEEC /* UIApplication+Ext.swift */,
 				CE387701242742EF001DAEEC /* UIButton+Ext.swift */,
+				CE294965243D826100523BF4 /* UICollectionViewCell+Ext.swift */,
 				CE387694242721FF001DAEEC /* UIColor+Ext.swift */,
 				CE38769624272226001DAEEC /* UIDevice+Ext.swift */,
 				CE38769824272272001DAEEC /* UIImage+Ext.swift */,
@@ -288,6 +293,7 @@
 			children = (
 				CE3876C92427350A001DAEEC /* AnimationHelper.swift */,
 				CE3876C1242733CC001DAEEC /* ButtonHelper.swift */,
+				CE294963243D815C00523BF4 /* CollectionViewHelper.swift */,
 				CE3876C324273468001DAEEC /* DateHelper.swift */,
 				CE3876CB2427352A001DAEEC /* ErrorHelper.swift */,
 				CE3877402427B52B001DAEEC /* FontHelper.swift */,
@@ -531,6 +537,7 @@
 				CE3876E824273F91001DAEEC /* Character+Ext.swift in Sources */,
 				CE387695242721FF001DAEEC /* UIColor+Ext.swift in Sources */,
 				CE3876DA24273A57001DAEEC /* ViewHelper.swift in Sources */,
+				CE294966243D826100523BF4 /* UICollectionViewCell+Ext.swift in Sources */,
 				CE3877182427450C001DAEEC /* BlockLongPress.swift in Sources */,
 				CE38769E242729B0001DAEEC /* DefinedColors.swift in Sources */,
 				CE3876F62427414D001DAEEC /* Int+Ext.swift in Sources */,
@@ -565,6 +572,7 @@
 				CE3876FA242741EE001DAEEC /* NSDictionary+Ext.swift in Sources */,
 				CE3876D2242737BA001DAEEC /* UIWindow+Ext.swift in Sources */,
 				CE3876CA2427350A001DAEEC /* AnimationHelper.swift in Sources */,
+				CE294964243D815C00523BF4 /* CollectionViewHelper.swift in Sources */,
 				CE3876D424273968001DAEEC /* ImageViewHelper.swift in Sources */,
 				CE3876E024273EE5001DAEEC /* Bundle+Ext.swift in Sources */,
 				CE387693242721A5001DAEEC /* NSObject+Ext.swift in Sources */,
@@ -733,7 +741,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1.5;
+				MARKETING_VERSION = 1.1.6;
 				PRODUCT_BUNDLE_IDENTIFIER = thinhNguyen.TSwiftHelper;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
@@ -762,7 +770,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1.5;
+				MARKETING_VERSION = 1.1.6;
 				PRODUCT_BUNDLE_IDENTIFIER = thinhNguyen.TSwiftHelper;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;

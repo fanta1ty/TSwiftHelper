@@ -26,7 +26,7 @@ public final class UIHelper {
         let currentDateStr = UTCToLocal(dateStr: dateStr)
         
         let dateFormatter = DateFormatter()
-        dateFormatter.locale = .current
+        dateFormatter.locale = Locale(identifier: "en_US_POSIX")
         dateFormatter.timeZone = .current
         
         dateFormatter.dateFormat = DateTimeFormat.dateTime24Long.rawValue
@@ -53,7 +53,7 @@ public final class UIHelper {
         let currentDateStr = UTCToLocal(dateStr: dateStr)
         
         let dateFormatter = DateFormatter()
-        dateFormatter.locale = .current
+        dateFormatter.locale = Locale(identifier: "en_US_POSIX")
         dateFormatter.timeZone = .current
         
         dateFormatter.dateFormat = DateTimeFormat.dateTime24Long.rawValue
@@ -96,7 +96,7 @@ public final class UIHelper {
         let currentDateStr = UTCToLocal(dateStr: dateStr)
         
         let dateFormatter = DateFormatter()
-        dateFormatter.locale = .current
+        dateFormatter.locale = Locale(identifier: "en_US_POSIX")
         dateFormatter.timeZone = .current
         
         dateFormatter.dateFormat = DateTimeFormat.dateTime24Long.rawValue
@@ -121,7 +121,7 @@ public final class UIHelper {
         let currentDateStr = UTCToLocal(dateStr: dateStr)
         
         let dateFormatter = DateFormatter()
-        dateFormatter.locale = .current
+        dateFormatter.locale = Locale(identifier: "en_US_POSIX")
         dateFormatter.timeZone = .current
         
         dateFormatter.dateFormat = DateTimeFormat.dateTime24Long.rawValue
@@ -146,7 +146,7 @@ public final class UIHelper {
         let currentDateStr = UTCToLocal(dateStr: dateStr)
         
         let dateFormatter = DateFormatter()
-        dateFormatter.locale = .current
+        dateFormatter.locale = Locale(identifier: "en_US_POSIX")
         dateFormatter.timeZone = .current
         
         dateFormatter.dateFormat = DateTimeFormat.dateTime24Long.rawValue
@@ -199,7 +199,7 @@ public final class UIHelper {
         let currentDateStr = UTCToLocal(dateStr: dateStr)
         
         let dateFormatter = DateFormatter()
-        dateFormatter.locale = .current
+        dateFormatter.locale = Locale(identifier: "en_US_POSIX")
         dateFormatter.timeZone = .current
         
         dateFormatter.dateFormat = DateTimeFormat.dateTime24Long.rawValue
@@ -222,7 +222,7 @@ public final class UIHelper {
         let currentDateStr = UTCToLocal(dateStr: dateStr)
         
         let dateFormatter = DateFormatter()
-        dateFormatter.locale = .current
+        dateFormatter.locale = Locale(identifier: "en_US_POSIX")
         dateFormatter.timeZone = .current
         
         dateFormatter.dateFormat = DateTimeFormat.dateTime24Long.rawValue
@@ -246,7 +246,7 @@ public final class UIHelper {
         
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = dateFormat
-        dateFormatter.locale = .current
+        dateFormatter.locale = Locale(identifier: "en_US_POSIX")
         dateFormatter.timeZone = .current
         
         let date = dateFormatter.date(from: currentDateStr)

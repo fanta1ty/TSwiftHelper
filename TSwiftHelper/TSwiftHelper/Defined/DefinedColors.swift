@@ -9526,7 +9526,7 @@ public extension DefinedColors {
             return UIColor(redInt: r, greenInt: g, blueInt: b, a: a)
             
         default:
-            return UIColor()
+            fatalError("Unknown")
         }
     }
 }

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CE02EE8624556EEB00F96365 /* ScrollViewHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE02EE8524556EEB00F96365 /* ScrollViewHelper.swift */; };
 		CE294964243D815C00523BF4 /* CollectionViewHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE294963243D815C00523BF4 /* CollectionViewHelper.swift */; };
 		CE294966243D826100523BF4 /* UICollectionViewCell+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE294965243D826100523BF4 /* UICollectionViewCell+Ext.swift */; };
 		CE38768624271562001DAEEC /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = CE38768824271562001DAEEC /* Localizable.strings */; };
@@ -101,6 +102,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CE02EE8524556EEB00F96365 /* ScrollViewHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollViewHelper.swift; sourceTree = "<group>"; };
 		CE294963243D815C00523BF4 /* CollectionViewHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewHelper.swift; sourceTree = "<group>"; };
 		CE294965243D826100523BF4 /* UICollectionViewCell+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionViewCell+Ext.swift"; sourceTree = "<group>"; };
 		CE38767424271370001DAEEC /* TSwiftHelper.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = TSwiftHelper.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -302,6 +304,7 @@
 				CE3876D5242739F5001DAEEC /* LabelHelper.swift */,
 				CE3876CF24273779001DAEEC /* PickerHelper.swift */,
 				CE3876BF2427305C001DAEEC /* PrintHelper.swift */,
+				CE02EE8524556EEB00F96365 /* ScrollViewHelper.swift */,
 				CE3876C7242734EA001DAEEC /* StringHelper.swift */,
 				CE3876DB24273A78001DAEEC /* TableViewHelper.swift */,
 				CE3876D724273A22001DAEEC /* TextFieldHelper.swift */,
@@ -519,6 +522,7 @@
 				CEA5E191242F11460061C6F1 /* TextViewHelper.swift in Sources */,
 				CE38771C24274528001DAEEC /* BlockPinch.swift in Sources */,
 				CE3876C424273468001DAEEC /* DateHelper.swift in Sources */,
+				CE02EE8624556EEB00F96365 /* ScrollViewHelper.swift in Sources */,
 				CE3876A024272AE5001DAEEC /* DefinedFonts.swift in Sources */,
 				CE38770424274366001DAEEC /* UIImageView+Ext.swift in Sources */,
 				CE3876F224274104001DAEEC /* FloatingPoint+Ext.swift in Sources */,
@@ -741,7 +745,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1.7;
+				MARKETING_VERSION = 1.1.8;
 				PRODUCT_BUNDLE_IDENTIFIER = thinhNguyen.TSwiftHelper;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
@@ -770,7 +774,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1.7;
+				MARKETING_VERSION = 1.1.8;
 				PRODUCT_BUNDLE_IDENTIFIER = thinhNguyen.TSwiftHelper;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;

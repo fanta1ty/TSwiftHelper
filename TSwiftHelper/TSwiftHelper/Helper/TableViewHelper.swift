@@ -57,6 +57,16 @@ public final class TableViewHelper: UITableView {
     }
 }
 
+// MARK: - Public Functions
+extension TableViewHelper {
+    // MARK: registerCells
+    final public func registerCells() {
+        for (index, cellClass) in cellClasses.enumerated() {
+            register(cellClass, forCellReuseIdentifier: cellIdentifiers[index])
+        }
+    }
+}
+
 // MARK: - Private Functions
 extension TableViewHelper {
     // MARK: initializeStyle
@@ -73,9 +83,5 @@ extension TableViewHelper {
         isUserInteractionEnabled = helperStyle.isUserInteractionEnabled
         
         separatorStyle = .none
-        
-        for (index, cellClass) in cellClasses.enumerated() {
-            register(cellClass, forCellReuseIdentifier: cellIdentifiers[index])
-        }
     }
 }

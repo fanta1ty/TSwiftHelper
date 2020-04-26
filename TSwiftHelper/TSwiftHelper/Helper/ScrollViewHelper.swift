@@ -1,8 +1,8 @@
 //
-//  CollectionViewHelper.swift
+//  ScrollViewHelper.swift
 //  TSwiftHelper
 //
-//  Created by User on 4/8/20.
+//  Created by User on 4/26/20.
 //  Copyright © 2020 ThinhNguyen. All rights reserved.
 //  Email: thinhnguyen12389@gmail.com
 //
@@ -10,7 +10,7 @@
 import Foundation
 import UIKit
 
-public struct CollectionViewStyle {
+public struct ScrollViewStyle {
     let backgroundColor: DefinedColors!
     let borderColor: DefinedColors!
     
@@ -33,17 +33,13 @@ public struct CollectionViewStyle {
     }
 }
 
-public final class CollectionViewHelper: UICollectionView {
-    private let helperStyle: CollectionViewStyle
-    private let cellClasses: [AnyClass?]
-    private let cellIdentifiers: [String]!
+public final class ScrollViewHelper: UIScrollView {
+    private let helperStyle: ScrollViewStyle
     
-    public init(style: CollectionViewStyle, collectionViewLayout: UICollectionViewLayout, cellClasses: [AnyClass?], cellIdentifiers: [String], parent: UIView? = nil) {
+    public init(style: ScrollViewStyle, parent: UIView? = nil) {
         self.helperStyle = style
-        self.cellClasses = cellClasses
-        self.cellIdentifiers = cellIdentifiers
         
-        super.init(frame: .zero, collectionViewLayout: collectionViewLayout)
+        super.init(frame: .zero)
         
         if let parent = parent {
             parent.addSubview(self)
@@ -58,17 +54,12 @@ public final class CollectionViewHelper: UICollectionView {
 }
 
 // MARK: - Public Functions
-extension CollectionViewHelper {
-    // MARK: registerCells
-    final public func registerCells() {
-        for (index, cellClass) in cellClasses.enumerated() {
-            register(cellClass, forCellWithReuseIdentifier: cellIdentifiers[index])
-        }
-    }
+extension ScrollViewHelper {
+    
 }
 
 // MARK: - Private Functions
-extension CollectionViewHelper {
+extension ScrollViewHelper {
     // MARK: initializeStyle
     final private func initializeStyle() {
         backgroundColor = helperStyle.backgroundColor.value

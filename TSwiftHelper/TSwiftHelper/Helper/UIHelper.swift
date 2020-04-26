@@ -168,6 +168,7 @@ public final class UIHelper {
     public static func UTCToLocal(dateStr: String) -> String {
         let dateFormatter = DateFormatter()
         dateFormatter.timeZone = TimeZone(identifier: "UTC")
+        dateFormatter.locale = Locale(identifier: "en_US_POSIX")
         
         dateFormatter.dateFormat = DateTimeFormat.dateTime24Long.rawValue
         let date24 = dateFormatter.date(from: dateStr)

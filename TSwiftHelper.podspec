@@ -1,7 +1,7 @@
 Pod::Spec.new do |spec|
   # ―――  Spec Metadata  ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
   spec.name         = "TSwiftHelper"
-  spec.version      = "1.1.6"
+  spec.version      = "1.1.7"
   spec.summary      = "TSwiftHelper is a library for iOS written in Swift to help user lots of helpful extension functions in development."
   spec.description  = <<-DESC
   TSwiftHelper is a library for iOS written in Swift to help user lots of helpful extension functions in development

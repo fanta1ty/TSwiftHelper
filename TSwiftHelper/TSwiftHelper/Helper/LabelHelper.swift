@@ -106,7 +106,7 @@ extension LabelHelper {
         numberOfLines = style.numberOfLines
         
         minimumScaleFactor = 0.5
-        adjustsFontSizeToFitWidth = true
+        adjustsFontSizeToFitWidth = false
         
         isHidden = style.isHidden
     }

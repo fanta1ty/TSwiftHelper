@@ -10,24 +10,42 @@
 import Foundation
 import UIKit
 
+public enum DateTimeFormat: String {
+    case dateTime24Long = "yyyy-MM-dd'T'HH:mm:ss.SSSZ"
+    case dateTime12Long = "yyyy-MM-dd'T'hh:mm:ss.SSSZ"
+    
+    case dateTime24VietnameseLong = "HH:mm - dd 'thg' M, yyyy"
+    case dateTime12VietnameseLong = "hh:mm a - dd 'thg' M, yyyy"
+    
+    case fullDate = "yyyy-MM-dd"
+}
+
 public final class UIHelper {
     // MARK: convertDateString
     public static func convertDateString(dateStr: String) -> String {
         let currentDateStr = UTCToLocal(dateStr: dateStr)
         
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZ"
         dateFormatter.locale = .current
         dateFormatter.timeZone = .current
         
-        let date = dateFormatter.date(from: currentDateStr)
+        dateFormatter.dateFormat = DateTimeFormat.dateTime24Long.rawValue
+        let date24 = dateFormatter.date(from: currentDateStr)
         
-        if let date = date {
-            dateFormatter.dateFormat = "HH:mm - dd 'thg' M, yyyy"
-            return dateFormatter.string(from: date)
-        } else {
-            return ""
+        if let date24 = date24 {
+            dateFormatter.dateFormat = DateTimeFormat.dateTime24VietnameseLong.rawValue
+            return dateFormatter.string(from: date24)
         }
+        
+        dateFormatter.dateFormat = DateTimeFormat.dateTime12Long.rawValue
+        let date12 = dateFormatter.date(from: currentDateStr)
+        
+        if let date12 = date12 {
+            dateFormatter.dateFormat = DateTimeFormat.dateTime12VietnameseLong.rawValue
+            return dateFormatter.string(from: date12)
+        }
+        
+        return ""
     }
     
     // MARK: convertDateString
@@ -35,24 +53,32 @@ public final class UIHelper {
         let currentDateStr = UTCToLocal(dateStr: dateStr)
         
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZ"
         dateFormatter.locale = .current
         dateFormatter.timeZone = .current
         
-        let date = dateFormatter.date(from: currentDateStr)
+        dateFormatter.dateFormat = DateTimeFormat.dateTime24Long.rawValue
+        let date24 = dateFormatter.date(from: currentDateStr)
         
-        if let date = date {
+        if let date24 = date24 {
             dateFormatter.dateFormat = dateFormat
-            return dateFormatter.string(from: date)
-        } else {
-            return ""
+            return dateFormatter.string(from: date24)
         }
+        
+        dateFormatter.dateFormat = DateTimeFormat.dateTime12Long.rawValue
+        let date12 = dateFormatter.date(from: currentDateStr)
+        
+        if let date12 = date12 {
+            dateFormatter.dateFormat = dateFormat
+            return dateFormatter.string(from: date12)
+        }
+        
+        return ""
     }
     
     // MARK: changeDateFormat
     public static func changeDateFormat(dateStr: String, dateFormat: String) -> String {
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy-MM-dd"
+        dateFormatter.dateFormat = DateTimeFormat.fullDate.rawValue
         dateFormatter.locale = .current
         dateFormatter.timeZone = .current
         
@@ -70,11 +96,24 @@ public final class UIHelper {
         let currentDateStr = UTCToLocal(dateStr: dateStr)
         
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZ"
         dateFormatter.locale = .current
         dateFormatter.timeZone = .current
         
-        return dateFormatter.date(from: currentDateStr)
+        dateFormatter.dateFormat = DateTimeFormat.dateTime24Long.rawValue
+        let date24 = dateFormatter.date(from: currentDateStr)
+        
+        if let date24 = date24 {
+            return date24
+        }
+        
+        dateFormatter.dateFormat = DateTimeFormat.dateTime12Long.rawValue
+        let date12 = dateFormatter.date(from: currentDateStr)
+        
+        if let date12 = date12 {
+            return date12
+        }
+        
+        return nil
     }
     
     // MARK: timePassed
@@ -82,17 +121,24 @@ public final class UIHelper {
         let currentDateStr = UTCToLocal(dateStr: dateStr)
         
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZ"
         dateFormatter.locale = .current
         dateFormatter.timeZone = .current
         
-        let date = dateFormatter.date(from: currentDateStr)
+        dateFormatter.dateFormat = DateTimeFormat.dateTime24Long.rawValue
+        let date24 = dateFormatter.date(from: currentDateStr)
         
-        if let date = date {
-            return  date.timePassed()
-        } else {
-            return ""
+        if let date24 = date24 {
+            return  date24.timePassed()
         }
+        
+        dateFormatter.dateFormat = DateTimeFormat.dateTime12Long.rawValue
+        let date12 = dateFormatter.date(from: currentDateStr)
+        
+        if let date12 = date12 {
+            return  date12.timePassed()
+        }
+        
+        return ""
     }
     
     // MARK: minutesInBetweenDate
@@ -100,32 +146,51 @@ public final class UIHelper {
         let currentDateStr = UTCToLocal(dateStr: dateStr)
         
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZ"
         dateFormatter.locale = .current
         dateFormatter.timeZone = .current
         
-        let date = dateFormatter.date(from: currentDateStr)
-        if let date = date {
-            return  Date().hoursInBetweenDate(date).toInt.toString
-        } else {
-            return ""
+        dateFormatter.dateFormat = DateTimeFormat.dateTime24Long.rawValue
+        let date24 = dateFormatter.date(from: currentDateStr)
+        if let date24 = date24 {
+            return  Date().hoursInBetweenDate(date24).toInt.toString
         }
+        
+        dateFormatter.dateFormat = DateTimeFormat.dateTime12Long.rawValue
+        let date12 = dateFormatter.date(from: currentDateStr)
+        if let date12 = date12 {
+            return  Date().hoursInBetweenDate(date12).toInt.toString
+        }
+        
+        return ""
     }
     
     // MARK: UTCToLocal
     public static func UTCToLocal(dateStr: String) -> String {
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZ"
         dateFormatter.timeZone = TimeZone(identifier: "UTC")
         
-        if let dt = dateFormatter.date(from: dateStr) {
+        dateFormatter.dateFormat = DateTimeFormat.dateTime24Long.rawValue
+        let date24 = dateFormatter.date(from: dateStr)
+        if let date24 = date24 {
+            // 24 hours format
             dateFormatter.timeZone = .current
-            dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZ"
+            dateFormatter.dateFormat = DateTimeFormat.dateTime24Long.rawValue
 
-            return dateFormatter.string(from: dt)
-        } else {
-            return ""
+            return dateFormatter.string(from: date24)
         }
+        
+        // 12 hours format
+        dateFormatter.dateFormat = DateTimeFormat.dateTime12Long.rawValue
+        let date12 = dateFormatter.date(from: dateStr)
+        if let date12 = date12 {
+            // 24 hours format
+            dateFormatter.timeZone = .current
+            dateFormatter.dateFormat = DateTimeFormat.dateTime12Long.rawValue
+
+            return dateFormatter.string(from: date12)
+        }
+        
+        return ""
     }
     
     // MARK: sinceDate
@@ -133,15 +198,22 @@ public final class UIHelper {
         let currentDateStr = UTCToLocal(dateStr: dateStr)
         
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZ"
         dateFormatter.locale = .current
         dateFormatter.timeZone = .current
         
-        if let date = dateFormatter.date(from: currentDateStr) {
-            return "\(date.since(Date(), in: .minute))"
-        } else {
-            return ""
+        dateFormatter.dateFormat = DateTimeFormat.dateTime24Long.rawValue
+        let date24 = dateFormatter.date(from: currentDateStr)
+        if let date24 = date24 {
+            return "\(date24.since(Date(), in: .minute))"
         }
+        
+        dateFormatter.dateFormat = DateTimeFormat.dateTime12Long.rawValue
+        let date12 = dateFormatter.date(from: currentDateStr)
+        if let date12 = date12 {
+            return "\(date12.since(Date(), in: .minute))"
+        }
+        
+        return ""
     }
     
     // MARK: minutesInBetweenDate
@@ -149,15 +221,22 @@ public final class UIHelper {
         let currentDateStr = UTCToLocal(dateStr: dateStr)
         
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZ"
         dateFormatter.locale = .current
         dateFormatter.timeZone = .current
         
-        if let date = dateFormatter.date(from: currentDateStr) {
-            return Date().minutesInBetweenDate(date).toInt.toString
-        } else {
-            return ""
+        dateFormatter.dateFormat = DateTimeFormat.dateTime24Long.rawValue
+        let date24 = dateFormatter.date(from: currentDateStr)
+        if let date24 = date24 {
+            return Date().minutesInBetweenDate(date24).toInt.toString
         }
+        
+        dateFormatter.dateFormat = DateTimeFormat.dateTime12Long.rawValue
+        let date12 = dateFormatter.date(from: currentDateStr)
+        if let date12 = date12 {
+            return Date().minutesInBetweenDate(date12).toInt.toString
+        }
+        
+        return ""
     }
     
     // MARK: minutesInBetweenDate

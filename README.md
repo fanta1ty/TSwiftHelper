@@ -22,6 +22,21 @@ Just drag and drop the files in `TSwiftHelper/TSwiftHelper` folder into your pro
 ####  Description
 TSwiftHelper is a library for iOS written in Swift to help user lots of helpful extension functions in development
 
+### Usage
+#### LabelHelper
+```swift
+let testLb = LabelHelper(style: LabelStyle(backgroundColor: .Clear, 
+                                           borderColor: .Clear, 
+                                           borderWidth: 0, 
+                                           corderRadius: 0, 
+                                           textColor: .Black, 
+                                           textFont: .regular(size: 16), 
+                                           textAlignment: .center, 
+                                           numberOfLines: 1, 
+                                           isHidden: false), 
+                                text: "Your text")
+```
+
 ### License
 
 TSwiftHelper is available under the MIT license. See the [LICENSE](https://github.com/fanta1ty/TSwiftHelper/blob/master/LICENSE) file for more info. 

@@ -121,6 +121,51 @@ override func viewDidLoad() {
         tableView.registerCells()
 }
 ```
+
+#### CollectionViewHelper
+```swift
+let collectionView = CollectionViewHelper(style: CollectionViewStyle(backgroundColor: .Clear, 
+                                                                     borderColor: .Black, 
+                                                                     borderWidth: 1, 
+                                                                     corderRadius: 4, 
+                                                                     clipsToBounds: true, 
+                                                                     isHidden: false, 
+                                                                     isUserInteractionEnabled: true), 
+                                                 collectionViewLayout: UICollectionViewLayout(), 
+                                                 cellClasses: [YourCell.self], 
+                                                 cellIdentifiers: [YourCell.reuseIdentifier])
+                                                 
+//Using reuseIdentifier, will automically create an identifier for your cell
+//Can use more than one cell, depence on what you want to display on collectionView: cellClasses: [FirstCell.self,SecondCell.self], also add this code to viewDidLoad()
+
+override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        collectionView.registerCells()
+}                                                 
+```
+
+#### PickerHelper
+```swift
+// DatePicker
+PickerHelper.selectDate(title: "Your Picker Title", 
+                        hideCancel: false, 
+                        datePickerMode: .dateAndTime, 
+                        selectedDate: Date(), 
+                        minDate: nil, 
+                        maxDate: Date().dateByAddingYears(5), 
+                        didSelectDate: { selectedDay in
+            
+                                            //Your Logic code with Picker 
+                                        })
+
+// Option Picker
+let data = ["Option1", "Option2", "Option3", "Option4", "Option5", "Option6"]
+
+PickerHelper.selectOption(dataArray: data) { [weak self] value, index in   //value: data value, index: data order
+     //Your Logic code with Picker
+}
+```
 ### License
 
 TSwiftHelper is available under the MIT license. See the [LICENSE](https://github.com/fanta1ty/TSwiftHelper/blob/master/LICENSE) file for more info. 

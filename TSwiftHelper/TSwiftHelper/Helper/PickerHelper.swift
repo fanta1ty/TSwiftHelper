@@ -35,7 +35,7 @@ public final class PickerHelper: NSObject {
             //hide keyboard
             UIApplication.shared.sendAction(#selector(UIApplication.resignFirstResponder), to: nil, from: nil, for: nil)
             
-            let datePicker = UIDatePicker()
+            let datePicker = UIDatePicker(frame: .zero)
             
             if #available(iOS 13.4, *) {
                 datePicker.preferredDatePickerStyle = .wheels

@@ -36,6 +36,11 @@ public final class PickerHelper: NSObject {
             UIApplication.shared.sendAction(#selector(UIApplication.resignFirstResponder), to: nil, from: nil, for: nil)
             
             let datePicker = UIDatePicker()
+            
+            if #available(iOS 13.4, *) {
+                datePicker.preferredDatePickerStyle = .wheels
+            }
+            
             datePicker.datePickerMode = datePickerMode
             datePicker.backgroundColor = UIColor.white
             datePicker.locale = Locale(identifier: "vi_VN")

@@ -22,6 +22,150 @@ Just drag and drop the files in `TSwiftHelper/TSwiftHelper` folder into your pro
 ####  Description
 TSwiftHelper is a library for iOS written in Swift to help user lots of helpful extension functions in development
 
+### Usage
+#### LabelHelper
+```swift
+let testLb = LabelHelper(style: LabelStyle(backgroundColor: .Clear, 
+                                           borderColor: .Clear, 
+                                           borderWidth: 0, 
+                                           corderRadius: 0, 
+                                           textColor: .Black, 
+                                           textFont: .regular(size: 16), 
+                                           textAlignment: .center, 
+                                           numberOfLines: 1, 
+                                           isHidden: false), 
+                                text: "Your text")
+```
+
+#### ButtonHelper
+```swift
+let testBtn = ButtonHelper(style: ButtonStyle(backgroundColor: .Blue, 
+                                              borderColor: .Black, 
+                                              borderWidth: 1, 
+                                              corderRadius: 8, 
+                                              textColor: .White, 
+                                              textFont: .regular(size: 16), 
+                                              clipsToBounds: true, 
+                                              isHidden: false, 
+                                              isUserInteractionEnabled: true), 
+                                  title: "Button Title", 
+                                  normalImage: "Button Image".uiImage, 
+                                  selectedImage: "Button Image when selected".uiImage) 
+                                  
+// uiImage() is a function to set image for components instead of using UIimage(named: "Image Name")
+```
+
+#### TextFieldHelper
+```swift
+let testTextfield = TextFieldHelper(style: TextFieldStyle(backgroundColor: .Clear, 
+                                                          borderColor: .Black, 
+                                                          borderWidth: 1, 
+                                                          corderRadius: 8, 
+                                                          textColor: .Black, 
+                                                          textFont: .regular(size: 16), 
+                                                          textAlignment: .left, 
+                                                          keyboardType: .default, 
+                                                          isSecureTextEntry: false, 
+                                                          autocorrectionType: .default, 
+                                                          spellCheckingType: .no, 
+                                                          autocapitalizationType: .none, 
+                                                          clearButtonMode: .never, 
+                                                          isHidden: false, 
+                                                          isUserInteractionEnabled: true), 
+                                            text: "Text", 
+                                            placeholder: "Placeholder text")
+```
+
+#### ViewHelper
+```swift
+let testView = ViewHelper(style: ViewStyle(backgroundColor: .Clear, 
+                                           borderColor: .Clear, 
+                                           borderWidth: 0, 
+                                           corderRadius: 0, 
+                                           clipsToBounds: true, 
+                                           isHidden: false, 
+                                           isUserInteractionEnabled: true))
+```
+
+#### ImageViewHelper
+```swift
+let testImageView = ImageViewHelper(style: ImageViewStyle(backgroundColor: .Clear, 
+                                                          borderColor: .Black, 
+                                                          borderWidth: 1, 
+                                                          corderRadius: 10, 
+                                                          contentMode: .scaleAspectFill, 
+                                                          clipsToBounds: true, 
+                                                          isHidden: false), 
+                                            iconImage: "Your View Image".uiImage)
+// uiImage() is a function to set image for components instead of using UIimage(named: "Image Name")    
+```
+
+#### TableViewHelper
+```swift
+let tableView = TableViewHelper(style: TableViewStyle(backgroundColor: .Clear, 
+                                                      borderColor: .Clear, 
+                                                      borderWidth: 0, 
+                                                      corderRadius: 0, 
+                                                      clipsToBounds: true, 
+                                                      isHidden: false, 
+                                                      isUserInteractionEnabled: true), 
+                                       cellClasses: [YourCell.self], 
+                                       cellIdentifiers: [YourCell.reuseIdentifier])
+                                       
+//Using reuseIdentifier, will automically create an identifier for your cell
+//Can use more than one cell, depence on what you want to display on tableview: cellClasses: [FirstCell.self,SecondCell.self], also add this code to viewDidLoad()
+
+override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        tableView.registerCells()
+}
+```
+
+#### CollectionViewHelper
+```swift
+let collectionView = CollectionViewHelper(style: CollectionViewStyle(backgroundColor: .Clear, 
+                                                                     borderColor: .Black, 
+                                                                     borderWidth: 1, 
+                                                                     corderRadius: 4, 
+                                                                     clipsToBounds: true, 
+                                                                     isHidden: false, 
+                                                                     isUserInteractionEnabled: true), 
+                                                 collectionViewLayout: UICollectionViewLayout(), 
+                                                 cellClasses: [YourCell.self], 
+                                                 cellIdentifiers: [YourCell.reuseIdentifier])
+                                                 
+//Using reuseIdentifier, will automically create an identifier for your cell
+//Can use more than one cell, depence on what you want to display on collectionView: cellClasses: [FirstCell.self,SecondCell.self], also add this code to viewDidLoad()
+
+override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        collectionView.registerCells()
+}                                                 
+```
+
+#### PickerHelper
+```swift
+// DatePicker
+PickerHelper.selectDate(title: "Your Picker Title", 
+                        hideCancel: false, 
+                        datePickerMode: .dateAndTime, 
+                        selectedDate: Date(), 
+                        minDate: nil, 
+                        maxDate: Date().dateByAddingYears(5), 
+                        didSelectDate: { selectedDay in
+            
+                                            //Your Logic code with Picker 
+                                        })
+
+// Option Picker
+let data = ["Option1", "Option2", "Option3", "Option4", "Option5", "Option6"]
+
+PickerHelper.selectOption(dataArray: data) { [weak self] value, index in   //value: data value, index: data order
+     //Your Logic code with Picker
+}
+```
 ### License
 
 TSwiftHelper is available under the MIT license. See the [LICENSE](https://github.com/fanta1ty/TSwiftHelper/blob/master/LICENSE) file for more info. 

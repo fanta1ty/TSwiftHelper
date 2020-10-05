@@ -96,6 +96,9 @@
 		CE38773C242747E4001DAEEC /* Niramit-MediumItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CE387730242747E4001DAEEC /* Niramit-MediumItalic.ttf */; };
 		CE38773E242754F9001DAEEC /* BaseAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE38773D242754F9001DAEEC /* BaseAPI.swift */; };
 		CE3877412427B52B001DAEEC /* FontHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3877402427B52B001DAEEC /* FontHelper.swift */; };
+		CE4994DC252B25A400A20AA6 /* RTA-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CE4994D9252B25A400A20AA6 /* RTA-Bold.ttf */; };
+		CE4994DD252B25A400A20AA6 /* RTA-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CE4994DA252B25A400A20AA6 /* RTA-Regular.ttf */; };
+		CE4994DE252B25A400A20AA6 /* RTA-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CE4994DB252B25A400A20AA6 /* RTA-Light.ttf */; };
 		CE559BA6242E5BBA0024406B /* UITableViewCell+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE559BA5242E5BBA0024406B /* UITableViewCell+Ext.swift */; };
 		CE559BA8242E5D490024406B /* UITableView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE559BA7242E5D490024406B /* UITableView+Ext.swift */; };
 		CEA5E191242F11460061C6F1 /* TextViewHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA5E190242F11450061C6F1 /* TextViewHelper.swift */; };
@@ -194,6 +197,9 @@
 		CE387730242747E4001DAEEC /* Niramit-MediumItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Niramit-MediumItalic.ttf"; sourceTree = "<group>"; };
 		CE38773D242754F9001DAEEC /* BaseAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseAPI.swift; sourceTree = "<group>"; };
 		CE3877402427B52B001DAEEC /* FontHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontHelper.swift; sourceTree = "<group>"; };
+		CE4994D9252B25A400A20AA6 /* RTA-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "RTA-Bold.ttf"; sourceTree = "<group>"; };
+		CE4994DA252B25A400A20AA6 /* RTA-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "RTA-Regular.ttf"; sourceTree = "<group>"; };
+		CE4994DB252B25A400A20AA6 /* RTA-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "RTA-Light.ttf"; sourceTree = "<group>"; };
 		CE559BA5242E5BBA0024406B /* UITableViewCell+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableViewCell+Ext.swift"; sourceTree = "<group>"; };
 		CE559BA7242E5D490024406B /* UITableView+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Ext.swift"; sourceTree = "<group>"; };
 		CEA5E190242F11450061C6F1 /* TextViewHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextViewHelper.swift; sourceTree = "<group>"; };
@@ -335,6 +341,7 @@
 		CE3876A124272DB9001DAEEC /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
+				CE4994D8252B258400A20AA6 /* RTA */,
 				CE387724242747C3001DAEEC /* Niramit */,
 				CE3876A224272DDB001DAEEC /* Inter */,
 			);
@@ -414,6 +421,16 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		CE4994D8252B258400A20AA6 /* RTA */ = {
+			isa = PBXGroup;
+			children = (
+				CE4994D9252B25A400A20AA6 /* RTA-Bold.ttf */,
+				CE4994DB252B25A400A20AA6 /* RTA-Light.ttf */,
+				CE4994DA252B25A400A20AA6 /* RTA-Regular.ttf */,
+			);
+			path = RTA;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -486,14 +503,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				CE387735242747E4001DAEEC /* Niramit-Medium.ttf in Resources */,
+				CE4994DE252B25A400A20AA6 /* RTA-Light.ttf in Resources */,
 				CE387737242747E4001DAEEC /* Niramit-Italic.ttf in Resources */,
 				CE38773B242747E4001DAEEC /* Niramit-LightItalic.ttf in Resources */,
 				CE38768624271562001DAEEC /* Localizable.strings in Resources */,
 				CE3876B324272DEF001DAEEC /* Inter-Regular.otf in Resources */,
+				CE4994DC252B25A400A20AA6 /* RTA-Bold.ttf in Resources */,
 				CE387731242747E4001DAEEC /* Niramit-Regular.ttf in Resources */,
 				CE3876AD24272DEF001DAEEC /* Inter-Medium.otf in Resources */,
 				CE3876B124272DEF001DAEEC /* Inter-ExtraBold.otf in Resources */,
 				CE3876AE24272DEF001DAEEC /* Inter-SemiBoldItalic.otf in Resources */,
+				CE4994DD252B25A400A20AA6 /* RTA-Regular.ttf in Resources */,
 				CE3876B224272DEF001DAEEC /* Inter-MediumItalic.otf in Resources */,
 				CE38773A242747E4001DAEEC /* Niramit-ExtraLightItalic.ttf in Resources */,
 				CE3876B624272DEF001DAEEC /* Inter-Bold.otf in Resources */,
@@ -747,7 +767,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.2.3;
+				MARKETING_VERSION = 1.2.4;
 				PRODUCT_BUNDLE_IDENTIFIER = thinhNguyen.TSwiftHelper;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
@@ -776,7 +796,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.2.3;
+				MARKETING_VERSION = 1.2.4;
 				PRODUCT_BUNDLE_IDENTIFIER = thinhNguyen.TSwiftHelper;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;

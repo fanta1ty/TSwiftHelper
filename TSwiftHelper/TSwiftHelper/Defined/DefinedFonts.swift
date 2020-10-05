@@ -13,6 +13,7 @@ import UIKit
 public enum FontFamilyName: String, CaseIterable {
     case inter = "Inter"
     case niramit = "Niramit"
+    case rta = "RTA"
 }
 
 public enum DefaultFontFamilyName: String {
@@ -232,6 +233,16 @@ public enum DefinedFonts {
     
     // MARK: Italic
     case NiramitItalic(size: Float)
+    
+    // MARK: - RTA Section
+    // MARK: Bold
+    case RTABold(size: Float)
+    
+    // MARK: Light
+    case RTALight(size: Float)
+    
+    // MARK: Regular
+    case RTARegular(size: Float)
 }
 
 public extension DefinedFonts {
@@ -352,6 +363,16 @@ public extension DefinedFonts {
             
         case .NiramitSemiBoldItalic(let size):
             return UIFont(name: FontFamilyName.niramit.rawValue + FontType.semiBoldItalic.rawValue, size: CGFloat(size))
+            
+        // MARK: - RTA Section
+        case .RTABold(let size):
+            return UIFont(name: FontFamilyName.rta.rawValue + FontType.bold.rawValue, size: CGFloat(size))
+            
+        case .RTALight(let size):
+            return UIFont(name: FontFamilyName.rta.rawValue + FontType.light.rawValue, size: CGFloat(size))
+            
+        case .RTARegular(let size):
+            return UIFont(name: FontFamilyName.rta.rawValue + FontType.regular.rawValue, size: CGFloat(size))
         }
     }
 }

@@ -7,23 +7,36 @@ TSwiftHelper is a library for iOS written in Swift to help user lots of helpful 
 [![License](http://img.shields.io/badge/license-MIT-blue)](https://github.com/fanta1ty/TSwiftHelper/blob/master/LICENSE)
 [![Email](https://img.shields.io/badge/contact-@thinhnguyen12389@gmail.com-blue)](thinhnguyen12389@gmail.com)
 
+## Requirements
+- iOS 11.0+
+- Swift 5
+
 ### Installation
 
-##### [CocoaPods](http://cocoapods.org)
+### From [CocoaPods](http://cocoapods.org)
 
 TSwiftHelper is available through CocoaPods. To install it, simply add the following line to your Podfile:
 ```ruby
 pod 'TSwiftHelper'
 ```
-##### Manual Installation
+Second, install `TProgressHUD` into your project:
+```ruby
+pod install
+```
+
+### Manual Installation
 
 Just drag and drop the files in `TSwiftHelper/TSwiftHelper` folder into your project
 
-####  Description
-TSwiftHelper is a library for iOS written in Swift to help user lots of helpful extension functions in development
+### Swift Package
+`TProgressHUD` is designed for Swift 5. To depend on the logging API package, you need to declare your dependency in your `Package.swift`
 
-### Usage
-#### LabelHelper
+```swift
+.package(url: "https://github.com/fanta1ty/TSwiftHelper.git", brand: "master"),
+```
+
+## Usage
+### LabelHelper
 ```swift
 let testLb = LabelHelper(style: LabelStyle(backgroundColor: .Clear, 
                                            borderColor: .Clear, 
@@ -37,7 +50,7 @@ let testLb = LabelHelper(style: LabelStyle(backgroundColor: .Clear,
                                 text: "Your text")
 ```
 
-#### ButtonHelper
+### ButtonHelper
 ```swift
 let testBtn = ButtonHelper(style: ButtonStyle(backgroundColor: .Blue, 
                                               borderColor: .Black, 
@@ -55,7 +68,7 @@ let testBtn = ButtonHelper(style: ButtonStyle(backgroundColor: .Blue,
 // uiImage() is a function to set image for components instead of using UIimage(named: "Image Name")
 ```
 
-#### TextFieldHelper
+### TextFieldHelper
 ```swift
 let testTextfield = TextFieldHelper(style: TextFieldStyle(backgroundColor: .Clear, 
                                                           borderColor: .Black, 
@@ -76,7 +89,7 @@ let testTextfield = TextFieldHelper(style: TextFieldStyle(backgroundColor: .Clea
                                             placeholder: "Placeholder text")
 ```
 
-#### ViewHelper
+### ViewHelper
 ```swift
 let testView = ViewHelper(style: ViewStyle(backgroundColor: .Clear, 
                                            borderColor: .Clear, 
@@ -87,7 +100,7 @@ let testView = ViewHelper(style: ViewStyle(backgroundColor: .Clear,
                                            isUserInteractionEnabled: true))
 ```
 
-#### ImageViewHelper
+### ImageViewHelper
 ```swift
 let testImageView = ImageViewHelper(style: ImageViewStyle(backgroundColor: .Clear, 
                                                           borderColor: .Black, 
@@ -100,7 +113,7 @@ let testImageView = ImageViewHelper(style: ImageViewStyle(backgroundColor: .Clea
 // uiImage() is a function to set image for components instead of using UIimage(named: "Image Name")    
 ```
 
-#### TableViewHelper
+### TableViewHelper
 ```swift
 let tableView = TableViewHelper(style: TableViewStyle(backgroundColor: .Clear, 
                                                       borderColor: .Clear, 
@@ -122,7 +135,7 @@ override func viewDidLoad() {
 }
 ```
 
-#### CollectionViewHelper
+### CollectionViewHelper
 ```swift
 let collectionView = CollectionViewHelper(style: CollectionViewStyle(backgroundColor: .Clear, 
                                                                      borderColor: .Black, 
@@ -145,7 +158,7 @@ override func viewDidLoad() {
 }                                                 
 ```
 
-#### PickerHelper
+### PickerHelper
 ```swift
 // DatePicker
 PickerHelper.selectDate(title: "Your Picker Title", 
@@ -166,10 +179,10 @@ PickerHelper.selectOption(dataArray: data) { [weak self] value, index in   //val
      //Your Logic code with Picker
 }
 ```
-### License
+## License
 
 TSwiftHelper is available under the MIT license. See the [LICENSE](https://github.com/fanta1ty/TSwiftHelper/blob/master/LICENSE) file for more info. 
 
-### Author
+## Author
 
 [@thinhnguyen](https://github.com/fanta1ty)

@@ -28,7 +28,11 @@ public final class FontHelper: NSObject {
     
     // MARK: loadFont
     private static func loadFont(withName fontName: String, extStr: String) {
+        #if SWIFT_PACKAGE
+        let bundle = Bundle.module
+        #else
         let bundle = Bundle(for: self.classForCoder())
+        #endif
         
         guard let fontURL = bundle.url(forResource: fontName, withExtension: extStr) else {
             return
